@@ -1,0 +1,28 @@
+<nav class="sb-topnav  navbar-dark bg-dark">
+    <a class="navbar-brand" routerLink="/dashboard">SME Adviser</a>
+    <button class="btn btn-link btn-sm order-1 order-lg-0" id="sidebarToggle" data-cy="topNavToggleSideNav"
+        (click)="toggleSideNav()">
+        <fa-icon [icon]='["fas", "bars"]'></fa-icon>
+    </button>
+    <ul class="navbar-nav ml-auto ml-md-0">
+        <sb-top-nav-user></sb-top-nav-user>
+    </ul>
+    <!-- <div class="row">
+        <div class=" col-sm-6 float-left"> -->
+
+            <!-- Navbar Search-->
+            <!-- <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
+                <div class="input-group">
+                    <input class="form-control" type="text" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2" />
+                    <div class="input-group-append">
+                        <button class="btn btn-primary" type="button"><fa-icon [icon]='["fas", "search"]'></fa-icon></button>
+                    </div>
+                </div>
+            </form> -->
+            <!-- Navbar-->
+        <!-- </div>
+        <div class="col-sm-6 float-left">
+
+        </div>
+    </div>-->
+</nav>

@@ -1,0 +1,19 @@
+{
+  "hosting": [
+    {
+      "target": "sb-admin-angular",
+      "public": "dist/sb-admin-angular",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ]
+    }
+  ]
+}

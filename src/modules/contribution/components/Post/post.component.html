@@ -1,0 +1,55 @@
+<h5> Post List Page Works</h5>
+
+
+<div class="card text-center">
+    <div class="card-header">
+      <ul class="nav nav-tabs card-header-tabs">
+        <li class="nav-item">
+          <a class="nav-link active" href="#" (click) = "getTodayPosts()">Today's Post</a>
+
+          <table class="table table-hover">
+            <thead>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Category</th>
+                <th>Post Description</th>
+            </thead>
+
+            <tbody >
+                <tr *ngFor="let post of postList">
+                  <td >{{post.firstname}}</td>
+                  <td >{{post.lastname}}</td>
+                  <td >{{post.email}}</td>
+                  <td >{{post.phone}}</td>
+                  <td >{{post.category}}</td>
+                  <td >{{post.postdesc}}</td>
+                 </tr>
+            </tbody>
+
+            </table>
+
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Older</a>
+        </li>
+        <li class="nav-item">
+            <a href="#" class="btn btn-primary" routerLink="/addnewpost">Create New Post</a>
+        </li>
+      </ul>
+    </div>
+   </div>
+
+  <div class="d-flex justify-content-between p-2">
+        <ngb-pagination [collectionSize]="total$ | async" [(page)]="countryService.page" [pageSize]="countryService.pageSize"></ngb-pagination
+        ><select class="custom-select" style="width: auto;" name="pageSize" [(ngModel)]="countryService.pageSize"
+            ><option [ngValue]="10">10 items per page</option
+            ><option [ngValue]="30">30 items per page</option
+            ><option [ngValue]="50">50 items per page</option></select
+        >
+    </div>
+
+
+
+
