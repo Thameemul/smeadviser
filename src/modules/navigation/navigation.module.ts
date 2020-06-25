@@ -20,10 +20,30 @@ import * as navigationGuards from './guards';
 
 /* Services */
 import * as navigationServices from './services';
+import { environment } from '../../environments/environment';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AngularFireStorageModule } from '@angular/fire/storage';
+import { FormsModule } from '@angular/forms';
+import * as authServices from '@modules/auth/services';
 
 @NgModule({
-    imports: [CommonModule, RouterModule, AppCommonModule],
-    providers: [...navigationServices.services, ...navigationGuards.guards],
+    imports: [
+        CommonModule,
+        RouterModule,
+        AppCommonModule,
+        AngularFireModule.initializeApp(environment.firebaseConfig),
+        AngularFirestoreModule, // firestore
+        AngularFireAuthModule, // auth
+        AngularFireStorageModule, // storage
+        FormsModule,
+    ],
+    providers: [
+        ...navigationServices.services,
+        ...authServices.services,
+        ...navigationGuards.guards,
+    ],
     declarations: [
         ...navigationContainers.containers,
         ...navigationComponents.components,
