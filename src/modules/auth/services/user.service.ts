@@ -13,6 +13,8 @@ export class UserService {
             firstName: 'Code',
             lastName: 'Blitz',
             email: 'abc@lntinfotech.com',
+            password: ' ',
+            confirmPassword: ' ',
         };
     }
 

@@ -4,6 +4,12 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
+//  Firebase
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireStorageModule } from '@angular/fire/storage';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+
 /* Modules */
 import { AppCommonModule } from '@common/app-common.module';
 import { NavigationModule } from '@modules/navigation/navigation.module';
@@ -19,6 +25,7 @@ import * as authGuards from './guards';
 
 /* Services */
 import * as authServices from './services';
+import { environment } from '../../environments/environment';
 
 @NgModule({
     imports: [
@@ -28,6 +35,11 @@ import * as authServices from './services';
         FormsModule,
         AppCommonModule,
         NavigationModule,
+        AngularFireModule.initializeApp(environment.firebaseConfig),
+        AngularFirestoreModule, // firestore
+        AngularFireAuthModule, // auth
+        AngularFireStorageModule, // storage
+        FormsModule,
     ],
     providers: [...authServices.services, ...authGuards.guards],
     declarations: [...authContainers.containers, ...authComponents.components],
