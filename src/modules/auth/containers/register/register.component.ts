@@ -3,8 +3,9 @@ import { AngularFirestore } from '@angular/fire/firestore';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 
+import { UserService } from '../../../contribution/services/user.service';
 import { User } from '../../models/user.model';
-import { UserService } from '../../services/user.service';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
     selector: 'sb-register',
@@ -13,48 +14,33 @@ import { UserService } from '../../services/user.service';
     styleUrls: ['register.component.scss'],
 })
 export class RegisterComponent implements OnInit {
-    constructor(
-        private userservice: UserService,
-        private firestore: AngularFirestore,
-        private router: Router
-    ) {}
+    email!: string;
+    password!: string;
+
+    constructor(private authservice: AuthService) {}
 
     ngOnInit() {
-   //     this.resetForm();
+        //  this.resetForm();
     }
 
-    // resetForm(form?: NgForm) {
-    //     if (form != null) {
-    //         form.reset();
-    //     }
+    resetForm(form?: NgForm) {
+        // if (form != null) {
+        //     form.reset();
+        // }
 
-    //     this.userservice.formData = {
-    //         id: '',
-    //         firstName: '',
-    //         lastName: '',
-    //         email: '',
-    //         password: '',
-    //         confirmPassword: '',
-    //     };
-    // }
+        // this.authservice.userData = {
+        //     id: '',
+        //     firstName: '',
+        //     lastName: '',
+        //     email: '',
+        //     password: '',
+        //     confirmPassword: '',
+        // };
+    }
 
-    // onSubmit(form: NgForm) {
-    //     let data = form.value;
-    //     this.firestore.collection('user').add(data);
-    //     this.resetForm(form);
-    //     alert('Registration Form Submitted successfully');
-    //     //this.router.navigate('/dashboard');
-    // }
-
-    // create(user: User) {
-    //     this.userservice.createUser(user);
-    // }
-
-    // update(user: User) {
-    //     this.userservice.updateUser(user);
-    // }
-
-    // delete(id: string) {
-    //     this.userservice.deleteUser(id);
-    // }
+    signUp() {
+        this.authservice.SignUp(this.email, this.password);
+        this.email = '';
+        this.password = '';
+    }
 }
