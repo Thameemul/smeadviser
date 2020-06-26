@@ -1,16 +1,22 @@
 import { Injectable } from '@angular/core';
-import { AngularFirestore } from '@angular/fire/firestore';
+import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from '@angular/fire/firestore';
+import { Observable } from 'rxjs';
 
 import { Post } from '../models/post.model';
 
 @Injectable()
 export class PostService {
     formData!: Post;
+    postCollections!: AngularFirestoreCollection<Post>;
 
-    constructor(private firestore: AngularFirestore) {}
+    posts: Observable<Post[]>;
 
-    getPost() {
-        return this.firestore.collection<PostItem>('post').snapshotChanges();
+    constructor(private firestore: AngularFirestore) {
+        this.posts = this.firestore.collection<Post>('post').valueChanges();
+    }
+
+    getPosts(): Observable<Post[]> {
+        return this.posts;
     }
     createPost(post: Post) {
         return this.firestore.collection('post').add(post);
@@ -26,12 +32,3 @@ export class PostService {
     }
 }
 
-export interface PostItem {
-    id: string;
-    firstname: string;
-    lastname: string;
-    email: string;
-    phone: string;
-    category: string;
-    postdesc: string;
- }

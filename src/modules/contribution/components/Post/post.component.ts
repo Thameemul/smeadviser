@@ -2,6 +2,7 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { PostService } from '../../../addnewpost/services/post.service';
 import { Post } from '@modules/addnewpost/models';
 import * as firebase from 'firebase/app';
+import { Observable } from 'rxjs';
 
 @Component({
     selector: 'sb-post',
@@ -10,7 +11,7 @@ import * as firebase from 'firebase/app';
     styleUrls: ['post.component.scss'],
 })
 export class PostComponent implements OnInit {
-    postList!: Post[];
+    posts!: Observable< Post[]>;
 
     constructor(private postservice: PostService,
     ) {
@@ -18,28 +19,6 @@ export class PostComponent implements OnInit {
     }
 
     ngOnInit()   {
-        // this.postservice.getPost<PostItem>().subscribe(data => {
-        //   this.postList = data.map(e => {
-        //     let test = e.payload.doc.data();
-
-        //      return {
-        //        id: e.payload.doc.id,
-        //        ...e.payload.doc.data()
-        //      } as unknown  as Post;
-        //   })
-        // });
-     }
-
-
-    // getTodayPosts() {
-    //     this.postservice.getPost$().subscribe(data => {
-    //         this.postList = data.map(e => {
-    //             return {
-    //                 id: e.payload.doc.id,
-    //                 ...e.payload.doc.data()
-    //             } as unknown as Post;
-    //         })
-    //     });
-    // }
-
+        this.posts = this.postservice.getPosts();
+        }
 }

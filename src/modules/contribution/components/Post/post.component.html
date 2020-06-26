@@ -5,7 +5,7 @@
     <div class="card-header">
       <ul class="nav nav-tabs card-header-tabs">
         <li class="nav-item">
-          <a class="nav-link active" href="#" (click) = "getTodayPosts()">Today's Post</a>
+          <a class="nav-link active">Today's Post</a>
 
           <table class="table table-hover">
             <thead>
@@ -18,17 +18,20 @@
             </thead>
 
             <tbody >
-                <tr *ngFor="let post of postList">
+                <tr *ngFor="let post of posts | async">
                   <td >{{post.firstname}}</td>
                   <td >{{post.lastname}}</td>
                   <td >{{post.email}}</td>
                   <td >{{post.phone}}</td>
                   <td >{{post.category}}</td>
                   <td >{{post.postdesc}}</td>
+
                  </tr>
             </tbody>
 
+
             </table>
+            <p>{{posts | json}}</p>
 
         </li>
         <li class="nav-item">
@@ -40,7 +43,7 @@
       </ul>
     </div>
    </div>
-
+<!--
   <div class="d-flex justify-content-between p-2">
         <ngb-pagination [collectionSize]="total$ | async" [(page)]="countryService.page" [pageSize]="countryService.pageSize"></ngb-pagination
         ><select class="custom-select" style="width: auto;" name="pageSize" [(ngModel)]="countryService.pageSize"
@@ -48,7 +51,7 @@
             ><option [ngValue]="30">30 items per page</option
             ><option [ngValue]="50">50 items per page</option></select
         >
-    </div>
+    </div> -->
 
 
 
