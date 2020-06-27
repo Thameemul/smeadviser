@@ -31,7 +31,7 @@ export const ROUTES: Routes = [
     {
         path: 'static',
         data: {
-            title: 'Dashboard Static - SME Adviser',
+            title: 'Dashboard - SME Adviser',
             breadcrumbs: [
                 {
                     text: 'Dashboard',
@@ -49,7 +49,7 @@ export const ROUTES: Routes = [
     {
         path: 'light',
         data: {
-            title: 'Dashboard Light - SME Adviser',
+            title: 'Dashboard - SME Adviser',
             breadcrumbs: [
                 {
                     text: 'Dashboard',

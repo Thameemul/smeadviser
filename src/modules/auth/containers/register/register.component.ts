@@ -2,8 +2,8 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
+import { UserService } from '@modules/auth/services';
 
-import { UserService } from '../../../contribution/services/user.service';
 import { User } from '../../models/user.model';
 import { AuthService } from '../../services/auth.service';
 
@@ -17,7 +17,9 @@ export class RegisterComponent implements OnInit {
     email!: string;
     password!: string;
 
-    constructor(private authservice: AuthService) {}
+    user?: User;
+
+    constructor(private authservice: AuthService, private userservice: UserService) {}
 
     ngOnInit() {
         //  this.resetForm();
@@ -27,7 +29,6 @@ export class RegisterComponent implements OnInit {
         // if (form != null) {
         //     form.reset();
         // }
-
         // this.authservice.userData = {
         //     id: '',
         //     firstName: '',
@@ -40,7 +41,12 @@ export class RegisterComponent implements OnInit {
 
     signUp() {
         this.authservice.SignUp(this.email, this.password);
-        this.email = '';
-        this.password = '';
     }
+
+    // onSubmit(form: NgForm) {
+    //     const user = form.value;
+    //     this.userservice.createUser(user);
+    //     this.resetForm(form);
+    //     alert('User Registered successfully');
+    // }
 }

@@ -63,15 +63,15 @@ export class AddNewQueryComponent implements OnInit {
         alert('Query Submitted successfully');
     }
 
-    create(query: Query) {
-        this.queryservice.createQuery(query);
-    }
+    // create(query: Query) {
+    //     this.queryservice.createQuery(query);
+    // }
 
-    update(query: Query) {
-        this.queryservice.updateQuery(query);
-    }
+    // update(query: Query) {
+    //     this.queryservice.updateQuery(query);
+    // }
 
-    delete(id: string) {
-        this.queryservice.deleteQuery(id);
-    }
+    // delete(id: string) {
+    //     this.queryservice.deleteQuery(id);
+    // }
 }

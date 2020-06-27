@@ -8,13 +8,11 @@ export const sideNavSections: SideNavSection[] = [
     },
     {
         text: 'INTERFACE',
-        items: ['layouts', 'contributions', 'category'],
-        // items: ['layouts', 'contributions', 'pages'], - Pages is hidden here
+        items: ['contributions', 'category'],
     },
     {
-        text: 'ADDONS',
+        text: 'ADD-ONS',
         items: ['charts'],
-        // items: ['charts', 'tables'], - tables is hidden here
     },
 ];
 
@@ -22,7 +20,7 @@ export const sideNavItems: SideNavItems =
 {
     dashboard: {
         icon: 'tachometer-alt',
-        text: 'Dashboard',
+        text: 'Home',
         link: '/dashboard',
     },
     viewprofile: {
