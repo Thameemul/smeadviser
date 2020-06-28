@@ -1,11 +1,5 @@
 {
-  "targets": {
-    "smeadviser-2320c": {
-      "hosting": {
-        "sb-admin-angular": [
-          "smeadviser-2320c"
-        ]
-      }
-    }
+  "projects": {
+    "default": "smeadviser-2320c"
   }
 }
