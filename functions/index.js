@@ -1,15 +1,7 @@
 const functions = require('firebase-functions');
-
-// // Create and Deploy Your First Cloud Functions
-// // https://firebase.google.com/docs/functions/write-firebase-functions
-//
-//  exports.helloWorld = functions.https.onRequest((request, response) => {
-//   response.send("Hello from Firebase!");
-//  });
-
-
 const admin=require('firebase-admin');
 const nodemailer =require('nodemailer');
+//const hbs = require('nodemailer-express-handlebars');
 
 admin.initializeApp()
 require('dotenv').config()
@@ -31,11 +23,18 @@ exports.sendPostEmail=functions.firestore.document('post/{docId}')
         }
     });
 
+// sendPostEmail.use('compile',hbs({
+//     viewEngine : 'express-handlebars',
+//     viewPath: './views/'
+// }));
+
+
 sendPost.sendMail({
          from: 'codeblitz.smeadviser@gmail.com',
          to: `${postdata.email}`,
          subject: 'New Post created',
-         text: `${postdata.postdesc}`,
+         text: `${postdata.postdesc}`
+        // template: 'index.handlebars'
     }).then(res=>console.log('successfully sent the mail for post')).catch(err=>console.log('Error Occurred while sending email for new post creation',err));
 });
 

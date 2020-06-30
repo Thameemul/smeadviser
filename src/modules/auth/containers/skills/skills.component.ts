@@ -4,7 +4,7 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
     selector: 'sb-skills',
     changeDetection: ChangeDetectionStrategy.OnPush,
     templateUrl: './skills.component.html',
-    styleUrls: ['skills.component.scss'],
+    styleUrls: ['skills.component.css'],
 })
 export class SkillsComponent implements OnInit {
     constructor() {}
