@@ -26,6 +26,7 @@ import * as authGuards from './guards';
 /* Services */
 import * as authServices from './services';
 import { environment } from '../../environments/environment';
+import { UserSkillService } from './services/userskill.service';
 
 @NgModule({
     imports: [
@@ -41,7 +42,7 @@ import { environment } from '../../environments/environment';
         AngularFireStorageModule, // storage
         FormsModule,
     ],
-    providers: [...authServices.services, ...authGuards.guards],
+    providers: [...authServices.services, UserSkillService, ...authGuards.guards],
     declarations: [...authContainers.containers, ...authComponents.components],
     exports: [...authContainers.containers, ...authComponents.components],
 })

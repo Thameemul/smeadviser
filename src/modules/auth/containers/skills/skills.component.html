@@ -5,50 +5,71 @@
                 <div class="card shadow-lg border-0 rounded-lg mt-5">
                     <div class="card-header"><h3 class="text-center font-weight-dark my-0">Registration</h3></div>
                     <div class="card-body">
-                        <form>
+                        <form #form="ngForm" >
                             <div class="form-row">
                                 <div class="col-md-6">
-                                    <div class="form-group"><label class="medium mb-1 " >First Name *</label><input class="form-control py-1"  /></div>
+                                    <div class="form-group"><label class="medium mb-1 " >First Name *</label>
+                                        <input class="form-control py-1" name="firstName" #firstName="ngModel" [(ngModel)]="userskillservice.userskillData.firstName" required/>
+                                        <!-- <div *ngIf="firstName.invalid && firstName.touched" class="validation-error">This field is required </div> -->
+                                    </div>
                                 </div>
                                 <div class="col-md-6">
-                                    <div class="form-group"><label class="medium mb-1" >Last Name *</label><input class="form-control py-1"    /></div>
+                                    <div class="form-group"><label class="medium mb-1" >Last Name *</label>
+                                        <input class="form-control py-1" name="lastName" #lastname="ngModel" [(ngModel)]="userskillservice.userskillData.lastName"  required />
+                                        <!-- <div *ngIf="lastName.invalid && lastName.touched" class="validation-error">This field is required </div> -->
+                                    </div>
                                 </div>
                             </div>
                             <div class="form-row">
                                 <div class="col-md-6">
-                                    <div class="form-group"><label class="medium mb-1" >Mobile No </label><input class="form-control py-1"  /></div>
+                                    <div class="form-group"><label class="medium mb-1" >Mobile No </label>
+                                        <input class="form-control py-1" name="mobile" #mobile="ngModel" [(ngModel)]="userskillservice.userskillData.mobile" />
+                                    </div>
                                 </div>
                                 <div class="col-md-6">
-                                    <div class="form-group"><label class="medium mb-1" >Team Name</label><input class="form-control py-1"  /></div>
+                                    <div class="form-group"><label class="medium mb-1" >Team Name</label>
+                                        <input class="form-control py-1" name="teamname" #teamname="ngModel" [(ngModel)]="userskillservice.userskillData.teamName" />
+                                    </div>
                                 </div>
                             </div>
                             <div class="form-row">
                                 <div class="col-md-6">
-                                    <div class="form-group"><label class="medium mb-1" >Desk No</label><input class="form-control py-1"  /></div>
+                                    <div class="form-group"><label class="medium mb-1" >Desk No</label>
+                                        <input class="form-control py-1" name="deskno" #desnko="ngModel" [(ngModel)]="userskillservice.userskillData.deskNo"  />
+                                    </div>
                                 </div>
                                 <div class="col-md-6">
-                                    <div class="form-group"><label class="medium mb-1" >Email *</label><input class="form-control py-1"  /></div>
+                                    <div class="form-group"><label class="medium mb-1" >Email *</label>
+                                        <input class="form-control py-1" name="email" #email="ngModel" [(ngModel)]="userskillservice.userskillData.email"  required/>
+                                        <!-- <div *ngIf="email.invalid && email.touched" class="validation-error">This field is required </div> -->
+                                    </div>
                                 </div>
                             </div>
 
                             <div class="form-row">
                                 <div class="col-md-6">
-                                    <div class="form-group"><label class="medium mb-1" >Password *</label><input class="form-control py-1" type="password"  /></div>
+                                    <div class="form-group"><label class="medium mb-1" >Password *</label>
+                                        <input class="form-control py-1" type="password" name="password" #password="ngModel" [(ngModel)]="userskillservice.userskillData.password" required />
+                                        <!-- <div *ngIf="password.invalid && password.touched" class="validation-error">This field is required </div> -->
+                                    </div>
                                 </div>
                                 <div class="col-md-6">
-                                    <div class="form-group"><label class="medium mb-1" >Confirm Password *</label><input class="form-control py-1" type="password" /></div>
+                                    <div class="form-group"><label class="medium mb-1" >Confirm Password *</label>
+                                        <input class="form-control py-1" type="password" name="confirmPassword" #confirmPassword="ngModel" [(ngModel)]="userskillservice.userskillData.confirmPassword" required/>
+                                        <!-- <div *ngIf="confirmPassword.invalid && confirmPassword.touched" class="validation-error">This field is required </div> -->
+                                    </div>
                                 </div>
                             </div>
 
                             <div class="form-row">
                                 <div class="col-md-6" >
                                        <div class="form-group">
-                                            <label class="medium mb-1" >SME Mark *</label>
-                                                <div class="checkbox">
+                                            <label class="medium mb-1" >SME Mark </label>
+                                                <div class="checkbox" >
                                                    <div>
-                                                        <input style="width: 30px;" type="checkbox" value=""><label>Technical</label>
-                                                        <input style="width: 30px;" type="checkbox" value=""><label>Domain</label>
-                                                        <input style="width: 30px;" type="checkbox" value=""><label>Others</label>
+                                                        <input style="width: 30px;" type="checkbox" value="" name="techsme" #techsme="ngModel" [(ngModel)]="userskillservice.userskillData.techSME"><label>Technical</label>
+                                                        <input style="width: 30px;" type="checkbox" value="" name="domainsme" #domainsme="ngModel" [(ngModel)]="userskillservice.userskillData.domainSME"><label>Domain</label>
+                                                        <input style="width: 30px;" type="checkbox" value="" name="otherssme" #otherssme="ngModel" [(ngModel)]="userskillservice.userskillData.othersSME"><label>Others</label>
                                                     </div>
                                                 </div>
                                         </div>
@@ -56,26 +77,22 @@
                                 <div class="col-md-6 " >
                                     <label class="medium mb-1" >Skills *</label>
                                     <div class="input-group mb-3">
-                                        <input type="text" class="form-control" name="skillset"  placeholder="Add your skills here (Ex: Java)">
+                                        <input type="text" class="form-control"    placeholder="Add your skills here (Ex: Java)" required>
                                         <div class="input-group-append">
-                                          <!-- <span class="input-group-text">@example.com</span> -->
-                                          <button class="btn btn-success" (click) = "addSkills()">Add Skills</button>
+                                             <button class="btn btn-success" (click)="onAdd( )">Add Skills</button>
                                         </div>
-                                      </div>
-                                    <!-- <input class="form-control py-1" name="skillset"  placeholder="Add your skills here (Ex: Java)" > -->
-                                    <!-- <button class="btn btn-success float-right" (click) = "addSkills()">Add Skills</button> -->
-                                        <ul id="myUL" >
-                                            <li class="mylist">COBOL</li>
-                                            <li class="mylist">JCL</li>
-                                            <li class="mylist">Webservices</li>
-                                            <li class="mylist">DB2</li>
-                                        </ul>
+                                        <!-- <div *ngIf="newSkill.invalid && newSkill.touched" class="validation-error">Please add atleast one skill </div> -->
+                                    </div>
+                                    <ul id="mySkills" >
+                                            <li *ngFor="let skill of skills">
+                                                {{ skill }}
+                                              </li>
+                                    </ul>
                                 </div>
                             </div>
-
                             <div class="form-row">
                                 <div class="col-md-12 text-center">
-                                    <div class="form-group "><a class="btn-lg btn-primary " routerLink="/dashboard">Create Account</a></div>
+                                    <div class="form-group "><button class="btn-lg btn-primary " (click)="onSubmit(form)">Create Account</button></div>
                                 </div>
                             </div>
                         </form>
@@ -86,5 +103,4 @@
                 </div>
             </div>
         </div>
-    </div></sb-layout-auth
->
+    </div></sb-layout-auth>
