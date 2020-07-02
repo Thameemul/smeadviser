@@ -1,6 +1,7 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { NgForm } from '@angular/forms';
+import { UserSkill } from '@modules/auth/models/userskill.model';
 
 import { UserSkillService } from '../../services/userskill.service';
 
@@ -11,24 +12,10 @@ import { UserSkillService } from '../../services/userskill.service';
     styleUrls: ['skills.component.css'],
 })
 export class SkillsComponent implements OnInit {
-    skills: any = [];
-    skill = ' ';
-    constructor(private userskillservice: UserSkillService, private firestore: AngularFirestore) { }
-
-    ngOnInit() {
-        this.resetForm();
-    }
-
-    onAdd(form: NgForm){
-        this.skills.push(this.skill);
-    }
-
-    resetForm(form?: NgForm) {
-        if (form != null) {
-            form.reset();
-        }
-
-        this.userskillservice.userskillData = {
+    skill = '';
+    model: UserSkill;
+    constructor(private userskillservice: UserSkillService, private firestore: AngularFirestore) {
+        this.model = {
             id: '',
             firstName: '',
             lastName: '',
@@ -41,14 +28,45 @@ export class SkillsComponent implements OnInit {
             techSME: false,
             domainSME: false,
             othersSME: false,
-            skills: [''],
+            skills: [],
         };
     }
 
+    ngOnInit() {
+        this.resetForm();
+    }
+
+    onAdd() {
+        if (
+            this.skill.trim() !== '' &&
+            this.model.skills.findIndex(value => {
+                return this.skill === value;
+            }) < 0
+        ) {
+            this.model.skills.push(this.skill);
+        }
+        this.skill = '';
+    }
+
+    resetForm(form?: NgForm) {
+        if (form != null) {
+            form.reset();
+        }
+    }
+
     onSubmit(form: NgForm) {
-        let data = form.value;
-        this.firestore.collection('userskill').add(data);
-        this.resetForm(form);
-        alert('User Registered successfully');
+        const data = form.value;
+        this.userskillservice.createUserSkill(this.model).then(
+            () => {
+                this.resetForm(form);
+                alert('User Registered successfully');
+            },
+            () => {
+                // this.resetForm(form);
+                alert(
+                    'User Registration failed. Please try again. If the issue persists, please contact Admin.'
+                );
+            }
+        );
     }
 }
