@@ -36,14 +36,14 @@ export const ROUTES: Routes = [
             title: 'Skills set',
         } as SBRouteData,
     },
-    {
-        path: 'register',
-        canActivate: [],
-        component: authContainers.RegisterComponent,
-        data: {
-            title: 'Register - SME Adviser',
-        } as SBRouteData,
-    },
+    // {
+    //     path: 'register',
+    //     canActivate: [],
+    //     component: authContainers.RegisterComponent,
+    //     data: {
+    //         title: 'Register - SME Adviser',
+    //     } as SBRouteData,
+    // },
     {
         path: 'forgot-password',
         canActivate: [],

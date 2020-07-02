@@ -11,20 +11,15 @@ export class AuthService {
         this.userData = angularFireAuth.authState;
     }
 
-    // getAuth$(): Observable<{}> {
-    //     return of({});
-    // }
-
     /* Sign up */
     SignUp(email: string, password: string) {
         this.angularFireAuth
             .createUserWithEmailAndPassword(email, password)
             .then(res => {
                 console.log('Successfully signed up!', res);
-                this.router.navigate(['dashboard']);
             })
             .catch(error => {
-                console.log('Something is wrong:', error.message);
+                console.log('Something is wrong while sign up:', error.message);
             });
     }
 
@@ -37,7 +32,7 @@ export class AuthService {
                 this.router.navigate(['dashboard']);
             })
             .catch(err => {
-                console.log('Something is wrong:', err.message);
+                console.log('Something is wrong while sign in:', err.message);
             });
     }
 

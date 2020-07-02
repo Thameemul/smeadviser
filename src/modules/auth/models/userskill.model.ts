@@ -13,3 +13,7 @@ export interface UserSkill {
     othersSME: boolean;
     skills: string[];
 }
+
+// export interface Skill {
+//     skill: string;
+// }

@@ -8,14 +8,10 @@ const userSubject: ReplaySubject<User> = new ReplaySubject(1);
 
 @Injectable()
 export class UserService {
-    // formData!: User;
-
     constructor(private firestore: AngularFirestore) {
         this.user = {
-            id: '123',
-            firstName: 'Code',
-            lastName: 'Blitz',
-            email: 'abc@lntinfotech.com',
+            id: ' ',
+            email: '',
             password: ' ',
             confirmPassword: ' ',
         };
@@ -28,8 +24,4 @@ export class UserService {
     get user$(): Observable<User> {
         return userSubject.asObservable();
     }
-
-    // createUser(user: User) {
-    //     return this.firestore.collection('user').add(user);
-    // }
 }

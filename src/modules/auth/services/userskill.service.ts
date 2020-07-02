@@ -9,8 +9,6 @@ import { UserSkill } from '../models/userskill.model';
 
 @Injectable()
 export class UserSkillService {
-    userskillData!: UserSkill;
-
     constructor(private firestore: AngularFirestore, private router: Router) {}
 
     getUserSkill$() {
