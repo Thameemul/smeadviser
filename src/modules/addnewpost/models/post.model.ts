@@ -1,9 +1,6 @@
 export interface Post {
     id?: string;
-    firstname?: string;
-    lastname?: string;
-    email?: string;
-    phone?: string;
+    title?: string;
     category?: string;
     postdesc?: string;
 }

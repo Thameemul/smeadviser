@@ -14,6 +14,8 @@ import { Observable } from 'rxjs';
 
 import { Query } from '../../models/query.model';
 import { QueryService } from '../../services/query.service';
+import { UserSkillService } from '../../../auth/services/userskill.service';
+import { UserSkill } from '../../../auth/models/userskill.model';
 
 @Component({
     selector: 'sb-addnewquery',
@@ -22,22 +24,35 @@ import { QueryService } from '../../services/query.service';
     styleUrls: ['addnewquery.component.scss'],
 })
 export class AddNewQueryComponent implements OnInit {
+    userSkills!: Observable<UserSkill[]>;
+
     htmlContent = '';
     public config: AngularEditorConfig = {
         editable: true,
         spellcheck: true,
         height: '5rem',
         minHeight: '15rem',
-        placeholder: 'Enter text here...',
+        placeholder:
+            ' Hello, \n Before you post, search the site to make sure your question hasn’t been answered..\n\n 1.Summarize the problem \n  2.Describe what you’ve tried \n 3.When appropriate, show some code',
         translate: 'no',
         defaultParagraphSeparator: 'p',
         defaultFontName: 'Arial',
     };
 
-    constructor(private queryservice: QueryService, private firestore: AngularFirestore) { }
+    constructor(
+        private queryservice: QueryService,
+        private firestore: AngularFirestore,
+        private userskillservice: UserSkillService
+    ) {}
 
     ngOnInit() {
         this.resetForm();
+        this.userSkills = this.userskillservice.getUserSkills();
+
+        // this.userSkills.subscribe(data => {
+        //     console.log(data);
+        // });
+        
     }
 
     resetForm(form?: NgForm) {
@@ -47,10 +62,7 @@ export class AddNewQueryComponent implements OnInit {
 
         this.queryservice.formData = {
             id: '',
-            firstname: '',
-            lastname: '',
-            email: '',
-            phone: '',
+            title: '',
             category: '',
             querydesc: '',
         };
@@ -58,20 +70,8 @@ export class AddNewQueryComponent implements OnInit {
 
     onSubmit(form: NgForm) {
         let data = form.value;
-        this.firestore.collection('query').add(data);
+        this.queryservice.createQuery(data);
         this.resetForm(form);
         alert('Query Submitted successfully');
     }
-
-    // create(query: Query) {
-    //     this.queryservice.createQuery(query);
-    // }
-
-    // update(query: Query) {
-    //     this.queryservice.updateQuery(query);
-    // }
-
-    // delete(id: string) {
-    //     this.queryservice.deleteQuery(id);
-    // }
 }

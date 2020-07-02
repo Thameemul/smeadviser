@@ -7,7 +7,7 @@ import { Post } from '../models/post.model';
 @Injectable()
 export class PostService {
     formData!: Post;
-    postCollections!: AngularFirestoreCollection<Post>;
+    //postCollections!: AngularFirestoreCollection<Post>;
 
     posts: Observable<Post[]>;
 

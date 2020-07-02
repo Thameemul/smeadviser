@@ -7,41 +7,19 @@
             <div class="card-body">
                 <form #form="ngForm"  (submit)="onSubmit(form)">
                     <div class="form-row">
-                        <div class="col-md-6">
-                            <div class="form-group "><label class="medium mb-1 ">First Name</label>
-                                <input class="form-control py-4" name="firstname" #firstname="ngModel"
-                                    [(ngModel)]="queryservice.formData.firstname" placeholder="Enter first name"
+                        <div class="col-md-12">
+                            <div class="form-group ">
+                                <h6 class="medium mb-1 ">Title *</h6>
+                                         <small class="text-muted">Be specific and imagine you’re asking a question to another person</small>
+                                <input class="form-control py-4" name="title" #title="ngModel"
+                                    [(ngModel)]="queryservice.formData.title" placeholder="Enter query title here.."
                                     required /></div>
-                            <div *ngIf="firstname.invalid && firstname.touched" class="validation-error">This field is
+                            <div *ngIf="title.invalid && title.touched" class="validation-error">This field is
                                 required</div>
                         </div>
-                        <div class="col-md-6">
-                            <div class="form-group"><label class="medium mb-1">Last Name</label>
-                                <input class="form-control py-4" name="lastname" #lastname="ngModel"
-                                    [(ngModel)]="queryservice.formData.lastname" placeholder="Enter last name"
-                                    required /></div>
-                            <div *ngIf="lastname.invalid && lastname.touched" class="validation-error">This field is
-                                required</div>
-                        </div>
+
                     </div>
-                    <div class="form-row">
-                        <div class="col-md-6">
-                            <div class="form-group"><label class="medium mb-1">Email</label>
-                                <input class="form-control py-4" name="email" #email="ngModel"
-                                    [(ngModel)]="queryservice.formData.email" type="email" aria-describedby="emailHelp"
-                                    placeholder="Enter email address" required /></div>
-                            <div *ngIf="email.invalid && email.touched" class="validation-error">This field is required
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group"><label class="medium mb-1">Phone No</label>
-                                <input class="form-control py-4" name="phone" #phone="ngModel"
-                                    [(ngModel)]="queryservice.formData.phone" placeholder="Enter Phone Number"
-                                    required /></div>
-                            <div *ngIf="phone.invalid && phone.touched" class="validation-error">This field is required
-                            </div>
-                        </div>
-                    </div>
+
 
                     <!-- <div class="form-row">
                         <div class="form-group col-md-12" name="category" #category="ngModel"
@@ -60,6 +38,8 @@
                     </div> -->
 
                     <div class="form-group">
+                        <h6 class="medium mb-1 ">Body *</h6>
+                                 <small class="text-muted">Include all the information someone would need to answer your question</small>
                         <angular-editor name="querydesc" #querydesc="ngModel" [(ngModel)]="queryservice.formData.querydesc"
                             [config]="config"></angular-editor>
                         <div *ngIf="querydesc.invalid && querydesc.touched" class="validation-error">This field is
@@ -81,5 +61,7 @@
 
         </div>
     </div>
-
 </div>
+
+
+

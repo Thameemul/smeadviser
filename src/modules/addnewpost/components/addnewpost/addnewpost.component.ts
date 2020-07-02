@@ -46,10 +46,7 @@ export class AddNewPostComponent implements OnInit {
 
         this.postservice.formData = {
             id: '',
-            firstname: '',
-            lastname: '',
-            email: '',
-            phone: '',
+            title: '',
             category: '',
             postdesc: '',
         };
@@ -57,20 +54,8 @@ export class AddNewPostComponent implements OnInit {
 
     onSubmit(form: NgForm) {
         let data = form.value;
-        this.firestore.collection('post').add(data);
+        this.postservice.createPost(data);
         this.resetForm(form);
         alert('Post Submitted successfully');
-    }
-
-    create(post: Post) {
-        this.postservice.createPost(post);
-    }
-
-    update(post: Post) {
-        this.postservice.updatePost(post);
-    }
-
-    delete(id: string) {
-        this.postservice.deletePost(id);
     }
 }

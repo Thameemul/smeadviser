@@ -1,9 +1,6 @@
 export class Query {
     id!: string;
-    firstname!: string;
-    lastname!: string;
-    email!: string;
-    phone!: string;
+    title!: string;
     category!: string;
     querydesc!: string;
 }

@@ -30,6 +30,8 @@ import * as addnewqueryGuards from './guards';
 /* Services */
 import * as addnewqueryServices from './services';
 import { environment } from '../../environments/environment';
+import * as authServices from '@modules/auth/services';
+import { UserSkillService } from '../auth/services/userskill.service';
 
 @NgModule({
     imports: [
@@ -49,8 +51,12 @@ import { environment } from '../../environments/environment';
     providers: [
         DecimalPipe,
         ...addnewqueryServices.services,
+        ...authServices.services,
+        UserSkillService,
         ...addnewqueryGuards.guards,
         ...addnewqueryDirectives.directives,
+
+
     ],
     declarations: [
         ...addnewqueryContainers.containers,
