@@ -25,6 +25,10 @@ import { UserSkill } from '../../../auth/models/userskill.model';
 })
 export class AddNewQueryComponent implements OnInit {
     userSkills!: Observable<UserSkill[]>;
+    radioTitle = 'Category';
+    radioItems: Array<string> = ['Technical', 'Domain', 'Others'];
+
+    model = { category: 'Technical' };
 
     htmlContent = '';
     public config: AngularEditorConfig = {
@@ -47,7 +51,7 @@ export class AddNewQueryComponent implements OnInit {
 
     ngOnInit() {
         this.resetForm();
-        this.userSkills = this.userskillservice.getUserSkills();
+       // this.userSkills = this.userskillservice.getUserSkills();
 
         // this.userSkills.subscribe(data => {
         //     console.log(data);
@@ -70,6 +74,11 @@ export class AddNewQueryComponent implements OnInit {
 
     onSubmit(form: NgForm) {
         let data = form.value;
+        this.queryservice.formData.category = this.model.category;
+
+        console.log("Selected category is :", this.queryservice.formData.category);
+        console.log("Selected title is :", this.queryservice.formData.title);
+        
         this.queryservice.createQuery(data);
         this.resetForm(form);
         alert('Query Submitted successfully');

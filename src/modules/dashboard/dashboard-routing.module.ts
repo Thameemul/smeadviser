@@ -29,6 +29,14 @@ export const ROUTES: Routes = [
         component: dashboardContainers.DashboardComponent,
     },
     {
+        path: 'help',
+        canActivate: [],
+        component: dashboardContainers.DashboardComponent,
+        data: {
+            title: 'Help - SME Adviser',
+        } as SBRouteData,
+    },
+    {
         path: 'static',
         data: {
             title: 'Dashboard - SME Adviser',

@@ -4,7 +4,6 @@ export const sideNavSections: SideNavSection[] = [
     {
         text: 'CORE',
         items: ['dashboard'],
-        // items: ['dashboard', 'viewprofile', 'newquery'],
     },
     {
         text: 'INTERFACE',
@@ -12,7 +11,7 @@ export const sideNavSections: SideNavSection[] = [
     },
     {
         text: 'ADD-ONS',
-        items: ['charts'],
+        items: ['charts', 'help'],
     },
 ];
 
@@ -27,6 +26,11 @@ export const sideNavItems: SideNavItems =
         icon: 'book-open',
         text: 'View Profile',
         link: '/view-profile',
+    },
+    help: {
+        icon: 'book-open',
+        text: 'Help',
+        link: '/help',
     },
     newquery: {
         icon: 'book-open',

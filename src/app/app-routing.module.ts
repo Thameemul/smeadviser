@@ -20,6 +20,13 @@ const routes: Routes = [
             ),
     },
     {
+        path: 'help',
+        loadChildren: () =>
+            import('modules/dashboard/dashboard-routing.module').then(
+                m => m.DashboardRoutingModule
+            ),
+    },
+    {
         path: 'view-profile',
         loadChildren: () =>
             import('modules/view-profile/view-profile-routing.module').then(
@@ -38,6 +45,7 @@ const routes: Routes = [
         loadChildren: () =>
             import('@modules/search/search-routing.module').then(m => m.SearchRoutingModule),
     },
+
     {
         path: 'addnewpost',
         loadChildren: () =>

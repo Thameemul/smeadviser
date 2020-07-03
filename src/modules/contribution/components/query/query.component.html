@@ -6,9 +6,10 @@
       <ngb-panel *ngFor="let query of queries | async; let indexOfElement = index;" >
           <ng-template ngbPanelHeader>
               <button class="btn btn-link" ngbPanelToggle>
-                  <span>&#9733; <b>Query {{indexOfElement + 1}}</b></span>
+                  <span>&#9733; <b> {{query.title}}</b></span>
+                  <!-- <span>&#9733; <b>Query {{indexOfElement + 1}}</b></span> -->
               </button>
-                <button type="button" class="btn btn-sm btn-outline-info float-lg-right" title="Add to Frequently Asked Questions">&#43;</button>
+              <button type="button" class="btn btn-sm btn-outline-info float-lg-right" title="Add to Frequently Asked Questions">&#43;</button>
           </ng-template>
 
         <ng-template ngbPanelContent>
@@ -26,6 +27,7 @@
         </select>
     </div>
 
+    
 
 
 

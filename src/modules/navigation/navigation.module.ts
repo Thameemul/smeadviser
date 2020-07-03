@@ -27,6 +27,7 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { FormsModule } from '@angular/forms';
 import * as authServices from '@modules/auth/services';
+import * as dashboardServices from '@modules/dashboard/services';
 
 @NgModule({
     imports: [
@@ -42,6 +43,7 @@ import * as authServices from '@modules/auth/services';
     providers: [
         ...navigationServices.services,
         ...authServices.services,
+        ...dashboardServices.services,
         ...navigationGuards.guards,
     ],
     declarations: [

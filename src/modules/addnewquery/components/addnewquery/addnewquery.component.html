@@ -21,21 +21,13 @@
                     </div>
 
 
-                    <!-- <div class="form-row">
-                        <div class="form-group col-md-12" name="category" #category="ngModel"
-                            [(ngModel)]="postservice.formData.category" >
-                            <div ngbDropdown class="d-inline-block">
-                                <a class="btn btn-outline-primary" id="dropdownBasic2" ngbDropdownToggle>Category</a>
-                                <div ngbDropdownMenu aria-labelledby="dropdownBasic2">
-                                    <a ngbDropdownItem>Technical</a>
-                                    <a ngbDropdownItem>Domain</a>
-                                    <a ngbDropdownItem>Others</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div *ngIf="category.invalid && category.touched" class="validation-error">This field is
-                            required</div>
-                    </div> -->
+                    <div class="form-row" style="height: 50px;">
+                        <h6 class="medium mb-1 ">{{radioTitle}} *</h6>
+                        <label *ngFor="let radiobutton of radioItems">
+                        <input  style="width: 30px;" type="radio" name="category" (click)="model.category = radiobutton" [checked]="radiobutton === model.category" >{{radiobutton}}
+                    </label>
+
+                    </div>
 
                     <div class="form-group">
                         <h6 class="medium mb-1 ">Body *</h6>
