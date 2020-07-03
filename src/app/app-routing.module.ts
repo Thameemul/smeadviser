@@ -34,6 +34,11 @@ const routes: Routes = [
             ),
     },
     {
+        path: 'search',
+        loadChildren: () =>
+            import('@modules/search/search-routing.module').then(m => m.SearchRoutingModule),
+    },
+    {
         path: 'addnewpost',
         loadChildren: () =>
             import('@modules/addnewpost/addnewpost-routing.module').then(
