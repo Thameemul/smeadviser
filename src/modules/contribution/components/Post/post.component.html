@@ -1,58 +1,44 @@
-<h5> Post List Page Works</h5>
-
-
-<div class="card text-center">
-    <div class="card-header">
-      <ul class="nav nav-tabs card-header-tabs">
-        <li class="nav-item">
-          <a class="nav-link active">Today's Post</a>
-
-          <table class="table table-hover">
-            <thead>
-                <th>First Name</th>
-                <th>Last Name</th>
-                <th>Email</th>
-                <th>Phone</th>
-                <th>Category</th>
-                <th>Post Description</th>
-            </thead>
-
-            <tbody >
-                <tr *ngFor="let post of posts | async">
-                  <td >{{post.firstname}}</td>
-                  <td >{{post.lastname}}</td>
-                  <td >{{post.email}}</td>
-                  <td >{{post.phone}}</td>
-                  <td >{{post.category}}</td>
-                  <td >{{post.postdesc}}</td>
-
-                 </tr>
-            </tbody>
-
-
-            </table>
-            <p>{{posts | json}}</p>
-
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Older</a>
-        </li>
-        <li class="nav-item">
-            <a href="#" class="btn btn-primary" routerLink="/addnewpost">Create New Post</a>
-        </li>
-      </ul>
-    </div>
-   </div>
-<!--
-  <div class="d-flex justify-content-between p-2">
-        <ngb-pagination [collectionSize]="total$ | async" [(page)]="countryService.page" [pageSize]="countryService.pageSize"></ngb-pagination
-        ><select class="custom-select" style="width: auto;" name="pageSize" [(ngModel)]="countryService.pageSize"
-            ><option [ngValue]="10">10 items per page</option
-            ><option [ngValue]="30">30 items per page</option
-            ><option [ngValue]="50">50 items per page</option></select
-        >
-    </div> -->
 
 
 
 
+
+<ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-0">
+  <ngb-panel *ngFor="let post of posts | async" >
+    <ng-template ngbPanelTitle>
+      <span>&#9733; <b>Fancy</b> title &#9733;</span>
+    </ng-template>
+    <ng-template ngbPanelContent>
+      <div [innerHTML]="post.postdesc"></div>
+    </ng-template>
+  </ngb-panel>
+  <!-- <ngb-panel>
+    <ng-template ngbPanelTitle>
+      <span>&#9733; <b>Fancy</b> title &#9733;</span>
+    </ng-template>
+    <ng-template ngbPanelContent>
+      Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon
+      officia
+      aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon
+      tempor,
+      sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh
+      helvetica,
+      craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings
+      occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus
+      labore sustainable VHS.
+    </ng-template>
+  </ngb-panel>
+  <ngb-panel title="Disabled" [disabled]="true">
+    <ng-template ngbPanelContent>
+      Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon
+      officia
+      aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon
+      tempor,
+      sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh
+      helvetica,
+      craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings
+      occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus
+      labore sustainable VHS.
+    </ng-template>
+  </ngb-panel> -->
+</ngb-accordion>
