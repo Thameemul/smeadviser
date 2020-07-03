@@ -13,12 +13,9 @@ import { Observable } from 'rxjs';
 export class PostComponent implements OnInit {
     posts!: Observable< Post[]>;
 
-    constructor(private postservice: PostService,
-    ) {
+    constructor(private postservice: PostService) {}
 
-    }
-
-    ngOnInit()   {
+    ngOnInit(){
         this.posts = this.postservice.getPosts();
-        }
+    }
 }

@@ -1,24 +1,27 @@
-<h5> FAQ Page Works</h5>
+<div class="card-header">
+    <h3>Frequently Asked Questions</h3>
+</div>
 
+<ngb-accordion #acc="ngbAccordion" >
+  <ngb-panel *ngFor="let faq of faqs | async; let indexOfElement = index;" >
+      <ng-template ngbPanelHeader>
+          <button class="btn btn-link" ngbPanelToggle>
+              <span>&#9733; <b>FAQ {{indexOfElement + 1}}</b></span>
+          </button>
+            <button type="button" class="btn btn-sm btn-outline-info float-lg-right" title="Add to Frequently Asked Questions">&#43;</button>
+      </ng-template>
 
-<form>
-    <ul ngbnav="" class="nav-tabs px-4 px-lg-5 content-tabset justify-content-md-start justify-content-end nav" role="tablist">
-        <li class="nav-item">
-            <a href="#/components/alert/examples" ngbnavlink="" id="ngb-nav-0" role="tab" aria-controls="ngb-nav-0-panel" aria-selected="true" aria-disabled="false" class="nav-link active"> Today FAQ's</a>
-        </li>
-        <li class="nav-item">
-            <a href="#/components/alert/api" ngbnavlink="" id="ngb-nav-1" role="tab" aria-selected="false" aria-disabled="false" class="nav-link"> Older </a>
-        </li>
-    </ul>
-
-    <div class="d-flex justify-content-between p-2">
-        <ngb-pagination [collectionSize]="total$ | async" [(page)]="countryService.page" [pageSize]="countryService.pageSize"></ngb-pagination
-        ><select class="custom-select" style="width: auto;" name="pageSize" [(ngModel)]="countryService.pageSize"
-            ><option [ngValue]="10">10 items per page</option
-            ><option [ngValue]="30">30 items per page</option
-            ><option [ngValue]="50">50 items per page</option></select
-        >
-    </div>
-</form>
-
-
+    <ng-template ngbPanelContent>
+      <div [innerHTML]="faq.faqdesc"></div>
+    </ng-template>
+  </ngb-panel>
+</ngb-accordion>
+<div class="d-flex justify-content-between p-2">
+    <ngb-pagination [collectionSize]="10" page="1" [pageSize]="10"></ngb-pagination>
+    <select class="custom-select"
+        style="width: auto;" name="pageSize">
+        <option [ngValue]="10" [selected]="true">10 items per page</option>
+        <option [ngValue]="30">30 items per page</option>
+        <option [ngValue]="50">50 items per page</option>
+    </select>
+</div>

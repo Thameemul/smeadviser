@@ -32,8 +32,8 @@ export class AddNewQueryComponent implements OnInit {
         spellcheck: true,
         height: '5rem',
         minHeight: '15rem',
-        placeholder:
-            ' Hello, \n Before you post, search the site to make sure your question hasn’t been answered..\n\n 1.Summarize the problem \n  2.Describe what you’ve tried \n 3.When appropriate, show some code',
+        placeholder: '',
+            // ' Hello, \n Before you post, search the site to make sure your question hasn’t been answered..\n\n 1.Summarize the problem \n  2.Describe what you’ve tried \n 3.When appropriate, show some code',
         translate: 'no',
         defaultParagraphSeparator: 'p',
         defaultFontName: 'Arial',
@@ -52,7 +52,7 @@ export class AddNewQueryComponent implements OnInit {
         // this.userSkills.subscribe(data => {
         //     console.log(data);
         // });
-        
+
     }
 
     resetForm(form?: NgForm) {

@@ -1,40 +1,30 @@
-<h5> Query List Component Works </h5>
-
-
-<div class="card text-center">
     <div class="card-header">
-      <ul class="nav nav-tabs card-header-tabs">
-        <li class="nav-item">
-          <a class="nav-link active" href="#">Today Queries</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Older</a>
-        </li>
-        <li class="nav-item">
-            <a href="#" class="btn btn-primary" routerLink="/addnewquery">Create New Query</a>
-        </li>
-      </ul>
-    </div>
-    <!-- <div class="card-body">
-      <h5 class="card-title">Special title treatment</h5>
-      <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
-    </div> -->
-  </div>
-
-  <div class="d-flex justify-content-between p-2">
-        <ngb-pagination [collectionSize]="total$ | async" [(page)]="countryService.page" [pageSize]="countryService.pageSize"></ngb-pagination
-        ><select class="custom-select" style="width: auto;" name="pageSize" [(ngModel)]="countryService.pageSize"
-            ><option [ngValue]="10">10 items per page</option
-            ><option [ngValue]="30">30 items per page</option
-            ><option [ngValue]="50">50 items per page</option></select
-        >
+            <h3>Queries<a class="btn btn-primary float-right" routerLink="/addnewquery">Ask Question</a></h3>
     </div>
 
+     <ngb-accordion #acc="ngbAccordion" >
+      <ngb-panel *ngFor="let query of queries | async; let indexOfElement = index;" >
+          <ng-template ngbPanelHeader>
+              <button class="btn btn-link" ngbPanelToggle>
+                  <span>&#9733; <b>Query {{indexOfElement + 1}}</b></span>
+              </button>
+                <button type="button" class="btn btn-sm btn-outline-info float-lg-right" title="Add to Frequently Asked Questions">&#43;</button>
+          </ng-template>
 
-
-
-
+        <ng-template ngbPanelContent>
+          <div [innerHTML]="query.querydesc"></div>
+        </ng-template>
+      </ngb-panel>
+    </ngb-accordion>
+    <div class="d-flex justify-content-between p-2">
+        <ngb-pagination [collectionSize]="10" page="1" [pageSize]="10"></ngb-pagination>
+        <select class="custom-select"
+            style="width: auto;" name="pageSize">
+            <option [ngValue]="10" [selected]="true">10 items per page</option>
+            <option [ngValue]="30">30 items per page</option>
+            <option [ngValue]="50">50 items per page</option>
+        </select>
+    </div>
 
 
 

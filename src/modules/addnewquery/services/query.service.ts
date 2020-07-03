@@ -8,21 +8,25 @@ import { Query } from '../models/query.model';
 export class QueryService {
     formData!: Query;
 
-    constructor(private firestore: AngularFirestore) {}
+    queries: Observable<Query[]>;
 
-    getQuery$() {
-        return this.firestore.collection('query').snapshotChanges();
+    constructor(private fireStore: AngularFirestore) {
+        this.queries = this.fireStore.collection<Query>('query').valueChanges();
+    }
+
+    getQueries(): Observable<Query[]> {
+        return this.queries;
     }
     createQuery(query: Query) {
-        return this.firestore.collection('query').add(query);
+        return this.fireStore.collection('query').add(query);
     }
 
     updateQuery(query: Query) {
         delete query.id;
-        this.firestore.doc('query/' + query.id).update(query);
+        this.fireStore.doc('query/' + query.id).update(query);
     }
 
     deleteQuery(queryId: string) {
-        this.firestore.doc('query/' + queryId).delete();
+        this.fireStore.doc('query/' + queryId).delete();
     }
 }

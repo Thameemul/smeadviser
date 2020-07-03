@@ -29,6 +29,7 @@ import * as contributionServices from './services';
 
 import { PostService } from '../addnewpost/services/post.service';
 import { environment } from '../../environments/environment';
+import { QueryService } from '../addnewquery/services/query.service';
 
 @NgModule({
     imports: [
@@ -45,7 +46,12 @@ import { environment } from '../../environments/environment';
         AngularFireStorageModule, // storage
         FormsModule,
     ],
-    providers: [...contributionServices.services, PostService, ...contributionGuards.guards],
+    providers: [
+        ...contributionServices.services,
+        PostService,
+        QueryService,
+        ...contributionGuards.guards,
+    ],
     declarations: [...contributionContainers.containers, ...contributionComponents.components],
     exports: [...contributionContainers.containers, ...contributionComponents.components],
 })
