@@ -22,9 +22,7 @@ const routes: Routes = [
     {
         path: 'help',
         loadChildren: () =>
-            import('modules/dashboard/dashboard-routing.module').then(
-                m => m.DashboardRoutingModule
-            ),
+            import('modules/help/help-routing.module').then(m => m.HelpRoutingModule),
     },
     {
         path: 'view-profile',
