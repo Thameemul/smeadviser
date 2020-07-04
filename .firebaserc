@@ -5,7 +5,7 @@
   "targets": {
     "smeadviser-e827c": {
       "hosting": {
-        "sb-admin-angular": [
+        "sme-adviser": [
           "smeadviser-e827c"
         ]
       }

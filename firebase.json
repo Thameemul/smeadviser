@@ -5,8 +5,8 @@
     ]
   },
   "hosting": {
-    "target": "sb-admin-angular",
-    "public": "dist/sb-admin-angular",
+    "target": "sme-adviser",
+    "public": "dist/sme-adviser",
     "ignore": [
       "firebase.json",
       "**/.*",
