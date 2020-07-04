@@ -25,6 +25,13 @@ const routes: Routes = [
             import('modules/help/help-routing.module').then(m => m.HelpRoutingModule),
     },
     {
+        path: 'detailquery',
+        loadChildren: () =>
+            import('modules/detailquery/detailquery-routing.module').then(
+                m => m.DetailQueryRoutingModule
+            ),
+    },
+    {
         path: 'view-profile',
         loadChildren: () =>
             import('modules/view-profile/view-profile-routing.module').then(

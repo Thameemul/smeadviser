@@ -11,7 +11,7 @@ export const sideNavSections: SideNavSection[] = [
     },
     {
         text: 'ADD-ONS',
-        items: ['charts', 'help'],
+        items: ['charts', 'detailQuery'],
     },
 ];
 
@@ -31,6 +31,11 @@ export const sideNavItems: SideNavItems =
         icon: 'book-open',
         text: 'Help',
         link: '/help',
+    },
+    detailQuery: {
+        icon: 'book-open',
+        text: 'Detail Query',
+        link: '/detailquery',
     },
     newquery: {
         icon: 'book-open',
