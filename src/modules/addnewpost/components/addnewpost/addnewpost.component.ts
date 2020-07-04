@@ -32,19 +32,13 @@ export class AddNewPostComponent implements OnInit {
         defaultParagraphSeparator: 'p',
         defaultFontName: 'Arial',
     };
+    model!: Post;
 
     constructor(private postservice: PostService, private firestore: AngularFirestore) {}
 
     ngOnInit() {
         this.resetForm();
-    }
-
-    resetForm(form?: NgForm) {
-        if (form != null) {
-            form.reset();
-        }
-
-        this.postservice.formData = {
+        this.model = {
             id: '',
             firstname: '',
             lastname: '',
@@ -55,9 +49,14 @@ export class AddNewPostComponent implements OnInit {
         };
     }
 
+    resetForm(form?: NgForm) {
+        if (form != null) {
+            form.reset();
+        }
+    }
+
     onSubmit(form: NgForm) {
-        let data = form.value;
-        this.firestore.collection('post').add(data);
+        this.firestore.collection('post').add(this.model);
         this.resetForm(form);
         alert('Post Submitted successfully');
     }

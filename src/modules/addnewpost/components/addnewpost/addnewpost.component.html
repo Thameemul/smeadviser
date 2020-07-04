@@ -10,7 +10,7 @@
                         <div class="col-md-6">
                             <div class="form-group "><label class="medium mb-1 ">First Name</label>
                                 <input class="form-control py-4" name="firstname" #firstname="ngModel"
-                                    [(ngModel)]="postservice.formData.firstname" placeholder="Enter first name"
+                                    [(ngModel)]="model.firstname" placeholder="Enter first name"
                                     required /></div>
                             <div *ngIf="firstname.invalid && firstname.touched" class="validation-error">This field is
                                 required</div>
@@ -18,7 +18,7 @@
                         <div class="col-md-6">
                             <div class="form-group"><label class="medium mb-1">Last Name</label>
                                 <input class="form-control py-4" name="lastname" #lastname="ngModel"
-                                    [(ngModel)]="postservice.formData.lastname" placeholder="Enter last name"
+                                    [(ngModel)]="model.lastname" placeholder="Enter last name"
                                     required /></div>
                             <div *ngIf="lastname.invalid && lastname.touched" class="validation-error">This field is
                                 required</div>
@@ -28,7 +28,7 @@
                         <div class="col-md-6">
                             <div class="form-group"><label class="medium mb-1">Email</label>
                                 <input class="form-control py-4" name="email" #email="ngModel"
-                                    [(ngModel)]="postservice.formData.email" type="email" aria-describedby="emailHelp"
+                                    [(ngModel)]="model.email" type="email" aria-describedby="emailHelp"
                                     placeholder="Enter email address" required /></div>
                             <div *ngIf="email.invalid && email.touched" class="validation-error">This field is required
                             </div>
@@ -36,7 +36,7 @@
                         <div class="col-md-6">
                             <div class="form-group"><label class="medium mb-1">Phone No</label>
                                 <input class="form-control py-4" name="phone" #phone="ngModel"
-                                    [(ngModel)]="postservice.formData.phone" placeholder="Enter Phone Number"
+                                    [(ngModel)]="model.phone" placeholder="Enter Phone Number"
                                     required /></div>
                             <div *ngIf="phone.invalid && phone.touched" class="validation-error">This field is required
                             </div>
@@ -45,7 +45,7 @@
 
                     <!-- <div class="form-row">
                         <div class="form-group col-md-12" name="category" #category="ngModel"
-                            [(ngModel)]="postservice.formData.category" >
+                            [(ngModel)]="model.category" >
                             <div ngbDropdown class="d-inline-block">
                                 <a class="btn btn-outline-primary" id="dropdownBasic2" ngbDropdownToggle>Category</a>
                                 <div ngbDropdownMenu aria-labelledby="dropdownBasic2">
@@ -60,7 +60,7 @@
                     </div> -->
 
                     <div class="form-group">
-                        <angular-editor name="postdesc" #postdesc="ngModel" [(ngModel)]="postservice.formData.postdesc"
+                        <angular-editor name="postdesc" #postdesc="ngModel" [(ngModel)]="model.postdesc"
                             [config]="config"></angular-editor>
                         <div *ngIf="postdesc.invalid && postdesc.touched" class="validation-error">This field is
                             required</div>

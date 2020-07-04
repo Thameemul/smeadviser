@@ -33,19 +33,12 @@ export class AddNewQueryComponent implements OnInit {
         defaultParagraphSeparator: 'p',
         defaultFontName: 'Arial',
     };
-
-    constructor(private queryservice: QueryService, private firestore: AngularFirestore) { }
+    model!: Query;
+    constructor(private queryservice: QueryService, private firestore: AngularFirestore) {}
 
     ngOnInit() {
         this.resetForm();
-    }
-
-    resetForm(form?: NgForm) {
-        if (form != null) {
-            form.reset();
-        }
-
-        this.queryservice.formData = {
+        this.model = {
             id: '',
             firstname: '',
             lastname: '',
@@ -56,9 +49,14 @@ export class AddNewQueryComponent implements OnInit {
         };
     }
 
+    resetForm(form?: NgForm) {
+        if (form != null) {
+            form.reset();
+        }
+    }
+
     onSubmit(form: NgForm) {
-        let data = form.value;
-        this.firestore.collection('query').add(data);
+        this.firestore.collection('query').add(this.model);
         this.resetForm(form);
         alert('Query Submitted successfully');
     }

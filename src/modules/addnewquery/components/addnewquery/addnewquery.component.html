@@ -10,7 +10,7 @@
                         <div class="col-md-6">
                             <div class="form-group "><label class="medium mb-1 ">First Name</label>
                                 <input class="form-control py-4" name="firstname" #firstname="ngModel"
-                                    [(ngModel)]="queryservice.formData.firstname" placeholder="Enter first name"
+                                    [(ngModel)]="model.firstname" placeholder="Enter first name"
                                     required /></div>
                             <div *ngIf="firstname.invalid && firstname.touched" class="validation-error">This field is
                                 required</div>
@@ -18,7 +18,7 @@
                         <div class="col-md-6">
                             <div class="form-group"><label class="medium mb-1">Last Name</label>
                                 <input class="form-control py-4" name="lastname" #lastname="ngModel"
-                                    [(ngModel)]="queryservice.formData.lastname" placeholder="Enter last name"
+                                    [(ngModel)]="model.lastname" placeholder="Enter last name"
                                     required /></div>
                             <div *ngIf="lastname.invalid && lastname.touched" class="validation-error">This field is
                                 required</div>
@@ -28,7 +28,7 @@
                         <div class="col-md-6">
                             <div class="form-group"><label class="medium mb-1">Email</label>
                                 <input class="form-control py-4" name="email" #email="ngModel"
-                                    [(ngModel)]="queryservice.formData.email" type="email" aria-describedby="emailHelp"
+                                    [(ngModel)]="model.email" type="email" aria-describedby="emailHelp"
                                     placeholder="Enter email address" required /></div>
                             <div *ngIf="email.invalid && email.touched" class="validation-error">This field is required
                             </div>
@@ -36,7 +36,7 @@
                         <div class="col-md-6">
                             <div class="form-group"><label class="medium mb-1">Phone No</label>
                                 <input class="form-control py-4" name="phone" #phone="ngModel"
-                                    [(ngModel)]="queryservice.formData.phone" placeholder="Enter Phone Number"
+                                    [(ngModel)]="model.phone" placeholder="Enter Phone Number"
                                     required /></div>
                             <div *ngIf="phone.invalid && phone.touched" class="validation-error">This field is required
                             </div>
@@ -60,7 +60,7 @@
                     </div> -->
 
                     <div class="form-group">
-                        <angular-editor name="querydesc" #querydesc="ngModel" [(ngModel)]="queryservice.formData.querydesc"
+                        <angular-editor name="querydesc" #querydesc="ngModel" [(ngModel)]="model.querydesc"
                             [config]="config"></angular-editor>
                         <div *ngIf="querydesc.invalid && querydesc.touched" class="validation-error">This field is
                             required</div>

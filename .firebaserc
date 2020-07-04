@@ -1,5 +1,14 @@
 {
   "projects": {
-    "default": "smeadviser-2320c"
+    "default": "smeadviser-e827c"
+  },
+  "targets": {
+    "smeadviser-e827c": {
+      "hosting": {
+        "sb-admin-angular": [
+          "smeadviser-e827c"
+        ]
+      }
+    }
   }
 }

@@ -17,12 +17,20 @@ export class RegisterComponent implements OnInit {
     email!: string;
     password!: string;
 
-    user?: User;
+    model!: User;
 
     constructor(private authservice: AuthService, private userservice: UserService) {}
 
     ngOnInit() {
         //  this.resetForm();
+        this.model = {
+            id: '',
+            firstName: '',
+            lastName: '',
+            email: '',
+            password: '',
+            confirmPassword: '',
+        };
     }
 
     resetForm(form?: NgForm) {
