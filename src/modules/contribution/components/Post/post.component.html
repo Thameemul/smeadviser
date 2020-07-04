@@ -1,28 +1,28 @@
-
-
 <h1>Posts</h1>
-<ngb-accordion #acc="ngbAccordion" >
-  <ngb-panel *ngFor="let post of posts | async; let indexOfElement = index;" >
-      <ng-template ngbPanelHeader>
-          <button class="btn btn-link" ngbPanelToggle>
-              <span>&#9733; <b>Post {{indexOfElement + 1}}</b></span>
-          </button>
+<ngb-accordion #acc="ngbAccordion">
+    <ngb-panel *ngFor="let post of posts | async; let indexOfElement = index;">
+        <ng-template ngbPanelHeader>
+            <button class="btn btn-link" ngbPanelToggle>
+                <span>&#9733; <b>Post {{indexOfElement + 1}}</b></span>
+            </button>
 
-            <button type="button" (click)="setAsFAQ(post)" *ngIf="post.isFAQ == null || !post.isFAQ" class="btn btn-sm btn-outline-info float-lg-right" title="Add to Frequently Asked Questions">&#43;</button>
-            <div class="float-lg-right"><span class="float-lg-right" *ngIf="post.isFAQ != null && post.isFAQ"
-                class="badge badge-secondary">FAQ</span>
-                </div>
+            <button type="button" (click)="setAsFAQ(post)" *ngIf="post.isFAQ == null || !post.isFAQ"
+                class="btn btn-sm btn-outline-info float-lg-right"
+                title="Add to Frequently Asked Questions">&#43;</button>
+            <div class="float-lg-right">
+                <span class="float-lg-right" *ngIf="post.isFAQ != null && post.isFAQ"
+                    class="badge badge-secondary">FAQ</span>
+            </div>
         </ng-template>
 
-    <ng-template ngbPanelContent>
-      <div [innerHTML]="post.postdesc"></div>
-    </ng-template>
-  </ngb-panel>
+        <ng-template ngbPanelContent>
+            <div [innerHTML]="post.postdesc"></div>
+        </ng-template>
+    </ngb-panel>
 </ngb-accordion>
 <div class="d-flex justify-content-between p-2">
-    <ngb-pagination [collectionSize]="10" page="1" [pageSize]="10"></ngb-pagination>
-    <select class="custom-select"
-        style="width: auto;" name="pageSize">
+    <ngb-pagination [collectionSize]="10" page="1" [pageSize]="10"> </ngb-pagination>
+    <select class="custom-select" style="width: auto;" name="pageSize">
         <option [ngValue]="10" [selected]="true">10 items per page</option>
         <option [ngValue]="30">30 items per page</option>
         <option [ngValue]="50">50 items per page</option>

@@ -1,24 +1,24 @@
 import { Injectable } from '@angular/core';
-import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
+import {
+    AngularFirestore,
+    AngularFirestoreCollection,
+    AngularFirestoreCollectionGroup,
+} from '@angular/fire/firestore';
 import { AuthService } from '@modules/auth/services';
+import * as firebase from 'firebase/app';
 import { Observable } from 'rxjs';
 
 import { Post } from '../models/post.model';
 
 @Injectable()
 export class PostService {
-    formData!: Post;
-    postCollections!: AngularFirestoreCollection<Post>;
-
-    posts: Observable<Post[]>;
-
-    constructor(private firestore: AngularFirestore, private authService: AuthService) {
-        this.posts = this.firestore.collection<Post>('post').valueChanges();
-    }
+    constructor(private firestore: AngularFirestore, private authService: AuthService) {}
 
     getPosts(): Observable<Post[]> {
-        return this.firestore.collection<Post>('post').valueChanges();
+        const t: AngularFirestoreCollection = this.firestore.collection<Post>('post');
+        return t.valueChanges();
     }
+
     createPost(post: Post) {
         const date = new Date();
         const id =
@@ -44,4 +44,3 @@ export class PostService {
         this.firestore.doc('post/' + postId).delete();
     }
 }
-
