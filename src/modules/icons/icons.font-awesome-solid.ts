@@ -12,6 +12,7 @@ import {
     faChevronDown,
     faChevronUp,
     faColumns,
+    faQuestionCircle,
     faSearch,
     faTable,
     faTachometerAlt,
@@ -33,5 +34,6 @@ export const fontAwesomeSolidIcons = {
     faSearch,
     faTable,
     faTachometerAlt,
+    faQuestionCircle,
     faUser,
 };
