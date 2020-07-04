@@ -56,9 +56,11 @@ export class AddNewPostComponent implements OnInit {
     }
 
     onSubmit(form: NgForm) {
-        this.firestore.collection('post').add(this.model);
-        this.resetForm(form);
-        alert('Post Submitted successfully');
+        // this.firestore.collection('post').add(this.model);
+        this.postservice.createPost(this.model).then(() => {
+            this.resetForm(form);
+            alert('Post Submitted successfully');
+        });
     }
 
     create(post: Post) {

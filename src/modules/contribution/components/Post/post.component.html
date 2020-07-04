@@ -7,8 +7,12 @@
           <button class="btn btn-link" ngbPanelToggle>
               <span>&#9733; <b>Post {{indexOfElement + 1}}</b></span>
           </button>
-            <button type="button" class="btn btn-sm btn-outline-info float-lg-right" title="Add to Frequently Asked Questions">&#43;</button>
-      </ng-template>
+
+            <button type="button" (click)="setAsFAQ(post)" *ngIf="post.isFAQ == null || !post.isFAQ" class="btn btn-sm btn-outline-info float-lg-right" title="Add to Frequently Asked Questions">&#43;</button>
+            <div class="float-lg-right"><span class="float-lg-right" *ngIf="post.isFAQ != null && post.isFAQ"
+                class="badge badge-secondary">FAQ</span>
+                </div>
+        </ng-template>
 
     <ng-template ngbPanelContent>
       <div [innerHTML]="post.postdesc"></div>

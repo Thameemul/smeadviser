@@ -6,4 +6,5 @@ export interface Post {
     phone?: string;
     category?: string;
     postdesc?: string;
+    isFAQ?: boolean;
 }
