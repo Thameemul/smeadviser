@@ -45,7 +45,18 @@ const routes: Routes = [
         loadChildren: () =>
             import('@modules/search/search-routing.module').then(m => m.SearchRoutingModule),
     },
-
+    {
+        path: 'underconst',
+        loadChildren: () =>
+            import('@modules/underconst/underconst-routing.module').then(
+                m => m.UnderConstRoutingModule
+            ),
+    },
+    {
+        path: 'contact',
+        loadChildren: () =>
+            import('@modules/contact/contact-routing.module').then(m => m.ContactRoutingModule),
+    },
     {
         path: 'addnewpost',
         loadChildren: () =>
