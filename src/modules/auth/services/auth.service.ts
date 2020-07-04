@@ -41,4 +41,30 @@ export class AuthService {
         this.angularFireAuth.signOut();
         this.router.navigate(['auth/login']);
     }
+
+    // // Send email verfificaiton when new user sign up
+    // SendVerificationMail() {
+    //     return this.angularFireAuth.
+    //         .then(() => {
+    //             this.router.navigate(['verify-email-address']);
+    //         })
+    // }
+
+    // Reset Forggot password
+    resetPassword(passwordResetEmail: string) {
+        return this.angularFireAuth
+            .sendPasswordResetEmail(passwordResetEmail)
+            .then(() => {
+                window.alert('Password reset email sent, check your inbox.');
+            })
+            .catch(error => {
+                window.alert(error);
+            });
+    }
+
+    // Returns true when user is looged in and email is verified
+    // get isLoggedIn(): boolean {
+    //     const user = JSON.parse(localStorage.getItem('user'));
+    //     return user !== null && user.emailVerified !== false ? true : false;
+    // }
 }

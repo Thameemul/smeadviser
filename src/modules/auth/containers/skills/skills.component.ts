@@ -75,7 +75,7 @@ export class SkillsComponent implements OnInit {
 
     onSubmit(form: NgForm) {
         const data = form.value;
-        this.model.password = '';
+//        this.model.password = '';
         this.userskillservice.createUserSkill(this.model).then(
             () => {
                 this.resetForm(form);

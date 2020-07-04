@@ -11,6 +11,7 @@ import * as authContainers from './containers';
 
 /* Guards */
 import * as authGuards from './guards';
+import { UserManagementComponent } from './containers/usermanagement/usermanagement.component';
 
 /* Routes */
 export const ROUTES: Routes = [
@@ -36,20 +37,20 @@ export const ROUTES: Routes = [
             title: 'Skills set',
         } as SBRouteData,
     },
-    // {
-    //     path: 'register',
-    //     canActivate: [],
-    //     component: authContainers.RegisterComponent,
-    //     data: {
-    //         title: 'Register - SME Adviser',
-    //     } as SBRouteData,
-    // },
     {
         path: 'forgot-password',
         canActivate: [],
         component: authContainers.ForgotPasswordComponent,
         data: {
             title: 'Forgot Password - SME Adviser',
+        } as SBRouteData,
+    },
+    {
+        path: 'reset-password',
+        canActivate: [],
+        component: authContainers.UserManagementComponent,
+        data: {
+            title: 'Reset Password - SME Adviser',
         } as SBRouteData,
     },
 ];
