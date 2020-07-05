@@ -4,6 +4,11 @@ export interface SBRouteData {
     breadcrumbs: Breadcrumb[];
 }
 
+export interface QueryRouteData {
+    title?: string;
+    docid: string;
+}
+
 export interface Breadcrumb {
     text: string;
     link?: string;

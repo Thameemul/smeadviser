@@ -1,0 +1,15 @@
+<sb-layout-dashboard>
+    <sb-dashboard-head></sb-dashboard-head>
+    <div class="card-body">
+        <div class="card">
+            <div class="card-body">
+                <div [innerHTML]="_queryDescription | async"></div>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li *ngFor="let r of replies | async; let indexOfElement = index;" class="list-group-item">
+                    <div [innerHTML]="r.desc"></div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</sb-layout-dashboard>

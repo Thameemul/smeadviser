@@ -1,7 +1,7 @@
 /* tslint:disable: ordered-imports*/
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { SBRouteData } from '@modules/navigation/models';
+import { SBRouteData, QueryRouteData } from '@modules/navigation/models';
 
 /* Module */
 import { ContributionModule } from './contribution.module';
@@ -11,6 +11,7 @@ import * as contributionContainers from './containers';
 
 /* Guards */
 import * as contributionGuards from './guards';
+import { DetailqueryComponent } from './components/query/detailquery.component';
 
 /* Routes */
 export const ROUTES: Routes = [
@@ -34,6 +35,14 @@ export const ROUTES: Routes = [
         data: {
             title: 'Query - SME Adviser',
         } as SBRouteData,
+    },
+    {
+        path: 'query/:docid',
+        canActivate: [],
+        component: DetailqueryComponent,
+        data: {
+            title: 'Query - SME Adviser',
+        } as QueryRouteData,
     },
     {
         path: 'faq',
