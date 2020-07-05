@@ -12,10 +12,10 @@ import { NgForm } from '@angular/forms';
 import { AngularEditorConfig } from '@kolkov/angular-editor';
 import { Observable } from 'rxjs';
 
+import { UserSkill } from '../../../auth/models/userskill.model';
+import { UserSkillService } from '../../../auth/services/userskill.service';
 import { Query } from '../../models/query.model';
 import { QueryService } from '../../services/query.service';
-import { UserSkillService } from '../../../auth/services/userskill.service';
-import { UserSkill } from '../../../auth/models/userskill.model';
 
 @Component({
     selector: 'sb-addnewquery',
@@ -28,7 +28,9 @@ export class AddNewQueryComponent implements OnInit {
     radioTitle = 'Category';
     radioItems: Array<string> = ['Technical', 'Domain', 'Others'];
 
-    model = { category: 'Technical' };
+    selectedOption = { category: 'Technical' };
+
+    model!: Query;
 
     htmlContent = '';
     public config: AngularEditorConfig = {
@@ -37,34 +39,16 @@ export class AddNewQueryComponent implements OnInit {
         height: '5rem',
         minHeight: '15rem',
         placeholder: '',
-            // ' Hello, \n Before you post, search the site to make sure your question hasn’t been answered..\n\n 1.Summarize the problem \n  2.Describe what you’ve tried \n 3.When appropriate, show some code',
         translate: 'no',
         defaultParagraphSeparator: 'p',
         defaultFontName: 'Arial',
     };
 
-    constructor(
-        private queryservice: QueryService,
-        private firestore: AngularFirestore,
-        private userskillservice: UserSkillService
-    ) {}
+    constructor(private queryservice: QueryService, private userskillservice: UserSkillService) {}
 
     ngOnInit() {
         this.resetForm();
-       // this.userSkills = this.userskillservice.getUserSkills();
-
-        // this.userSkills.subscribe(data => {
-        //     console.log(data);
-        // });
-
-    }
-
-    resetForm(form?: NgForm) {
-        if (form != null) {
-            form.reset();
-        }
-
-        this.queryservice.formData = {
+        this.model = {
             id: '',
             title: '',
             category: '',
@@ -72,15 +56,28 @@ export class AddNewQueryComponent implements OnInit {
         };
     }
 
-    onSubmit(form: NgForm) {
-        let data = form.value;
-        this.queryservice.formData.category = this.model.category;
+    resetForm(form?: NgForm) {
+        if (form != null) {
+            form.reset();
+        }
+    }
 
-        console.log("Selected category is :", this.queryservice.formData.category);
-        console.log("Selected title is :", this.queryservice.formData.title);
-        
-        this.queryservice.createQuery(data);
+    onSubmit(form: NgForm) {
+        // this.queryservice.formData.category = this.model.category;
+
+        // console.log("Selected category is :", this.queryservice.formData.category);
+        // console.log("Selected title is :", this.queryservice.formData.title);
+
+        this.queryservice.createQuery(this.model);
         this.resetForm(form);
         alert('Query Submitted successfully');
     }
+
+    // update(query: Query) {
+    //     this.queryservice.updateQuery(query);
+    // }
+
+    // delete(id: string) {
+    //     this.queryservice.deleteQuery(id);
+    // }
 }

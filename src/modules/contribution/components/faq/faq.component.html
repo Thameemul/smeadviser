@@ -17,9 +17,8 @@
   </ngb-panel>
 </ngb-accordion>
 <div class="d-flex justify-content-between p-2">
-    <ngb-pagination [collectionSize]="10" page="1" [pageSize]="10"></ngb-pagination>
-    <select class="custom-select"
-        style="width: auto;" name="pageSize">
+    <ngb-pagination [collectionSize]="10" page="1" [pageSize]="10"> </ngb-pagination>
+    <select class="custom-select" style="width: auto;" name="pageSize">
         <option [ngValue]="10" [selected]="true">10 items per page</option>
         <option [ngValue]="30">30 items per page</option>
         <option [ngValue]="50">50 items per page</option>

@@ -11,32 +11,17 @@
                             <div class="form-group ">
                                 <h6 class="medium mb-1 ">Title *</h6>
                                 <input class="form-control py-4" name="title" #title="ngModel"
-                                    [(ngModel)]="postservice.formData.title" placeholder="Enter post title here"
+                                    [(ngModel)]="model.title" placeholder="Enter post title here"
                                     required /></div>
                             <div *ngIf="title.invalid && title.touched" class="validation-error">This field is
                                 required</div>
                         </div>
                     </div>
-
-                    <!-- <div class="form-row">
-                        <div class="form-group col-md-12" name="category" #category="ngModel"
-                            [(ngModel)]="postservice.formData.category" >
-                            <div ngbDropdown class="d-inline-block">
-                                <a class="btn btn-outline-primary" id="dropdownBasic2" ngbDropdownToggle>Category</a>
-                                <div ngbDropdownMenu aria-labelledby="dropdownBasic2">
-                                    <a ngbDropdownItem>Technical</a>
-                                    <a ngbDropdownItem>Domain</a>
-                                    <a ngbDropdownItem>Others</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div *ngIf="category.invalid && category.touched" class="validation-error">This field is
-                            required</div>
-                    </div> -->
+            
 
                     <div class="form-group">
                         <h6 class="medium mb-1 ">Body *</h6>
-                        <angular-editor name="postdesc" #postdesc="ngModel" [(ngModel)]="postservice.formData.postdesc"
+                        <angular-editor name="postdesc" #postdesc="ngModel" [(ngModel)]="model.postdesc"
                             [config]="config"></angular-editor>
                         <div *ngIf="postdesc.invalid && postdesc.touched" class="validation-error">This field is
                             required</div>
@@ -54,8 +39,6 @@
 
                 </form>
             </div>
-
         </div>
     </div>
-
 </div>

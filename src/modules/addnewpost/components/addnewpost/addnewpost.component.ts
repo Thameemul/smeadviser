@@ -1,13 +1,4 @@
-import {
-    ChangeDetectionStrategy,
-    ChangeDetectorRef,
-    Component,
-    Input,
-    OnInit,
-    QueryList,
-    ViewChildren,
-} from '@angular/core';
-import { AngularFirestore } from '@angular/fire/firestore';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { AngularEditorConfig } from '@kolkov/angular-editor';
 
@@ -32,19 +23,13 @@ export class AddNewPostComponent implements OnInit {
         defaultParagraphSeparator: 'p',
         defaultFontName: 'Arial',
     };
+    model!: Post;
 
-    constructor(private postservice: PostService, private firestore: AngularFirestore) {}
+    constructor(private postService: PostService) {}
 
     ngOnInit() {
         this.resetForm();
-    }
-
-    resetForm(form?: NgForm) {
-        if (form != null) {
-            form.reset();
-        }
-
-        this.postservice.formData = {
+        this.model = {
             id: '',
             title: '',
             category: '',
@@ -52,10 +37,28 @@ export class AddNewPostComponent implements OnInit {
         };
     }
 
+    resetForm(form?: NgForm) {
+        if (form != null) {
+            form.reset();
+        }
+    }
+
     onSubmit(form: NgForm) {
-        let data = form.value;
-        this.postservice.createPost(data);
-        this.resetForm(form);
-        alert('Post Submitted successfully');
+        this.postService.createPost(this.model).then(() => {
+            this.resetForm(form);
+            alert('Post Submitted successfully');
+        });
+    }
+
+    create(post: Post) {
+        this.postService.createPost(post);
+    }
+
+    update(post: Post) {
+        this.postService.updatePost(post);
+    }
+
+    delete(id: string) {
+        this.postService.deletePost(id);
     }
 }

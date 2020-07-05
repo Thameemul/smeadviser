@@ -1,6 +1,6 @@
 export class Query {
-    id!: string;
-    title!: string;
-    category!: string;
-    querydesc!: string;
+    id?: string;
+    title?: string;
+    category?: string;
+    querydesc?: string;
 }

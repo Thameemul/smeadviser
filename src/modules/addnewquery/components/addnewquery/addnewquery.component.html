@@ -12,7 +12,7 @@
                                 <h6 class="medium mb-1 ">Title *</h6>
                                          <small class="text-muted">Be specific and imagine you’re asking a question to another person</small>
                                 <input class="form-control py-4" name="title" #title="ngModel"
-                                    [(ngModel)]="queryservice.formData.title" placeholder="Enter query title here.."
+                                    [(ngModel)]="model.title" placeholder="Enter query title here.."
                                     required /></div>
                             <div *ngIf="title.invalid && title.touched" class="validation-error">This field is
                                 required</div>
@@ -24,7 +24,7 @@
                     <div class="form-row" style="height: 50px;">
                         <h6 class="medium mb-1 ">{{radioTitle}} *</h6>
                         <label *ngFor="let radiobutton of radioItems">
-                        <input  style="width: 30px;" type="radio" name="category" (click)="model.category = radiobutton" [checked]="radiobutton === model.category" >{{radiobutton}}
+                        <input  style="width: 30px;" type="radio" name="category" (click)="selectedOption.category = radiobutton" [checked]="radiobutton === selectedOption.category" >{{radiobutton}}
                     </label>
 
                     </div>
@@ -32,7 +32,7 @@
                     <div class="form-group">
                         <h6 class="medium mb-1 ">Body *</h6>
                                  <small class="text-muted">Include all the information someone would need to answer your question</small>
-                        <angular-editor name="querydesc" #querydesc="ngModel" [(ngModel)]="queryservice.formData.querydesc"
+                        <angular-editor name="querydesc" #querydesc="ngModel" [(ngModel)]="model.querydesc"
                             [config]="config"></angular-editor>
                         <div *ngIf="querydesc.invalid && querydesc.touched" class="validation-error">This field is
                             required</div>
