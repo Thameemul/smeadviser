@@ -3,4 +3,5 @@ export interface Post {
     title?: string;
     category?: string;
     postdesc?: string;
+    isFAQ?: boolean;
 }

@@ -1,20 +1,16 @@
-<div class="card-header">
-    <h3>Frequently Asked Questions</h3>
-</div>
+<h1>Frequently Asked Questions</h1>
+<ngb-accordion #acc="ngbAccordion">
+    <ngb-panel *ngFor="let faq of faqs | async; let indexOfElement = index;">
+        <ng-template ngbPanelHeader>
+            <button class="btn btn-link" ngbPanelToggle>
+                <span>&#9733; <b> {{faq.title}}</b></span>
+            </button>
+        </ng-template>
 
-<ngb-accordion #acc="ngbAccordion" >
-  <ngb-panel *ngFor="let faq of faqs | async; let indexOfElement = index;" >
-      <ng-template ngbPanelHeader>
-          <button class="btn btn-link" ngbPanelToggle>
-              <span>&#9733; <b>FAQ {{indexOfElement + 1}}</b></span>
-          </button>
-            <button type="button" class="btn btn-sm btn-outline-info float-lg-right" title="Add to Frequently Asked Questions">&#43;</button>
-      </ng-template>
-
-    <ng-template ngbPanelContent>
-      <div [innerHTML]="faq.faqdesc"></div>
-    </ng-template>
-  </ngb-panel>
+        <ng-template ngbPanelContent>
+            <div [innerHTML]="faq.postdesc"></div>
+        </ng-template>
+    </ngb-panel>
 </ngb-accordion>
 <div class="d-flex justify-content-between p-2">
     <ngb-pagination [collectionSize]="10" page="1" [pageSize]="10"> </ngb-pagination>

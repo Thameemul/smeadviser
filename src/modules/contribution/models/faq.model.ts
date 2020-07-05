@@ -1,7 +1,7 @@
-export class Query {
+export interface FAQ {
     id?: string;
     title?: string;
     category?: string;
-    querydesc?: string;
+    postdesc?: string;
     isFAQ?: boolean;
 }

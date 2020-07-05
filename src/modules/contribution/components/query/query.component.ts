@@ -1,7 +1,8 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { Query } from '@modules/addnewquery/models';
+import * as firebase from 'firebase/app';
 import { Observable } from 'rxjs';
 
-import { Query } from '../../../addnewquery/models/query.model';
 import { QueryService } from '../../../addnewquery/services/query.service';
 
 @Component({
@@ -17,5 +18,10 @@ export class QueryComponent implements OnInit {
 
     ngOnInit() {
         this.queries = this.queryService.getQueries();
+    }
+
+    setAsFAQ(query: Query) {
+        query.isFAQ = true;
+        this.queryService.setFAQstatus(query);
     }
 }

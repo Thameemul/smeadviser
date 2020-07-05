@@ -1,4 +1,7 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { FAQ } from '@modules/contribution/models/faq.model';
+import { ContributionService } from '@modules/contribution/services';
+import { Observable } from 'rxjs';
 
 @Component({
     selector: 'sb-faq',
@@ -7,6 +10,9 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
     styleUrls: ['faq.component.scss'],
 })
 export class FAQComponent implements OnInit {
-    constructor() {}
-    ngOnInit() {}
+    constructor(private contributionService: ContributionService) {}
+    faqs!: Observable<FAQ[]>;
+    ngOnInit() {
+        this.faqs = this.contributionService.getFAQs();
+    }
 }

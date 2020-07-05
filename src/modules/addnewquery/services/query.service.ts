@@ -1,31 +1,45 @@
 import { Injectable } from '@angular/core';
-import { AngularFirestore } from '@angular/fire/firestore';
-import { Observable, of } from 'rxjs';
+import {
+    AngularFirestore,
+    AngularFirestoreCollection,
+    AngularFirestoreCollectionGroup,
+} from '@angular/fire/firestore';
+import { AuthService } from '@modules/auth/services';
+import * as firebase from 'firebase/app';
+import { Observable } from 'rxjs';
 
-import { Query } from '../models/query.model';
+import { Query } from '../models/Query.model';
 
 @Injectable()
 export class QueryService {
-    formData!: Query;
-
-    queries: Observable<Query[]>;
-
-    constructor(private fireStore: AngularFirestore) {
-        this.queries = this.fireStore.collection<Query>('query').valueChanges();
-    }
+    constructor(private fireStore: AngularFirestore, private authService: AuthService) {}
 
     getQueries(): Observable<Query[]> {
-        return this.queries;
+        const t: AngularFirestoreCollection = this.fireStore.collection<Query>('query');
+        return t.valueChanges();
     }
+
     createQuery(query: Query) {
-        return this.fireStore.collection('query').add(query);
+        const date = new Date();
+        const id =
+            date.getFullYear() +
+            '_' +
+            +date.getMonth() +
+            '_' +
+            +date.getDate() +
+            '_' +
+            +date.getTime();
+        query.id = id;
+        return this.fireStore.collection('query').doc(id).set(query);
     }
 
     updateQuery(query: Query) {
-        delete query.id;
         this.fireStore.doc('query/' + query.id).update(query);
     }
 
+    setFAQstatus(query: Query) {
+        this.fireStore.doc('query/' + query.id).update({ isFAQ: 1 });
+    }
     deleteQuery(queryId: string) {
         this.fireStore.doc('query/' + queryId).delete();
     }

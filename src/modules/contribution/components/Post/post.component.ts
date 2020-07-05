@@ -1,8 +1,9 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { PostService } from '../../../addnewpost/services/post.service';
 import { Post } from '@modules/addnewpost/models';
 import * as firebase from 'firebase/app';
 import { Observable } from 'rxjs';
+
+import { PostService } from '../../../addnewpost/services/post.service';
 
 @Component({
     selector: 'sb-post',
@@ -11,11 +12,16 @@ import { Observable } from 'rxjs';
     styleUrls: ['post.component.scss'],
 })
 export class PostComponent implements OnInit {
-    posts!: Observable< Post[]>;
+    posts!: Observable<Post[]>;
 
-    constructor(private postservice: PostService) {}
+    constructor(private postService: PostService) {}
 
-    ngOnInit(){
-        this.posts = this.postservice.getPosts();
+    ngOnInit() {
+        this.posts = this.postService.getPosts();
+    }
+
+    setAsFAQ(post: Post) {
+        post.isFAQ = true;
+        this.postService.setFAQstatus(post);
     }
 }
