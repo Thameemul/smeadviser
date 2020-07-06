@@ -3,17 +3,17 @@
 SB Admin Angular is a free and open-sourced Bootstrap themed Angular 9 starter project.
 
 It shares the same project structure and subset of tooling from our professional offering,
-[SB Admin Pro Angular](https://themes.startbootstrap.com/sb-admin-pro-angular/),
-so much of the [SB Admin Pro Angular Documentation](https://docs.startbootstrap.com/sb-admin-pro-angular/quickstart) is applicable.
+[SB Admin Pro Angular](https://themes.startbootstrap.com/SME-Adviser-angular/),
+so much of the [SB Admin Pro Angular Documentation](https://docs.startbootstrap.com/SME-Adviser-angular/quickstart) is applicable.
 
-In particular the documentation for [Structure](https://docs.startbootstrap.com/sb-admin-pro-angular/structure-root-level),
-and the documentation for [SBPro Schematics](https://docs.startbootstrap.com/sb-admin-pro-angular/development-general#sb-pro-schematics)
+In particular the documentation for [Structure](https://docs.startbootstrap.com/SME-Adviser-angular/structure-root-level),
+and the documentation for [SBPro Schematics](https://docs.startbootstrap.com/SME-Adviser-angular/development-general#sb-pro-schematics)
 
 SB Admin Angular comes with a base implementation of navigation and layouts.
 
 For professionally designed components (including an advanced SideNav), 100% code coverage,
 starter cypress tests and more, please consider our professional offering:
-[SB Admin Pro Angular](https://themes.startbootstrap.com/sb-admin-pro-angular/)
+[SB Admin Pro Angular](https://themes.startbootstrap.com/SME-Adviser-angular/)
 
 ## Quick Start
 
