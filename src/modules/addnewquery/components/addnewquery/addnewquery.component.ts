@@ -28,7 +28,7 @@ export class AddNewQueryComponent implements OnInit {
     radioTitle = 'Category';
     radioItems: Array<string> = ['Technical', 'Domain', 'Others'];
 
-    selectedOption = { category: 'Technical' };
+    selectedOption = 'Technical';
 
     model!: Query;
 
@@ -63,11 +63,7 @@ export class AddNewQueryComponent implements OnInit {
     }
 
     onSubmit(form: NgForm) {
-        // this.queryservice.formData.category = this.model.category;
-
-        // console.log("Selected category is :", this.queryservice.formData.category);
-        // console.log("Selected title is :", this.queryservice.formData.title);
-
+        this.model.category = this.selectedOption;
         this.queryservice.createQuery(this.model);
         this.resetForm(form);
         alert('Query Submitted successfully');

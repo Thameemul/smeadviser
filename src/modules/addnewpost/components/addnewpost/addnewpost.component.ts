@@ -12,6 +12,11 @@ import { PostService } from '../../services/post.service';
     styleUrls: ['addnewpost.component.scss'],
 })
 export class AddNewPostComponent implements OnInit {
+    radioTitle = 'Category';
+    radioItems: Array<string> = ['Technical', 'Domain', 'Others'];
+
+    selectedOption = 'Technical';
+
     htmlContent = '';
     public config: AngularEditorConfig = {
         editable: true,
@@ -44,6 +49,7 @@ export class AddNewPostComponent implements OnInit {
     }
 
     onSubmit(form: NgForm) {
+        this.model.category = this.selectedOption;
         this.postService.createPost(this.model).then(() => {
             this.resetForm(form);
             alert('Post Submitted successfully');

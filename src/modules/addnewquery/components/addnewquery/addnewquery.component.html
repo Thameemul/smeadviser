@@ -24,9 +24,8 @@
                     <div class="form-row" style="height: 50px;">
                         <h6 class="medium mb-1 ">{{radioTitle}} *</h6>
                         <label *ngFor="let radiobutton of radioItems">
-                        <input  style="width: 30px;" type="radio" name="category" (click)="selectedOption.category = radiobutton" [checked]="radiobutton === selectedOption.category" >{{radiobutton}}
-                    </label>
-
+                            <input  style="width: 30px;" type="radio" name="category" [value]="radiobutton"  [(ngModel)]="selectedOption" >{{radiobutton}}
+                        </label>
                     </div>
 
                     <div class="form-group">
