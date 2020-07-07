@@ -1,12 +1,12 @@
 {
   "projects": {
-    "default": "smeadviser-e827c"
+    "default": "smeadviser2"
   },
   "targets": {
-    "smeadviser-e827c": {
+    "smeadviser2": {
       "hosting": {
         "sme-adviser": [
-          "smeadviser-e827c"
+          "smeadviser2"
         ]
       }
     }

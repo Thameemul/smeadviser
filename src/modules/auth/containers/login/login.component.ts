@@ -1,8 +1,8 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 
 import { AuthService } from '../../services/auth.service';
-import { Router } from '@angular/router';
 
 @Component({
     selector: 'sb-login',
@@ -14,7 +14,7 @@ export class LoginComponent implements OnInit {
     email!: string;
     password!: string;
 
-    constructor(private authservice: AuthService, private router: Router) { }
+    constructor(private authservice: AuthService, private router: Router) {}
 
     ngOnInit() {
         //  this.resetForm();
@@ -24,7 +24,6 @@ export class LoginComponent implements OnInit {
         // if (form != null) {
         //     form.reset();
         // }
-
         // this.authservice.userData = {
         //     id: '',
         //     firstName: '',

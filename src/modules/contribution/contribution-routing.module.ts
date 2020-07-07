@@ -22,7 +22,7 @@ export const ROUTES: Routes = [
     },
     {
         path: 'post',
-        canActivate: [],
+        canActivate: [contributionGuards.ContributionGuard],
         component: contributionContainers.PostContriComponent,
         data: {
             title: 'Post - SME Adviser',
@@ -30,7 +30,7 @@ export const ROUTES: Routes = [
     },
     {
         path: 'query',
-        canActivate: [],
+        canActivate: [contributionGuards.ContributionGuard],
         component: contributionContainers.QueryContriComponent,
         data: {
             title: 'Query - SME Adviser',
@@ -38,7 +38,7 @@ export const ROUTES: Routes = [
     },
     {
         path: 'query/:docid',
-        canActivate: [],
+        canActivate: [contributionGuards.ContributionGuard],
         component: DetailqueryComponent,
         data: {
             title: 'Query - SME Adviser',
@@ -46,7 +46,7 @@ export const ROUTES: Routes = [
     },
     {
         path: 'faq',
-        canActivate: [],
+        canActivate: [contributionGuards.ContributionGuard],
         component: contributionContainers.FAQContriComponent,
         data: {
             title: 'FAQ - SME Adviser',
