@@ -11,6 +11,8 @@ import * as contributionContainers from './containers';
 
 /* Guards */
 import * as contributionGuards from './guards';
+/* Components */
+import * as contributionComponents from './components';
 
 /* Routes */
 export const ROUTES: Routes = [
@@ -31,6 +33,16 @@ export const ROUTES: Routes = [
         path: 'query',
         canActivate: [contributionGuards.ContributionGuard],
         component: contributionContainers.QueryContriComponent,
+        children: [
+            {
+                path: '',
+                component: contributionComponents.QueryComponent,
+            },
+            {
+                path: ':docid',
+                component: contributionComponents.DetailqueryComponent,
+            },
+        ],
         data: {
             title: 'Query - SME Adviser',
         } as SBRouteData,

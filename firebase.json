@@ -6,7 +6,7 @@
     "source": "functions"
   },
   "hosting": {
-    "public": "dist/sme-adviser",
+    "public": "dist\\sme-adviser",
     "ignore": [
       "firebase.json",
       "**/.*",

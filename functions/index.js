@@ -1,10 +1,11 @@
 const functions = require('firebase-functions');
 const admin=require('firebase-admin');
 const nodemailer =require('nodemailer');
-//const hbs = require('nodemailer-express-handlebars');
 
 admin.initializeApp()
 require('dotenv').config()
+
+const db = admin.firestore();
 
 const {SENDER_EMAIL,SENDER_PASSWORD}= process.env;
 
@@ -23,10 +24,21 @@ exports.sendPostEmail=functions.firestore.document('post/{docId}')
         }
     });
 
-// sendPostEmail.use('compile',hbs({
-//     viewEngine : 'express-handlebars',
-//     viewPath: './views/'
-// }));
+//get userskill data
+
+        // const getUserSkill = db.collection('userskill');
+
+        // const snapshot = getUserSkill.where('domainSME', '==', true).get();
+
+        // if (snapshot.empty)
+        // {
+        // console.log('No matching documents from userskill db');
+        // return;
+        // }
+
+        // snapshot.forEach(doc => {
+        //         console.log(doc.id, '=>', doc.data());
+        // });
 
 
 sendPost.sendMail({
@@ -36,6 +48,22 @@ sendPost.sendMail({
          text: `${postdata.postdesc}`
         // template: 'index.handlebars'
     }).then(res=>console.log('successfully sent the mail for post')).catch(err=>console.log('Error Occurred while sending email for new post creation',err));
+
+            // //get userskill data
+
+            // const getUserSkill = db.collection('userskill');
+
+            // const snapshot = getUserSkill.where('domainSME', '==', true).get();
+
+            // if (snapshot.empty)
+            // {
+            // console.log('No matching documents from userskill db');
+            // return;
+            // }
+
+            // snapshot.forEach(doc => {
+            //         console.log(doc.id, '=>', doc.data());
+            // });
 });
 
 // Send Email when new query is created

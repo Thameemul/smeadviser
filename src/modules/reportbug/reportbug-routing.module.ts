@@ -3,10 +3,10 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 /* Module */
-import { DetailQueryModule } from './detailquery.module';
+import { ReportBugModule } from './reportbug.module';
 
 /* Containers */
-import * as detailqueryContainers from './containers';
+import * as ReportBugsContainers from './containers';
 
 /* Guards */
 
@@ -17,17 +17,17 @@ export const ROUTES: Routes = [
     {
         path: '',
         canActivate: [],
-        component: detailqueryContainers.DetailedQueryComponent,
+        component: ReportBugsContainers.ReportBugsComponent,
         data: {
-            title: 'Detailed Query - SME Adviser',
+            title: 'ReportBug - SME Adviser',
             breadcrumbs: [
                 {
                     icon: 'book-open',
-                    text: 'detailquery',
-                    link: '/detailquery',
+                    text: 'ReportBug',
+                    link: '/reportbug',
                 },
                 {
-                    text: 'detailquery',
+                    text: 'reportbug',
                     active: true,
                 },
             ],
@@ -36,7 +36,7 @@ export const ROUTES: Routes = [
 ];
 
 @NgModule({
-    imports: [DetailQueryModule, RouterModule.forChild(ROUTES)],
+    imports: [ReportBugModule, RouterModule.forChild(ROUTES)],
     exports: [RouterModule],
 })
-export class DetailQueryRoutingModule {}
+export class ReportBugRoutingModule {}

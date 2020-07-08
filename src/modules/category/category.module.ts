@@ -19,6 +19,8 @@ import * as categoryGuards from './guards';
 
 /* Services */
 import * as categoryServices from './services';
+import { PostService } from '../addnewpost/services/post.service';
+import { QueryService } from '../addnewquery/services/query.service';
 
 @NgModule({
     imports: [
@@ -29,7 +31,7 @@ import * as categoryServices from './services';
         AppCommonModule,
         NavigationModule,
     ],
-    providers: [...categoryServices.services, ...categoryGuards.guards],
+    providers: [...categoryServices.services, ...categoryGuards.guards, PostService, QueryService],
     declarations: [...categoryContainers.containers, ...categoryComponents.components],
     exports: [...categoryContainers.containers, ...categoryComponents.components],
 })

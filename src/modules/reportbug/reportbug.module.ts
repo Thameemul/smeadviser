@@ -5,7 +5,6 @@ import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { AngularEditorModule } from '@kolkov/angular-editor';
 import { NavigationModule } from '@modules/navigation/navigation.module';
-
 //  Firebase
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
@@ -16,22 +15,20 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AppCommonModule } from '@common/app-common.module';
 
 /* Components */
-import * as detailqueryComponents from './components';
+import * as reportbugComponents from './components';
 
 /* Containers */
-import * as detailqueryContainers from './containers';
+import * as reportbugContainers from './containers';
 
 /* Directives */
-// import * as detailqueryDirectives from './directives';
+// import * as searchDirectives from './directives';
 
 /* Guards */
-import * as detailqueryGuards from './guards';
 
 /* Services */
-import * as detailqueryServices from './services';
+import * as ReportBugService from './services';
+
 import { environment } from '../../environments/environment';
-import * as authServices from '@modules/auth/services';
-import { UserSkillService } from '../auth/services/userskill.service';
 
 @NgModule({
     imports: [
@@ -48,19 +45,12 @@ import { UserSkillService } from '../auth/services/userskill.service';
         AngularFireStorageModule, // storage
         FormsModule,
     ],
-    providers: [
-        DecimalPipe,
-        ...detailqueryServices.services,
-        ...authServices.services,
-        UserSkillService,
-        ...detailqueryGuards.guards,
-        // ...detailqueryDirectives.directives,
-    ],
+    providers: [DecimalPipe, ...ReportBugService.services],
     declarations: [
-        ...detailqueryContainers.containers,
-        ...detailqueryComponents.components,
-        // ...detailqueryDirectives.directives,
+        ...reportbugContainers.containers,
+        ...reportbugComponents.components,
+        // ...searchDirectives.directives,
     ],
-    exports: [...detailqueryContainers.containers, ...detailqueryComponents.components],
+    exports: [...reportbugContainers.containers, ...reportbugComponents.components],
 })
-export class DetailQueryModule {}
+export class ReportBugModule {}

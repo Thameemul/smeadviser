@@ -1,25 +1,30 @@
-<h5> Other Category Component Works </h5>
+<h3>Category wise Listing - Other than Technical and Domain</h3>
+<ngb-accordion #acc="ngbAccordion">
+    <ngb-panel *ngFor="let post of posts | async; let indexOfElement = index;">
+        <ng-template ngbPanelHeader>
+            <button class="btn btn-link" ngbPanelToggle>
+                <span>&#9733; <b> {{post.title}}</b></span>
+            </button>
 
-<form>
-    <ul ngbnav="" class="nav-tabs px-4 px-lg-5 content-tabset justify-content-md-start justify-content-end nav" role="tablist">
-        <li class="nav-item">
-            <a href="#/components/alert/examples" ngbnavlink="" id="ngb-nav-0" role="tab" aria-controls="ngb-nav-0-panel" aria-selected="true" aria-disabled="false" class="nav-link active"> Tools </a>
-        </li>
-        <li class="nav-item">
-            <a href="#/components/alert/api" ngbnavlink="" id="ngb-nav-1" role="tab" aria-selected="false" aria-disabled="false" class="nav-link"> Simulators </a>
-        </li>
-        <li class="nav-item navbar-light">
-            <a href="#/components/alert/api" ngbnavlink="" id="ngb-nav-1" role="tab" aria-selected="false" aria-disabled="false" class="nav-link"> Others </a>
-        </li>
-    </ul>
+            <button type="button" (click)="setAsFAQ(post)" *ngIf="post.isFAQ == null || !post.isFAQ"
+                class="btn btn-sm btn-outline-info float-lg-right"
+                title="Add to Frequently Asked Questions">&#43;</button>
+            <div class="float-lg-right">
+                <span class="float-lg-right" *ngIf="post.isFAQ != null && post.isFAQ"
+                    class="badge badge-secondary">FAQ</span>
+            </div>
+        </ng-template>
 
-    <!-- <div class="d-flex justify-content-between p-2">
-        <ngb-pagination [collectionSize]="total$ | async" [(page)]="countryService.page" [pageSize]="countryService.pageSize"></ngb-pagination
-        ><select class="custom-select" style="width: auto;" name="pageSize" [(ngModel)]="countryService.pageSize"
-            ><option [ngValue]="10">10 items per page</option
-            ><option [ngValue]="30">30 items per page</option
-            ><option [ngValue]="50">50 items per page</option></select
-        >
-    </div> -->
-</form>
-
+        <ng-template ngbPanelContent>
+            <div [innerHTML]="post.postdesc"></div>
+        </ng-template>
+    </ngb-panel>
+</ngb-accordion>
+<div class="d-flex justify-content-between p-2">
+    <ngb-pagination [collectionSize]="10" page="1" [pageSize]="10"> </ngb-pagination>
+    <select class="custom-select" style="width: auto;" name="pageSize">
+        <option [ngValue]="10" [selected]="true">10 items per page</option>
+        <option [ngValue]="30">30 items per page</option>
+        <option [ngValue]="50">50 items per page</option>
+    </select>
+</div>

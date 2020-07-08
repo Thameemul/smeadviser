@@ -1,0 +1,26 @@
+<div class="card">
+    <div class="card-header" >
+        <!-- style="background-color:slategrey" -->
+        <h5 style="color:rgb(47, 0, 255)"      class="card-title">  {{ (query | async).title }}</h5>
+    </div>
+    <div class="card-body">
+        <!-- <h6 style="color:rgb(47, 0, 255)" class="medium mb-1 ">Query Description</h6> -->
+        <div   [innerHTML]="(query | async).querydesc"></div>
+    </div>
+    <hr>
+    <ul class="list-group list-group-flush">
+        <!-- <h6 style="color:rgb(47, 0, 255)" class="medium mb-1 ">Responses</h6> -->
+        <li *ngFor="let r of replies | async; let indexOfElement = index;" class="list-group-item">
+            <h6 style="color:rgb(47, 0, 255)" class="medium mb-1 ">Response {{indexOfElement + 1}}</h6>
+            <div [innerHTML]="r.desc"></div>
+        </li>
+    </ul>
+    <div class="card-body">
+        <!-- <h6 style="color:rgb(47, 0, 255)" class="medium mb-1 ">Add Response</h6> -->
+        <angular-editor [config]="config"></angular-editor>
+    </div>
+    <div class="card-footer">
+            <button type="submit"  class="btn btn-primary "  routerLink="/dashboard"> Cancel</button>
+            <button type="submit" class="btn btn-success  float-right" autofocus> Add Response</button>
+    </div>
+</div>

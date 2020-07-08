@@ -15,4 +15,4 @@ export class FAQComponent implements OnInit {
     ngOnInit() {
         this.faqs = this.contributionService.getFAQs();
     }
-}7
+}

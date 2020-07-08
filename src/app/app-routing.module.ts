@@ -25,13 +25,6 @@ const routes: Routes = [
             import('modules/help/help-routing.module').then(m => m.HelpRoutingModule),
     },
     {
-        path: 'detailquery',
-        loadChildren: () =>
-            import('modules/detailquery/detailquery-routing.module').then(
-                m => m.DetailQueryRoutingModule
-            ),
-    },
-    {
         path: 'view-profile',
         loadChildren: () =>
             import('modules/view-profile/view-profile-routing.module').then(
@@ -61,6 +54,13 @@ const routes: Routes = [
         path: 'contact',
         loadChildren: () =>
             import('@modules/contact/contact-routing.module').then(m => m.ContactRoutingModule),
+    },
+    {
+        path: 'reportbug',
+        loadChildren: () =>
+            import('@modules/reportbug/reportbug-routing.module').then(
+                m => m.ReportBugRoutingModule
+            ),
     },
     {
         path: 'addnewpost',

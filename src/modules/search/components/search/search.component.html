@@ -4,7 +4,29 @@
             <div class="card-header">
                 <h3 class="text-center font-weight-dark my-1">Search Results</h3>
                 <!-- <h6 class="text-center font-weight-dark my-1">Below you will see everything we could locate for your search of <h5>"{{searchWord}}"</h5></h6> -->
-                <small class="text-muted text-center">Below you will see everything we could locate for your search of "{{searchWord}}"</small>
+                <h6 class="text-center">Below you will see everything we could locate for your search word"</h6>
+            </div>
+
+            <ngb-accordion #acc="ngbAccordion">
+                <ngb-panel *ngFor="let query of queries | async; let indexOfElement = index;">
+                    <ng-template ngbPanelHeader>
+                        <button class="btn btn-link" ngbPanelToggle>
+                            <span>&#9733; <b> {{query.title}}</b></span>
+                        </button>
+                    </ng-template>
+
+                    <ng-template ngbPanelContent>
+                        <div [innerHTML]="query.querydesc"></div>
+                    </ng-template>
+                </ngb-panel>
+            </ngb-accordion>
+            <div class="d-flex justify-content-between p-2">
+                <ngb-pagination [collectionSize]="10" page="1" [pageSize]="10"> </ngb-pagination>
+                <select class="custom-select" style="width: auto;" name="pageSize">
+                    <option [ngValue]="10" [selected]="true">10 items per page</option>
+                    <option [ngValue]="30">30 items per page</option>
+                    <option [ngValue]="50">50 items per page</option>
+                </select>
             </div>
             <div class="card-body">
             </div>

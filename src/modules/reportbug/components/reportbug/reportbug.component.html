@@ -1,0 +1,57 @@
+<div class="row justify-content-center">
+    <div class="col-lg-12">
+        <div class="card shadow-lg border-0 rounded-lg mt-2">
+            <div class="card-header">
+                <h3 > {{title}}</h3>
+                    <!-- <img src="../../../../assets/img/bug.png" style="width: 70%"> -->
+            </div>
+            <div class="card-body">
+                <form #form="ngForm" (submit)="onSubmit(form)">
+                    <div class="form-row">
+                        <div class="col-md-12">
+                            <div class="form-group ">
+                                <h6 class="medium mb-1 ">Subject *</h6>
+                                <input class="form-control py-1" name="subject" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <h6 class="medium mb-1 ">Your Message *</h6>
+                        <!-- <textarea type="text" id="message" name="message" rows="5" class="form-control md-textarea"
+                            placeholder="Write something.."></textarea> -->
+                            <angular-editor [config]="config"></angular-editor>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="col-md-6 form-group mt-4 mb-4">
+                            <button type="submit" [disabled]="form.invalid" class="btn btn-success float-right">
+                                Submit</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="card-footer">
+                <div class="row">
+                    <div class="col-md-6">
+                         <b>Phone Number        </b> <p>  +91 99625 78940 </p>
+                         <br />
+                         <b>Email               </b> <p>codeblitz.smeadviser@lntinfotech.com</p>
+                         <br />
+                         <b>Hours Of Operation  </b> <p> 9 AM to 5 PM IST</p>
+                    </div>
+                    <div class="col-md-6">
+                        <p style="margin-bottom:15px;" align="center">
+                            <br />
+                            <br />
+                            <b>Larsen & Toubro Infotech Limited </b>
+                            <br />
+                            LTI Building : Block 4, DLF IT Park, SEZ Campus,<br />
+                            1/124, Shivaji Gardens, Mount Poonamalle High Road,<br />
+                            Manapakkam, Chennai, Tamil Nadu 600089</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
