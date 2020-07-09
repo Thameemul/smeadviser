@@ -20,7 +20,7 @@ export class SearchService {
                     querySnapshot.forEach(doc => {
                         // doc.data() is never undefined for query doc snapshots
                         queries.push(doc.data());
-                        console.log(doc.id, ' => ', doc.data());
+                        // console.log(doc.id, ' => ', doc.data());
                     });
                     observer.next(queries);
                 });

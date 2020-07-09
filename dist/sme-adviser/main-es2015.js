@@ -308,72 +308,72 @@ const routes = [
     },
     {
         path: 'charts',
-        loadChildren: () => Promise.all(/*! import() | modules-charts-charts-routing-module */[__webpack_require__.e("default~modules-addnewpost-addnewpost-routing-module~modules-addnewquery-addnewquery-routing-module~~6d764e77"), __webpack_require__.e("default~modules-charts-charts-routing-module~modules-dashboard-dashboard-routing-module"), __webpack_require__.e("modules-charts-charts-routing-module")]).then(__webpack_require__.bind(null, /*! modules/charts/charts-routing.module */ "./src/modules/charts/charts-routing.module.ts")).then(m => m.ChartsRoutingModule),
+        loadChildren: () => Promise.all(/*! import() | modules-charts-charts-routing-module */[__webpack_require__.e("default~modules-addnewpost-addnewpost-routing-module~modules-addnewquery-addnewquery-routing-module~~cdffaea9"), __webpack_require__.e("default~modules-charts-charts-routing-module~modules-dashboard-dashboard-routing-module"), __webpack_require__.e("modules-charts-charts-routing-module")]).then(__webpack_require__.bind(null, /*! modules/charts/charts-routing.module */ "./src/modules/charts/charts-routing.module.ts")).then(m => m.ChartsRoutingModule),
     },
     {
         path: 'dashboard',
-        loadChildren: () => Promise.all(/*! import() | modules-dashboard-dashboard-routing-module */[__webpack_require__.e("default~modules-addnewpost-addnewpost-routing-module~modules-addnewquery-addnewquery-routing-module~~6d764e77"), __webpack_require__.e("default~modules-charts-charts-routing-module~modules-dashboard-dashboard-routing-module"), __webpack_require__.e("default~modules-dashboard-dashboard-routing-module~modules-tables-tables-routing-module"), __webpack_require__.e("modules-dashboard-dashboard-routing-module")]).then(__webpack_require__.bind(null, /*! modules/dashboard/dashboard-routing.module */ "./src/modules/dashboard/dashboard-routing.module.ts")).then(m => m.DashboardRoutingModule),
+        loadChildren: () => Promise.all(/*! import() | modules-dashboard-dashboard-routing-module */[__webpack_require__.e("default~modules-addnewpost-addnewpost-routing-module~modules-addnewquery-addnewquery-routing-module~~cdffaea9"), __webpack_require__.e("default~modules-charts-charts-routing-module~modules-dashboard-dashboard-routing-module"), __webpack_require__.e("default~modules-dashboard-dashboard-routing-module~modules-tables-tables-routing-module"), __webpack_require__.e("modules-dashboard-dashboard-routing-module")]).then(__webpack_require__.bind(null, /*! modules/dashboard/dashboard-routing.module */ "./src/modules/dashboard/dashboard-routing.module.ts")).then(m => m.DashboardRoutingModule),
     },
     {
         path: 'help',
-        loadChildren: () => Promise.all(/*! import() | modules-help-help-routing-module */[__webpack_require__.e("default~modules-addnewpost-addnewpost-routing-module~modules-addnewquery-addnewquery-routing-module~~6d764e77"), __webpack_require__.e("modules-help-help-routing-module")]).then(__webpack_require__.bind(null, /*! modules/help/help-routing.module */ "./src/modules/help/help-routing.module.ts")).then(m => m.HelpRoutingModule),
-    },
-    {
-        path: 'detailquery',
-        loadChildren: () => Promise.all(/*! import() | modules-detailquery-detailquery-routing-module */[__webpack_require__.e("default~modules-addnewpost-addnewpost-routing-module~modules-addnewquery-addnewquery-routing-module~~6d764e77"), __webpack_require__.e("common"), __webpack_require__.e("modules-detailquery-detailquery-routing-module")]).then(__webpack_require__.bind(null, /*! modules/detailquery/detailquery-routing.module */ "./src/modules/detailquery/detailquery-routing.module.ts")).then(m => m.DetailQueryRoutingModule),
+        loadChildren: () => Promise.all(/*! import() | modules-help-help-routing-module */[__webpack_require__.e("default~modules-addnewpost-addnewpost-routing-module~modules-addnewquery-addnewquery-routing-module~~cdffaea9"), __webpack_require__.e("modules-help-help-routing-module")]).then(__webpack_require__.bind(null, /*! modules/help/help-routing.module */ "./src/modules/help/help-routing.module.ts")).then(m => m.HelpRoutingModule),
     },
     {
         path: 'view-profile',
-        loadChildren: () => Promise.all(/*! import() | modules-view-profile-view-profile-routing-module */[__webpack_require__.e("default~modules-addnewpost-addnewpost-routing-module~modules-addnewquery-addnewquery-routing-module~~6d764e77"), __webpack_require__.e("modules-view-profile-view-profile-routing-module")]).then(__webpack_require__.bind(null, /*! modules/view-profile/view-profile-routing.module */ "./src/modules/view-profile/view-profile-routing.module.ts")).then(m => m.ViewProfileRoutingModule),
+        loadChildren: () => Promise.all(/*! import() | modules-view-profile-view-profile-routing-module */[__webpack_require__.e("default~modules-addnewpost-addnewpost-routing-module~modules-addnewquery-addnewquery-routing-module~~cdffaea9"), __webpack_require__.e("modules-view-profile-view-profile-routing-module")]).then(__webpack_require__.bind(null, /*! modules/view-profile/view-profile-routing.module */ "./src/modules/view-profile/view-profile-routing.module.ts")).then(m => m.ViewProfileRoutingModule),
     },
     {
         path: 'addnewquery',
-        loadChildren: () => Promise.all(/*! import() | modules-addnewquery-addnewquery-routing-module */[__webpack_require__.e("default~modules-addnewpost-addnewpost-routing-module~modules-addnewquery-addnewquery-routing-module~~6d764e77"), __webpack_require__.e("common"), __webpack_require__.e("modules-addnewquery-addnewquery-routing-module")]).then(__webpack_require__.bind(null, /*! @modules/addnewquery/addnewquery-routing.module */ "./src/modules/addnewquery/addnewquery-routing.module.ts")).then(m => m.AddNewQueryRoutingModule),
+        loadChildren: () => Promise.all(/*! import() | modules-addnewquery-addnewquery-routing-module */[__webpack_require__.e("default~modules-addnewpost-addnewpost-routing-module~modules-addnewquery-addnewquery-routing-module~~cdffaea9"), __webpack_require__.e("common"), __webpack_require__.e("modules-addnewquery-addnewquery-routing-module")]).then(__webpack_require__.bind(null, /*! @modules/addnewquery/addnewquery-routing.module */ "./src/modules/addnewquery/addnewquery-routing.module.ts")).then(m => m.AddNewQueryRoutingModule),
     },
     {
         path: 'search',
-        loadChildren: () => Promise.all(/*! import() | modules-search-search-routing-module */[__webpack_require__.e("default~modules-addnewpost-addnewpost-routing-module~modules-addnewquery-addnewquery-routing-module~~6d764e77"), __webpack_require__.e("modules-search-search-routing-module")]).then(__webpack_require__.bind(null, /*! @modules/search/search-routing.module */ "./src/modules/search/search-routing.module.ts")).then(m => m.SearchRoutingModule),
+        loadChildren: () => Promise.all(/*! import() | modules-search-search-routing-module */[__webpack_require__.e("default~modules-addnewpost-addnewpost-routing-module~modules-addnewquery-addnewquery-routing-module~~cdffaea9"), __webpack_require__.e("modules-search-search-routing-module")]).then(__webpack_require__.bind(null, /*! @modules/search/search-routing.module */ "./src/modules/search/search-routing.module.ts")).then(m => m.SearchRoutingModule),
     },
     {
         path: 'underconst',
-        loadChildren: () => Promise.all(/*! import() | modules-underconst-underconst-routing-module */[__webpack_require__.e("default~modules-addnewpost-addnewpost-routing-module~modules-addnewquery-addnewquery-routing-module~~6d764e77"), __webpack_require__.e("modules-underconst-underconst-routing-module")]).then(__webpack_require__.bind(null, /*! @modules/underconst/underconst-routing.module */ "./src/modules/underconst/underconst-routing.module.ts")).then(m => m.UnderConstRoutingModule),
+        loadChildren: () => Promise.all(/*! import() | modules-underconst-underconst-routing-module */[__webpack_require__.e("default~modules-addnewpost-addnewpost-routing-module~modules-addnewquery-addnewquery-routing-module~~cdffaea9"), __webpack_require__.e("modules-underconst-underconst-routing-module")]).then(__webpack_require__.bind(null, /*! @modules/underconst/underconst-routing.module */ "./src/modules/underconst/underconst-routing.module.ts")).then(m => m.UnderConstRoutingModule),
     },
     {
         path: 'contact',
-        loadChildren: () => Promise.all(/*! import() | modules-contact-contact-routing-module */[__webpack_require__.e("default~modules-addnewpost-addnewpost-routing-module~modules-addnewquery-addnewquery-routing-module~~6d764e77"), __webpack_require__.e("modules-contact-contact-routing-module")]).then(__webpack_require__.bind(null, /*! @modules/contact/contact-routing.module */ "./src/modules/contact/contact-routing.module.ts")).then(m => m.ContactRoutingModule),
+        loadChildren: () => Promise.all(/*! import() | modules-contact-contact-routing-module */[__webpack_require__.e("default~modules-addnewpost-addnewpost-routing-module~modules-addnewquery-addnewquery-routing-module~~cdffaea9"), __webpack_require__.e("modules-contact-contact-routing-module")]).then(__webpack_require__.bind(null, /*! @modules/contact/contact-routing.module */ "./src/modules/contact/contact-routing.module.ts")).then(m => m.ContactRoutingModule),
+    },
+    {
+        path: 'reportbug',
+        loadChildren: () => Promise.all(/*! import() | modules-reportbug-reportbug-routing-module */[__webpack_require__.e("default~modules-addnewpost-addnewpost-routing-module~modules-addnewquery-addnewquery-routing-module~~cdffaea9"), __webpack_require__.e("modules-reportbug-reportbug-routing-module")]).then(__webpack_require__.bind(null, /*! @modules/reportbug/reportbug-routing.module */ "./src/modules/reportbug/reportbug-routing.module.ts")).then(m => m.ReportBugRoutingModule),
     },
     {
         path: 'addnewpost',
-        loadChildren: () => Promise.all(/*! import() | modules-addnewpost-addnewpost-routing-module */[__webpack_require__.e("default~modules-addnewpost-addnewpost-routing-module~modules-addnewquery-addnewquery-routing-module~~6d764e77"), __webpack_require__.e("common"), __webpack_require__.e("modules-addnewpost-addnewpost-routing-module")]).then(__webpack_require__.bind(null, /*! @modules/addnewpost/addnewpost-routing.module */ "./src/modules/addnewpost/addnewpost-routing.module.ts")).then(m => m.AddNewPostRoutingModule),
+        loadChildren: () => Promise.all(/*! import() | modules-addnewpost-addnewpost-routing-module */[__webpack_require__.e("default~modules-addnewpost-addnewpost-routing-module~modules-addnewquery-addnewquery-routing-module~~cdffaea9"), __webpack_require__.e("common"), __webpack_require__.e("modules-addnewpost-addnewpost-routing-module")]).then(__webpack_require__.bind(null, /*! @modules/addnewpost/addnewpost-routing.module */ "./src/modules/addnewpost/addnewpost-routing.module.ts")).then(m => m.AddNewPostRoutingModule),
     },
     {
         path: 'auth',
-        loadChildren: () => Promise.all(/*! import() | modules-auth-auth-routing-module */[__webpack_require__.e("default~modules-addnewpost-addnewpost-routing-module~modules-addnewquery-addnewquery-routing-module~~6d764e77"), __webpack_require__.e("common"), __webpack_require__.e("modules-auth-auth-routing-module")]).then(__webpack_require__.bind(null, /*! modules/auth/auth-routing.module */ "./src/modules/auth/auth-routing.module.ts")).then(m => m.AuthRoutingModule),
+        loadChildren: () => Promise.all(/*! import() | modules-auth-auth-routing-module */[__webpack_require__.e("default~modules-addnewpost-addnewpost-routing-module~modules-addnewquery-addnewquery-routing-module~~cdffaea9"), __webpack_require__.e("common"), __webpack_require__.e("modules-auth-auth-routing-module")]).then(__webpack_require__.bind(null, /*! modules/auth/auth-routing.module */ "./src/modules/auth/auth-routing.module.ts")).then(m => m.AuthRoutingModule),
     },
     {
         path: 'contribution',
-        loadChildren: () => Promise.all(/*! import() | modules-contribution-contribution-routing-module */[__webpack_require__.e("default~modules-addnewpost-addnewpost-routing-module~modules-addnewquery-addnewquery-routing-module~~6d764e77"), __webpack_require__.e("common"), __webpack_require__.e("modules-contribution-contribution-routing-module")]).then(__webpack_require__.bind(null, /*! @modules/contribution/contribution-routing.module */ "./src/modules/contribution/contribution-routing.module.ts")).then(m => m.ContributionRoutingModule),
+        loadChildren: () => Promise.all(/*! import() | modules-contribution-contribution-routing-module */[__webpack_require__.e("default~modules-addnewpost-addnewpost-routing-module~modules-addnewquery-addnewquery-routing-module~~cdffaea9"), __webpack_require__.e("common"), __webpack_require__.e("modules-contribution-contribution-routing-module")]).then(__webpack_require__.bind(null, /*! @modules/contribution/contribution-routing.module */ "./src/modules/contribution/contribution-routing.module.ts")).then(m => m.ContributionRoutingModule),
     },
     {
         path: 'category',
-        loadChildren: () => Promise.all(/*! import() | modules-category-category-routing-module */[__webpack_require__.e("default~modules-addnewpost-addnewpost-routing-module~modules-addnewquery-addnewquery-routing-module~~6d764e77"), __webpack_require__.e("modules-category-category-routing-module")]).then(__webpack_require__.bind(null, /*! @modules/category/category-routing.module */ "./src/modules/category/category-routing.module.ts")).then(m => m.CategoryRoutingModule),
+        loadChildren: () => Promise.all(/*! import() | modules-category-category-routing-module */[__webpack_require__.e("default~modules-addnewpost-addnewpost-routing-module~modules-addnewquery-addnewquery-routing-module~~cdffaea9"), __webpack_require__.e("common"), __webpack_require__.e("modules-category-category-routing-module")]).then(__webpack_require__.bind(null, /*! @modules/category/category-routing.module */ "./src/modules/category/category-routing.module.ts")).then(m => m.CategoryRoutingModule),
     },
     {
         path: 'error',
-        loadChildren: () => Promise.all(/*! import() | modules-error-error-routing-module */[__webpack_require__.e("default~modules-addnewpost-addnewpost-routing-module~modules-addnewquery-addnewquery-routing-module~~6d764e77"), __webpack_require__.e("modules-error-error-routing-module")]).then(__webpack_require__.bind(null, /*! modules/error/error-routing.module */ "./src/modules/error/error-routing.module.ts")).then(m => m.ErrorRoutingModule),
+        loadChildren: () => Promise.all(/*! import() | modules-error-error-routing-module */[__webpack_require__.e("default~modules-addnewpost-addnewpost-routing-module~modules-addnewquery-addnewquery-routing-module~~cdffaea9"), __webpack_require__.e("modules-error-error-routing-module")]).then(__webpack_require__.bind(null, /*! modules/error/error-routing.module */ "./src/modules/error/error-routing.module.ts")).then(m => m.ErrorRoutingModule),
     },
     {
         path: 'tables',
-        loadChildren: () => Promise.all(/*! import() | modules-tables-tables-routing-module */[__webpack_require__.e("default~modules-addnewpost-addnewpost-routing-module~modules-addnewquery-addnewquery-routing-module~~6d764e77"), __webpack_require__.e("default~modules-dashboard-dashboard-routing-module~modules-tables-tables-routing-module"), __webpack_require__.e("modules-tables-tables-routing-module")]).then(__webpack_require__.bind(null, /*! modules/tables/tables-routing.module */ "./src/modules/tables/tables-routing.module.ts")).then(m => m.TablesRoutingModule),
+        loadChildren: () => Promise.all(/*! import() | modules-tables-tables-routing-module */[__webpack_require__.e("default~modules-addnewpost-addnewpost-routing-module~modules-addnewquery-addnewquery-routing-module~~cdffaea9"), __webpack_require__.e("default~modules-dashboard-dashboard-routing-module~modules-tables-tables-routing-module"), __webpack_require__.e("modules-tables-tables-routing-module")]).then(__webpack_require__.bind(null, /*! modules/tables/tables-routing.module */ "./src/modules/tables/tables-routing.module.ts")).then(m => m.TablesRoutingModule),
     },
     {
         path: 'version',
-        loadChildren: () => Promise.all(/*! import() | modules-utility-utility-routing-module */[__webpack_require__.e("default~modules-addnewpost-addnewpost-routing-module~modules-addnewquery-addnewquery-routing-module~~6d764e77"), __webpack_require__.e("modules-utility-utility-routing-module")]).then(__webpack_require__.bind(null, /*! modules/utility/utility-routing.module */ "./src/modules/utility/utility-routing.module.ts")).then(m => m.UtilityRoutingModule),
+        loadChildren: () => Promise.all(/*! import() | modules-utility-utility-routing-module */[__webpack_require__.e("default~modules-addnewpost-addnewpost-routing-module~modules-addnewquery-addnewquery-routing-module~~cdffaea9"), __webpack_require__.e("modules-utility-utility-routing-module")]).then(__webpack_require__.bind(null, /*! modules/utility/utility-routing.module */ "./src/modules/utility/utility-routing.module.ts")).then(m => m.UtilityRoutingModule),
     },
     {
         path: '**',
         pathMatch: 'full',
-        loadChildren: () => Promise.all(/*! import() | modules-error-error-routing-module */[__webpack_require__.e("default~modules-addnewpost-addnewpost-routing-module~modules-addnewquery-addnewquery-routing-module~~6d764e77"), __webpack_require__.e("modules-error-error-routing-module")]).then(__webpack_require__.bind(null, /*! modules/error/error-routing.module */ "./src/modules/error/error-routing.module.ts")).then(m => m.ErrorRoutingModule),
+        loadChildren: () => Promise.all(/*! import() | modules-error-error-routing-module */[__webpack_require__.e("default~modules-addnewpost-addnewpost-routing-module~modules-addnewquery-addnewquery-routing-module~~cdffaea9"), __webpack_require__.e("modules-error-error-routing-module")]).then(__webpack_require__.bind(null, /*! modules/error/error-routing.module */ "./src/modules/error/error-routing.module.ts")).then(m => m.ErrorRoutingModule),
     },
 ];
 let AppRoutingModule = class AppRoutingModule {

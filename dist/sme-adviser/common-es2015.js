@@ -152,10 +152,10 @@ let UserSkillService = class UserSkillService {
         return this.userSkills;
     }
     createUserSkill(userskill) {
-        return this.fireStore.collection('userskill').add(userskill);
+        return this.fireStore.collection('userskill').doc(userskill.id).set(userskill);
     }
     updateUserSkill(userskill) {
-        delete userskill.id;
+        // delete userskill.id;
         this.fireStore.doc('userskill/' + userskill.id).update(userskill);
     }
     deleteUserSkill(userskillId) {

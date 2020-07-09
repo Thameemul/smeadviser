@@ -27,7 +27,7 @@ export class ContributionService {
                     querySnapshot.forEach(doc => {
                         // doc.data() is never undefined for query doc snapshots
                         faqs.push(doc.data());
-                        console.log(doc.id, ' => ', doc.data());
+                        //console.log(doc.id, ' => ', doc.data());
                     });
                     observer.next(faqs);
                 });

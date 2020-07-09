@@ -691,7 +691,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       loadChildren: function loadChildren() {
         return Promise.all(
         /*! import() | modules-charts-charts-routing-module */
-        [__webpack_require__.e("default~modules-addnewpost-addnewpost-routing-module~modules-addnewquery-addnewquery-routing-module~~6d764e77"), __webpack_require__.e("default~modules-charts-charts-routing-module~modules-dashboard-dashboard-routing-module"), __webpack_require__.e("modules-charts-charts-routing-module")]).then(__webpack_require__.bind(null,
+        [__webpack_require__.e("default~modules-addnewpost-addnewpost-routing-module~modules-addnewquery-addnewquery-routing-module~~cdffaea9"), __webpack_require__.e("default~modules-charts-charts-routing-module~modules-dashboard-dashboard-routing-module"), __webpack_require__.e("modules-charts-charts-routing-module")]).then(__webpack_require__.bind(null,
         /*! modules/charts/charts-routing.module */
         "./src/modules/charts/charts-routing.module.ts")).then(function (m) {
           return m.ChartsRoutingModule;
@@ -702,7 +702,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       loadChildren: function loadChildren() {
         return Promise.all(
         /*! import() | modules-dashboard-dashboard-routing-module */
-        [__webpack_require__.e("default~modules-addnewpost-addnewpost-routing-module~modules-addnewquery-addnewquery-routing-module~~6d764e77"), __webpack_require__.e("default~modules-charts-charts-routing-module~modules-dashboard-dashboard-routing-module"), __webpack_require__.e("default~modules-dashboard-dashboard-routing-module~modules-tables-tables-routing-module"), __webpack_require__.e("modules-dashboard-dashboard-routing-module")]).then(__webpack_require__.bind(null,
+        [__webpack_require__.e("default~modules-addnewpost-addnewpost-routing-module~modules-addnewquery-addnewquery-routing-module~~cdffaea9"), __webpack_require__.e("default~modules-charts-charts-routing-module~modules-dashboard-dashboard-routing-module"), __webpack_require__.e("default~modules-dashboard-dashboard-routing-module~modules-tables-tables-routing-module"), __webpack_require__.e("modules-dashboard-dashboard-routing-module")]).then(__webpack_require__.bind(null,
         /*! modules/dashboard/dashboard-routing.module */
         "./src/modules/dashboard/dashboard-routing.module.ts")).then(function (m) {
           return m.DashboardRoutingModule;
@@ -713,21 +713,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       loadChildren: function loadChildren() {
         return Promise.all(
         /*! import() | modules-help-help-routing-module */
-        [__webpack_require__.e("default~modules-addnewpost-addnewpost-routing-module~modules-addnewquery-addnewquery-routing-module~~6d764e77"), __webpack_require__.e("modules-help-help-routing-module")]).then(__webpack_require__.bind(null,
+        [__webpack_require__.e("default~modules-addnewpost-addnewpost-routing-module~modules-addnewquery-addnewquery-routing-module~~cdffaea9"), __webpack_require__.e("modules-help-help-routing-module")]).then(__webpack_require__.bind(null,
         /*! modules/help/help-routing.module */
         "./src/modules/help/help-routing.module.ts")).then(function (m) {
           return m.HelpRoutingModule;
-        });
-      }
-    }, {
-      path: 'detailquery',
-      loadChildren: function loadChildren() {
-        return Promise.all(
-        /*! import() | modules-detailquery-detailquery-routing-module */
-        [__webpack_require__.e("default~modules-addnewpost-addnewpost-routing-module~modules-addnewquery-addnewquery-routing-module~~6d764e77"), __webpack_require__.e("common"), __webpack_require__.e("modules-detailquery-detailquery-routing-module")]).then(__webpack_require__.bind(null,
-        /*! modules/detailquery/detailquery-routing.module */
-        "./src/modules/detailquery/detailquery-routing.module.ts")).then(function (m) {
-          return m.DetailQueryRoutingModule;
         });
       }
     }, {
@@ -735,7 +724,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       loadChildren: function loadChildren() {
         return Promise.all(
         /*! import() | modules-view-profile-view-profile-routing-module */
-        [__webpack_require__.e("default~modules-addnewpost-addnewpost-routing-module~modules-addnewquery-addnewquery-routing-module~~6d764e77"), __webpack_require__.e("modules-view-profile-view-profile-routing-module")]).then(__webpack_require__.bind(null,
+        [__webpack_require__.e("default~modules-addnewpost-addnewpost-routing-module~modules-addnewquery-addnewquery-routing-module~~cdffaea9"), __webpack_require__.e("modules-view-profile-view-profile-routing-module")]).then(__webpack_require__.bind(null,
         /*! modules/view-profile/view-profile-routing.module */
         "./src/modules/view-profile/view-profile-routing.module.ts")).then(function (m) {
           return m.ViewProfileRoutingModule;
@@ -746,7 +735,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       loadChildren: function loadChildren() {
         return Promise.all(
         /*! import() | modules-addnewquery-addnewquery-routing-module */
-        [__webpack_require__.e("default~modules-addnewpost-addnewpost-routing-module~modules-addnewquery-addnewquery-routing-module~~6d764e77"), __webpack_require__.e("common"), __webpack_require__.e("modules-addnewquery-addnewquery-routing-module")]).then(__webpack_require__.bind(null,
+        [__webpack_require__.e("default~modules-addnewpost-addnewpost-routing-module~modules-addnewquery-addnewquery-routing-module~~cdffaea9"), __webpack_require__.e("common"), __webpack_require__.e("modules-addnewquery-addnewquery-routing-module")]).then(__webpack_require__.bind(null,
         /*! @modules/addnewquery/addnewquery-routing.module */
         "./src/modules/addnewquery/addnewquery-routing.module.ts")).then(function (m) {
           return m.AddNewQueryRoutingModule;
@@ -757,7 +746,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       loadChildren: function loadChildren() {
         return Promise.all(
         /*! import() | modules-search-search-routing-module */
-        [__webpack_require__.e("default~modules-addnewpost-addnewpost-routing-module~modules-addnewquery-addnewquery-routing-module~~6d764e77"), __webpack_require__.e("modules-search-search-routing-module")]).then(__webpack_require__.bind(null,
+        [__webpack_require__.e("default~modules-addnewpost-addnewpost-routing-module~modules-addnewquery-addnewquery-routing-module~~cdffaea9"), __webpack_require__.e("modules-search-search-routing-module")]).then(__webpack_require__.bind(null,
         /*! @modules/search/search-routing.module */
         "./src/modules/search/search-routing.module.ts")).then(function (m) {
           return m.SearchRoutingModule;
@@ -768,7 +757,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       loadChildren: function loadChildren() {
         return Promise.all(
         /*! import() | modules-underconst-underconst-routing-module */
-        [__webpack_require__.e("default~modules-addnewpost-addnewpost-routing-module~modules-addnewquery-addnewquery-routing-module~~6d764e77"), __webpack_require__.e("modules-underconst-underconst-routing-module")]).then(__webpack_require__.bind(null,
+        [__webpack_require__.e("default~modules-addnewpost-addnewpost-routing-module~modules-addnewquery-addnewquery-routing-module~~cdffaea9"), __webpack_require__.e("modules-underconst-underconst-routing-module")]).then(__webpack_require__.bind(null,
         /*! @modules/underconst/underconst-routing.module */
         "./src/modules/underconst/underconst-routing.module.ts")).then(function (m) {
           return m.UnderConstRoutingModule;
@@ -779,10 +768,21 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       loadChildren: function loadChildren() {
         return Promise.all(
         /*! import() | modules-contact-contact-routing-module */
-        [__webpack_require__.e("default~modules-addnewpost-addnewpost-routing-module~modules-addnewquery-addnewquery-routing-module~~6d764e77"), __webpack_require__.e("modules-contact-contact-routing-module")]).then(__webpack_require__.bind(null,
+        [__webpack_require__.e("default~modules-addnewpost-addnewpost-routing-module~modules-addnewquery-addnewquery-routing-module~~cdffaea9"), __webpack_require__.e("modules-contact-contact-routing-module")]).then(__webpack_require__.bind(null,
         /*! @modules/contact/contact-routing.module */
         "./src/modules/contact/contact-routing.module.ts")).then(function (m) {
           return m.ContactRoutingModule;
+        });
+      }
+    }, {
+      path: 'reportbug',
+      loadChildren: function loadChildren() {
+        return Promise.all(
+        /*! import() | modules-reportbug-reportbug-routing-module */
+        [__webpack_require__.e("default~modules-addnewpost-addnewpost-routing-module~modules-addnewquery-addnewquery-routing-module~~cdffaea9"), __webpack_require__.e("modules-reportbug-reportbug-routing-module")]).then(__webpack_require__.bind(null,
+        /*! @modules/reportbug/reportbug-routing.module */
+        "./src/modules/reportbug/reportbug-routing.module.ts")).then(function (m) {
+          return m.ReportBugRoutingModule;
         });
       }
     }, {
@@ -790,7 +790,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       loadChildren: function loadChildren() {
         return Promise.all(
         /*! import() | modules-addnewpost-addnewpost-routing-module */
-        [__webpack_require__.e("default~modules-addnewpost-addnewpost-routing-module~modules-addnewquery-addnewquery-routing-module~~6d764e77"), __webpack_require__.e("common"), __webpack_require__.e("modules-addnewpost-addnewpost-routing-module")]).then(__webpack_require__.bind(null,
+        [__webpack_require__.e("default~modules-addnewpost-addnewpost-routing-module~modules-addnewquery-addnewquery-routing-module~~cdffaea9"), __webpack_require__.e("common"), __webpack_require__.e("modules-addnewpost-addnewpost-routing-module")]).then(__webpack_require__.bind(null,
         /*! @modules/addnewpost/addnewpost-routing.module */
         "./src/modules/addnewpost/addnewpost-routing.module.ts")).then(function (m) {
           return m.AddNewPostRoutingModule;
@@ -801,7 +801,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       loadChildren: function loadChildren() {
         return Promise.all(
         /*! import() | modules-auth-auth-routing-module */
-        [__webpack_require__.e("default~modules-addnewpost-addnewpost-routing-module~modules-addnewquery-addnewquery-routing-module~~6d764e77"), __webpack_require__.e("common"), __webpack_require__.e("modules-auth-auth-routing-module")]).then(__webpack_require__.bind(null,
+        [__webpack_require__.e("default~modules-addnewpost-addnewpost-routing-module~modules-addnewquery-addnewquery-routing-module~~cdffaea9"), __webpack_require__.e("common"), __webpack_require__.e("modules-auth-auth-routing-module")]).then(__webpack_require__.bind(null,
         /*! modules/auth/auth-routing.module */
         "./src/modules/auth/auth-routing.module.ts")).then(function (m) {
           return m.AuthRoutingModule;
@@ -812,7 +812,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       loadChildren: function loadChildren() {
         return Promise.all(
         /*! import() | modules-contribution-contribution-routing-module */
-        [__webpack_require__.e("default~modules-addnewpost-addnewpost-routing-module~modules-addnewquery-addnewquery-routing-module~~6d764e77"), __webpack_require__.e("common"), __webpack_require__.e("modules-contribution-contribution-routing-module")]).then(__webpack_require__.bind(null,
+        [__webpack_require__.e("default~modules-addnewpost-addnewpost-routing-module~modules-addnewquery-addnewquery-routing-module~~cdffaea9"), __webpack_require__.e("common"), __webpack_require__.e("modules-contribution-contribution-routing-module")]).then(__webpack_require__.bind(null,
         /*! @modules/contribution/contribution-routing.module */
         "./src/modules/contribution/contribution-routing.module.ts")).then(function (m) {
           return m.ContributionRoutingModule;
@@ -823,7 +823,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       loadChildren: function loadChildren() {
         return Promise.all(
         /*! import() | modules-category-category-routing-module */
-        [__webpack_require__.e("default~modules-addnewpost-addnewpost-routing-module~modules-addnewquery-addnewquery-routing-module~~6d764e77"), __webpack_require__.e("modules-category-category-routing-module")]).then(__webpack_require__.bind(null,
+        [__webpack_require__.e("default~modules-addnewpost-addnewpost-routing-module~modules-addnewquery-addnewquery-routing-module~~cdffaea9"), __webpack_require__.e("common"), __webpack_require__.e("modules-category-category-routing-module")]).then(__webpack_require__.bind(null,
         /*! @modules/category/category-routing.module */
         "./src/modules/category/category-routing.module.ts")).then(function (m) {
           return m.CategoryRoutingModule;
@@ -834,7 +834,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       loadChildren: function loadChildren() {
         return Promise.all(
         /*! import() | modules-error-error-routing-module */
-        [__webpack_require__.e("default~modules-addnewpost-addnewpost-routing-module~modules-addnewquery-addnewquery-routing-module~~6d764e77"), __webpack_require__.e("modules-error-error-routing-module")]).then(__webpack_require__.bind(null,
+        [__webpack_require__.e("default~modules-addnewpost-addnewpost-routing-module~modules-addnewquery-addnewquery-routing-module~~cdffaea9"), __webpack_require__.e("modules-error-error-routing-module")]).then(__webpack_require__.bind(null,
         /*! modules/error/error-routing.module */
         "./src/modules/error/error-routing.module.ts")).then(function (m) {
           return m.ErrorRoutingModule;
@@ -845,7 +845,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       loadChildren: function loadChildren() {
         return Promise.all(
         /*! import() | modules-tables-tables-routing-module */
-        [__webpack_require__.e("default~modules-addnewpost-addnewpost-routing-module~modules-addnewquery-addnewquery-routing-module~~6d764e77"), __webpack_require__.e("default~modules-dashboard-dashboard-routing-module~modules-tables-tables-routing-module"), __webpack_require__.e("modules-tables-tables-routing-module")]).then(__webpack_require__.bind(null,
+        [__webpack_require__.e("default~modules-addnewpost-addnewpost-routing-module~modules-addnewquery-addnewquery-routing-module~~cdffaea9"), __webpack_require__.e("default~modules-dashboard-dashboard-routing-module~modules-tables-tables-routing-module"), __webpack_require__.e("modules-tables-tables-routing-module")]).then(__webpack_require__.bind(null,
         /*! modules/tables/tables-routing.module */
         "./src/modules/tables/tables-routing.module.ts")).then(function (m) {
           return m.TablesRoutingModule;
@@ -856,7 +856,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       loadChildren: function loadChildren() {
         return Promise.all(
         /*! import() | modules-utility-utility-routing-module */
-        [__webpack_require__.e("default~modules-addnewpost-addnewpost-routing-module~modules-addnewquery-addnewquery-routing-module~~6d764e77"), __webpack_require__.e("modules-utility-utility-routing-module")]).then(__webpack_require__.bind(null,
+        [__webpack_require__.e("default~modules-addnewpost-addnewpost-routing-module~modules-addnewquery-addnewquery-routing-module~~cdffaea9"), __webpack_require__.e("modules-utility-utility-routing-module")]).then(__webpack_require__.bind(null,
         /*! modules/utility/utility-routing.module */
         "./src/modules/utility/utility-routing.module.ts")).then(function (m) {
           return m.UtilityRoutingModule;
@@ -868,7 +868,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       loadChildren: function loadChildren() {
         return Promise.all(
         /*! import() | modules-error-error-routing-module */
-        [__webpack_require__.e("default~modules-addnewpost-addnewpost-routing-module~modules-addnewquery-addnewquery-routing-module~~6d764e77"), __webpack_require__.e("modules-error-error-routing-module")]).then(__webpack_require__.bind(null,
+        [__webpack_require__.e("default~modules-addnewpost-addnewpost-routing-module~modules-addnewquery-addnewquery-routing-module~~cdffaea9"), __webpack_require__.e("modules-error-error-routing-module")]).then(__webpack_require__.bind(null,
         /*! modules/error/error-routing.module */
         "./src/modules/error/error-routing.module.ts")).then(function (m) {
           return m.ErrorRoutingModule;

@@ -266,12 +266,12 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "createUserSkill",
         value: function createUserSkill(userskill) {
-          return this.fireStore.collection('userskill').add(userskill);
+          return this.fireStore.collection('userskill').doc(userskill.id).set(userskill);
         }
       }, {
         key: "updateUserSkill",
         value: function updateUserSkill(userskill) {
-          delete userskill.id;
+          // delete userskill.id;
           this.fireStore.doc('userskill/' + userskill.id).update(userskill);
         }
       }, {

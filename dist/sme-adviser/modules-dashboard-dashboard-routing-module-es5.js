@@ -33,7 +33,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<div class=\"row\">\n    <div class=\"col-sm-4\">\n        <sb-card-view-details link=\"/dashboard\" background=\"bg-primary\"><div class=\"card-body\">Today's Queries</div></sb-card-view-details>\n    </div>\n    <div class=\"col-sm-4\">\n        <sb-card-view-details link=\"/dashboard\" background=\"bg-warning\"><div class=\"card-body\">Most Viewed</div></sb-card-view-details>\n    </div>\n    <div class=\"col-sm-4\">\n        <sb-card-view-details link=\"/dashboard\" background=\"bg-success\"><div class=\"card-body\">Today's Posts</div></sb-card-view-details>\n    </div>\n</div>\n";
+    __webpack_exports__["default"] = "<div class=\"row\">\n    <div class=\"col-sm-4\">\n        <sb-card-view-details link=\"/contribution/query\" background=\"bg-primary\"><div class=\"card-body\">Today's Queries</div></sb-card-view-details>\n    </div>\n    <div class=\"col-sm-4\">\n        <sb-card-view-details link=\"/dashboard\" background=\"bg-warning\"><div class=\"card-body\">Most Viewed</div></sb-card-view-details>\n    </div>\n    <div class=\"col-sm-4\">\n        <sb-card-view-details link=\"/contribution/post\" background=\"bg-success\"><div class=\"card-body\">Today's Posts</div></sb-card-view-details>\n    </div>\n</div>\n";
     /***/
   },
 

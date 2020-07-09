@@ -1,90 +1,55 @@
 const functions = require('firebase-functions');
 const admin=require('firebase-admin');
 const nodemailer =require('nodemailer');
-
 admin.initializeApp()
 require('dotenv').config()
 
-const db = admin.firestore();
-
 const {SENDER_EMAIL,SENDER_PASSWORD}= process.env;
-
-// Send Email when new post is created
-
-exports.sendPostEmail=functions.firestore.document('post/{docId}')
-.onCreate((snap,context)=>{
-    const postdata=snap.data();
-    let sendPost=nodemailer.createTransport({
-        host:'smtp.gmail.com',
-        port:465,
-        secure:true,
-        auth:{
-            user:SENDER_EMAIL,
-            pass:SENDER_PASSWORD
-        }
-    });
-
-//get userskill data
-
-        // const getUserSkill = db.collection('userskill');
-
-        // const snapshot = getUserSkill.where('domainSME', '==', true).get();
-
-        // if (snapshot.empty)
-        // {
-        // console.log('No matching documents from userskill db');
-        // return;
-        // }
-
-        // snapshot.forEach(doc => {
-        //         console.log(doc.id, '=>', doc.data());
-        // });
-
-
-sendPost.sendMail({
-         from: 'codeblitz.smeadviser@gmail.com',
-         to: `${postdata.email}`,
-         subject: 'New Post created',
-         text: `${postdata.postdesc}`
-        // template: 'index.handlebars'
-    }).then(res=>console.log('successfully sent the mail for post')).catch(err=>console.log('Error Occurred while sending email for new post creation',err));
-
-            // //get userskill data
-
-            // const getUserSkill = db.collection('userskill');
-
-            // const snapshot = getUserSkill.where('domainSME', '==', true).get();
-
-            // if (snapshot.empty)
-            // {
-            // console.log('No matching documents from userskill db');
-            // return;
-            // }
-
-            // snapshot.forEach(doc => {
-            //         console.log(doc.id, '=>', doc.data());
-            // });
-});
-
-// Send Email when new query is created
 
 exports.sendQueryEmail=functions.firestore.document('query/{docId}')
 .onCreate((snap,context)=>{
-    const querydata=snap.data();
-    let sendQuery=nodemailer.createTransport({
-        host:'smtp.gmail.com',
-        port:465,
-        secure:true,
-        auth:{
-            user:SENDER_EMAIL,
-            pass:SENDER_PASSWORD
+    const querydata = snap.data();
+    const smeFields = {
+        'Technical': 'techSME',
+        'Domain': 'domainSME',
+        'Others': 'othersSME'
+    };
+    let sendQuery = nodemailer.createTransport({
+        host: 'smtp.gmail.com',
+        port: 465,
+        secure: true,
+        auth: {
+            user: SENDER_EMAIL,
+            pass: SENDER_PASSWORD
         }
     });
+    functions.logger.log('smeFields', smeFields[querydata.category]);
+    const userSkillRef = admin.firestore().collection('userskill').where(smeFields[querydata.category], '==', true);
 
-sendQuery.sendMail({
-         from: 'codeblitz.smeadviser@gmail.com',
-         to: `${querydata.email}`,
-         subject: 'Test mail triggered from firebase for NEW QUERY',
-         text: `${querydata.querydesc}`,
-    }).then(res=>console.log('successfully sent the mail for query')).catch(err=>console.log('Error Occurred while sending email for new query creation',err));
-});
+    userSkillRef.get()
+        .then(querySnapshot => {
+            const emails = [];
+            querySnapshot.forEach(doc => {
+                emails.push(doc.data().email);
+                //functions.logger.log(doc.id, ' => ', doc.data());
+            });
+            functions.logger.log('Emails', emails)
+            return emails;
+        })
+        .then(emails => {
+            //let toEmails = emails.join(';');
+            let query = `<a href="https://smeadviser-2320c.web.app/contribution/query/${querydata.id}">Click here to check detailed query and post your answers</a> ${querydata.querydesc}`
+           // functions.logger.log('Mail body', query)
+            return sendQuery.sendMail({
+                from: 'codeblitz.smeadviser@gmail.com',
+                to: emails,
+                subject: 'New Query created',
+                html: query
+                // template: 'index.handlebars'
+            });
+        }).then(() => {
+            functions.logger.log('Email has been sent successfully')
+            return true;
+        })
+        .catch(err => functions.logger.log('Error Occurred while sending email for new query creation', err));
+    });

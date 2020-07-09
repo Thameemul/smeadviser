@@ -33,7 +33,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<div class=\"row justify-content-center\">\n    <div class=\"col-lg-12\">\n        <div class=\"card shadow-lg border-0 rounded-lg mt-2\">\n            <div class=\"card-header\">\n                <h3 class=\"text-center font-weight-dark my-1\">Search Results</h3>\n                <!-- <h6 class=\"text-center font-weight-dark my-1\">Below you will see everything we could locate for your search of <h5>\"{{searchWord}}\"</h5></h6> -->\n                <small class=\"text-muted text-center\">Below you will see everything we could locate for your search of \"{{searchWord}}\"</small>\n            </div>\n            <div class=\"card-body\">\n            </div>\n        </div>\n    </div>\n</div>\n";
+    __webpack_exports__["default"] = "<div class=\"row justify-content-center\">\n    <div class=\"col-lg-12\">\n        <div class=\"card shadow-lg border-0 rounded-lg mt-2\">\n            <div class=\"card-header\">\n                <h3 class=\"text-center font-weight-dark my-1\">Search Results</h3>\n                <!-- <h6 class=\"text-center font-weight-dark my-1\">Below you will see everything we could locate for your search of <h5>\"{{searchWord}}\"</h5></h6> -->\n                <h6 class=\"text-center\">Below you will see everything we could locate for your search word\"</h6>\n            </div>\n\n            <ngb-accordion #acc=\"ngbAccordion\">\n                <ngb-panel *ngFor=\"let query of queries | async; let indexOfElement = index;\">\n                    <ng-template ngbPanelHeader>\n                        <button class=\"btn btn-link\" ngbPanelToggle>\n                            <span>&#9733; <b> {{query.title}}</b></span>\n                        </button>\n                    </ng-template>\n\n                    <ng-template ngbPanelContent>\n                        <div [innerHTML]=\"query.querydesc\"></div>\n                    </ng-template>\n                </ngb-panel>\n            </ngb-accordion>\n            <div class=\"d-flex justify-content-between p-2\">\n                <ngb-pagination [collectionSize]=\"10\" page=\"1\" [pageSize]=\"10\"> </ngb-pagination>\n                <select class=\"custom-select\" style=\"width: auto;\" name=\"pageSize\">\n                    <option [ngValue]=\"10\" [selected]=\"true\">10 items per page</option>\n                    <option [ngValue]=\"30\">30 items per page</option>\n                    <option [ngValue]=\"50\">50 items per page</option>\n                </select>\n            </div>\n            <div class=\"card-body\">\n            </div>\n        </div>\n    </div>\n</div>\n";
     /***/
   },
 
@@ -150,21 +150,36 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
     /*! @angular/core */
     "./node_modules/@angular/core/fesm2015/core.js");
+    /* harmony import */
+
+
+    var _services_search_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! ../../services/search.service */
+    "./src/modules/search/services/search.service.ts");
 
     var SearchComponent = /*#__PURE__*/function () {
-      function SearchComponent() {
+      function SearchComponent(searchService) {
         _classCallCheck(this, SearchComponent);
 
+        this.searchService = searchService;
         this.searchWord = 'credit card';
       }
 
       _createClass(SearchComponent, [{
         key: "ngOnInit",
-        value: function ngOnInit() {}
+        value: function ngOnInit() {
+          this.queries = this.searchService.getSearchResults();
+        }
       }]);
 
       return SearchComponent;
     }();
+
+    SearchComponent.ctorParameters = function () {
+      return [{
+        type: _services_search_service__WEBPACK_IMPORTED_MODULE_2__["SearchService"]
+      }];
+    };
 
     SearchComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
       selector: 'sb-search',
@@ -175,7 +190,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       styles: [Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(
       /*! ./search.component.scss */
       "./src/modules/search/components/search/search.component.scss"))["default"]]
-    }), Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [])], SearchComponent);
+    }), Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [_services_search_service__WEBPACK_IMPORTED_MODULE_2__["SearchService"]])], SearchComponent);
     /***/
   },
 
@@ -609,10 +624,47 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
     /*! @angular/core */
     "./node_modules/@angular/core/fesm2015/core.js");
+    /* harmony import */
 
-    var SearchService = function SearchService() {
-      _classCallCheck(this, SearchService);
-    };
+
+    var firebase_app__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! firebase/app */
+    "./node_modules/firebase/app/dist/index.cjs.js");
+    /* harmony import */
+
+
+    var firebase_app__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(firebase_app__WEBPACK_IMPORTED_MODULE_2__);
+    /* harmony import */
+
+
+    var rxjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    /*! rxjs */
+    "./node_modules/rxjs/_esm2015/index.js");
+
+    var SearchService = /*#__PURE__*/function () {
+      function SearchService() {
+        _classCallCheck(this, SearchService);
+      }
+
+      _createClass(SearchService, [{
+        key: "getSearchResults",
+        value: function getSearchResults() {
+          var o = new rxjs__WEBPACK_IMPORTED_MODULE_3__["Observable"](function (observer) {
+            var t = firebase_app__WEBPACK_IMPORTED_MODULE_2__["firestore"]().collection('query').where('category', '<=', 'cal').get().then(function (querySnapshot) {
+              var queries = [];
+              querySnapshot.forEach(function (doc) {
+                // doc.data() is never undefined for query doc snapshots
+                queries.push(doc.data()); // console.log(doc.id, ' => ', doc.data());
+              });
+              observer.next(queries);
+            });
+          });
+          return o;
+        }
+      }]);
+
+      return SearchService;
+    }();
 
     SearchService = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])()], SearchService);
     /***/

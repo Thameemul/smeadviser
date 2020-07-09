@@ -9,7 +9,7 @@
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<h5> Domain Page Works</h5>\n\n<form>\n    <ul ngbnav=\"\" class=\"nav-tabs px-4 px-lg-5 content-tabset justify-content-md-start justify-content-end nav\" role=\"tablist\">\n        <li class=\"nav-item\">\n            <a href=\"#/components/alert/examples\" ngbnavlink=\"\" id=\"ngb-nav-0\" role=\"tab\" aria-controls=\"ngb-nav-0-panel\" aria-selected=\"true\" aria-disabled=\"false\" class=\"nav-link active\"> NDS </a>\n        </li>\n        <li class=\"nav-item\">\n            <a href=\"#/components/alert/api\" ngbnavlink=\"\" id=\"ngb-nav-1\" role=\"tab\" aria-selected=\"false\" aria-disabled=\"false\" class=\"nav-link\"> CAPS </a>\n        </li>\n        <li class=\"nav-item navbar-light\">\n            <a href=\"#/components/alert/api\" ngbnavlink=\"\" id=\"ngb-nav-1\" role=\"tab\" aria-selected=\"false\" aria-disabled=\"false\" class=\"nav-link\"> Others </a>\n        </li>\n    </ul>\n\n    <!-- <div class=\"d-flex justify-content-between p-2\">\n        <ngb-pagination [collectionSize]=\"total$ | async\" [(page)]=\"countryService.page\" [pageSize]=\"countryService.pageSize\"></ngb-pagination\n        ><select class=\"custom-select\" style=\"width: auto;\" name=\"pageSize\" [(ngModel)]=\"countryService.pageSize\"\n            ><option [ngValue]=\"10\">10 items per page</option\n            ><option [ngValue]=\"30\">30 items per page</option\n            ><option [ngValue]=\"50\">50 items per page</option></select\n        >\n    </div> -->\n</form>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<h3>Category wise Listing - Domain</h3>\n<ngb-accordion #acc=\"ngbAccordion\">\n    <ngb-panel *ngFor=\"let post of posts | async; let indexOfElement = index;\">\n        <ng-template ngbPanelHeader>\n            <button class=\"btn btn-link\" ngbPanelToggle>\n                <span>&#9733; <b> {{post.title}}</b></span>\n            </button>\n\n            <button type=\"button\" (click)=\"setAsFAQ(post)\" *ngIf=\"post.isFAQ == null || !post.isFAQ\"\n                class=\"btn btn-sm btn-outline-info float-lg-right\"\n                title=\"Add to Frequently Asked Questions\">&#43;</button>\n            <div class=\"float-lg-right\">\n                <span class=\"float-lg-right\" *ngIf=\"post.isFAQ != null && post.isFAQ\"\n                    class=\"badge badge-secondary\">FAQ</span>\n            </div>\n        </ng-template>\n\n        <ng-template ngbPanelContent>\n            <div [innerHTML]=\"post.postdesc\"></div>\n        </ng-template>\n    </ngb-panel>\n</ngb-accordion>\n<div class=\"d-flex justify-content-between p-2\">\n    <ngb-pagination [collectionSize]=\"10\" page=\"1\" [pageSize]=\"10\"> </ngb-pagination>\n    <select class=\"custom-select\" style=\"width: auto;\" name=\"pageSize\">\n        <option [ngValue]=\"10\" [selected]=\"true\">10 items per page</option>\n        <option [ngValue]=\"30\">30 items per page</option>\n        <option [ngValue]=\"50\">50 items per page</option>\n    </select>\n</div>\n");
 
 /***/ }),
 
@@ -22,7 +22,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<h5> Other Category Component Works </h5>\n\n<form>\n    <ul ngbnav=\"\" class=\"nav-tabs px-4 px-lg-5 content-tabset justify-content-md-start justify-content-end nav\" role=\"tablist\">\n        <li class=\"nav-item\">\n            <a href=\"#/components/alert/examples\" ngbnavlink=\"\" id=\"ngb-nav-0\" role=\"tab\" aria-controls=\"ngb-nav-0-panel\" aria-selected=\"true\" aria-disabled=\"false\" class=\"nav-link active\"> Tools </a>\n        </li>\n        <li class=\"nav-item\">\n            <a href=\"#/components/alert/api\" ngbnavlink=\"\" id=\"ngb-nav-1\" role=\"tab\" aria-selected=\"false\" aria-disabled=\"false\" class=\"nav-link\"> Simulators </a>\n        </li>\n        <li class=\"nav-item navbar-light\">\n            <a href=\"#/components/alert/api\" ngbnavlink=\"\" id=\"ngb-nav-1\" role=\"tab\" aria-selected=\"false\" aria-disabled=\"false\" class=\"nav-link\"> Others </a>\n        </li>\n    </ul>\n\n    <!-- <div class=\"d-flex justify-content-between p-2\">\n        <ngb-pagination [collectionSize]=\"total$ | async\" [(page)]=\"countryService.page\" [pageSize]=\"countryService.pageSize\"></ngb-pagination\n        ><select class=\"custom-select\" style=\"width: auto;\" name=\"pageSize\" [(ngModel)]=\"countryService.pageSize\"\n            ><option [ngValue]=\"10\">10 items per page</option\n            ><option [ngValue]=\"30\">30 items per page</option\n            ><option [ngValue]=\"50\">50 items per page</option></select\n        >\n    </div> -->\n</form>\n\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<h3>Category wise Listing - Other than Technical and Domain</h3>\n<ngb-accordion #acc=\"ngbAccordion\">\n    <ngb-panel *ngFor=\"let post of posts | async; let indexOfElement = index;\">\n        <ng-template ngbPanelHeader>\n            <button class=\"btn btn-link\" ngbPanelToggle>\n                <span>&#9733; <b> {{post.title}}</b></span>\n            </button>\n\n            <button type=\"button\" (click)=\"setAsFAQ(post)\" *ngIf=\"post.isFAQ == null || !post.isFAQ\"\n                class=\"btn btn-sm btn-outline-info float-lg-right\"\n                title=\"Add to Frequently Asked Questions\">&#43;</button>\n            <div class=\"float-lg-right\">\n                <span class=\"float-lg-right\" *ngIf=\"post.isFAQ != null && post.isFAQ\"\n                    class=\"badge badge-secondary\">FAQ</span>\n            </div>\n        </ng-template>\n\n        <ng-template ngbPanelContent>\n            <div [innerHTML]=\"post.postdesc\"></div>\n        </ng-template>\n    </ngb-panel>\n</ngb-accordion>\n<div class=\"d-flex justify-content-between p-2\">\n    <ngb-pagination [collectionSize]=\"10\" page=\"1\" [pageSize]=\"10\"> </ngb-pagination>\n    <select class=\"custom-select\" style=\"width: auto;\" name=\"pageSize\">\n        <option [ngValue]=\"10\" [selected]=\"true\">10 items per page</option>\n        <option [ngValue]=\"30\">30 items per page</option>\n        <option [ngValue]=\"50\">50 items per page</option>\n    </select>\n</div>\n");
 
 /***/ }),
 
@@ -35,7 +35,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<h5> Tech Category Page Works</h5>\n\n\n<form>\n    <ul ngbnav=\"\" class=\"nav-tabs px-4 px-lg-5 content-tabset justify-content-md-start justify-content-end nav\" role=\"tablist\">\n        <li class=\"nav-item\">\n            <a href=\"#/components/alert/examples\" ngbnavlink=\"\" id=\"ngb-nav-0\" role=\"tab\" aria-controls=\"ngb-nav-0-panel\" aria-selected=\"true\" aria-disabled=\"false\" class=\"nav-link active\"> Front End </a>\n        </li>\n        <li class=\"nav-item\">\n            <a href=\"#/components/alert/api\" ngbnavlink=\"\" id=\"ngb-nav-1\" role=\"tab\" aria-selected=\"false\" aria-disabled=\"false\" class=\"nav-link\"> Back End </a>\n        </li>\n        <li class=\"nav-item navbar-light\">\n            <a href=\"#/components/alert/api\" ngbnavlink=\"\" id=\"ngb-nav-1\" role=\"tab\" aria-selected=\"false\" aria-disabled=\"false\" class=\"nav-link\"> Others </a>\n        </li>\n    </ul>\n\n    <!-- <div class=\"d-flex justify-content-between p-2\">\n        <ngb-pagination [collectionSize]=\"total$ | async\" [(page)]=\"countryService.page\" [pageSize]=\"countryService.pageSize\"></ngb-pagination\n        ><select class=\"custom-select\" style=\"width: auto;\" name=\"pageSize\" [(ngModel)]=\"countryService.pageSize\"\n            ><option [ngValue]=\"10\">10 items per page</option\n            ><option [ngValue]=\"30\">30 items per page</option\n            ><option [ngValue]=\"50\">50 items per page</option></select\n        >\n    </div> -->\n</form>\n\n\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<h3>Category wise Listing - Technical</h3>\n<ngb-accordion #acc=\"ngbAccordion\">\n    <ngb-panel *ngFor=\"let post of posts | async; let indexOfElement = index;\">\n        <ng-template ngbPanelHeader>\n            <button class=\"btn btn-link\" ngbPanelToggle>\n                <span>&#9733; <b> {{post.title}}</b></span>\n            </button>\n\n            <button type=\"button\" (click)=\"setAsFAQ(post)\" *ngIf=\"post.isFAQ == null || !post.isFAQ\"\n                class=\"btn btn-sm btn-outline-info float-lg-right\"\n                title=\"Add to Frequently Asked Questions\">&#43;</button>\n            <div class=\"float-lg-right\">\n                <span class=\"float-lg-right\" *ngIf=\"post.isFAQ != null && post.isFAQ\"\n                    class=\"badge badge-secondary\">FAQ</span>\n            </div>\n        </ng-template>\n\n        <ng-template ngbPanelContent>\n            <div [innerHTML]=\"post.postdesc\"></div>\n        </ng-template>\n    </ngb-panel>\n</ngb-accordion>\n<div class=\"d-flex justify-content-between p-2\">\n    <ngb-pagination [collectionSize]=\"10\" page=\"1\" [pageSize]=\"10\"> </ngb-pagination>\n    <select class=\"custom-select\" style=\"width: auto;\" name=\"pageSize\">\n        <option [ngValue]=\"10\" [selected]=\"true\">10 items per page</option>\n        <option [ngValue]=\"30\">30 items per page</option>\n        <option [ngValue]=\"50\">50 items per page</option>\n    </select>\n</div>\n");
 
 /***/ }),
 
@@ -168,6 +168,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _containers__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./containers */ "./src/modules/category/containers/index.ts");
 /* harmony import */ var _guards__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./guards */ "./src/modules/category/guards/index.ts");
 /* harmony import */ var _services__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./services */ "./src/modules/category/services/index.ts");
+/* harmony import */ var _addnewpost_services_post_service__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../addnewpost/services/post.service */ "./src/modules/addnewpost/services/post.service.ts");
+/* harmony import */ var _addnewquery_services_query_service__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../addnewquery/services/query.service */ "./src/modules/addnewquery/services/query.service.ts");
 
 /* tslint:disable: ordered-imports*/
 
@@ -185,6 +187,8 @@ __webpack_require__.r(__webpack_exports__);
 
 /* Services */
 
+
+
 let CategoryModule = class CategoryModule {
 };
 CategoryModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
@@ -197,7 +201,7 @@ CategoryModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
             _common_app_common_module__WEBPACK_IMPORTED_MODULE_5__["AppCommonModule"],
             _modules_navigation_navigation_module__WEBPACK_IMPORTED_MODULE_6__["NavigationModule"],
         ],
-        providers: [..._services__WEBPACK_IMPORTED_MODULE_10__["services"], ..._guards__WEBPACK_IMPORTED_MODULE_9__["guards"]],
+        providers: [..._services__WEBPACK_IMPORTED_MODULE_10__["services"], ..._guards__WEBPACK_IMPORTED_MODULE_9__["guards"], _addnewpost_services_post_service__WEBPACK_IMPORTED_MODULE_11__["PostService"], _addnewquery_services_query_service__WEBPACK_IMPORTED_MODULE_12__["QueryService"]],
         declarations: [..._containers__WEBPACK_IMPORTED_MODULE_8__["containers"], ..._components__WEBPACK_IMPORTED_MODULE_7__["components"]],
         exports: [..._containers__WEBPACK_IMPORTED_MODULE_8__["containers"], ..._components__WEBPACK_IMPORTED_MODULE_7__["components"]],
     })
@@ -232,12 +236,25 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DomainComponent", function() { return DomainComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _addnewpost_services_post_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../addnewpost/services/post.service */ "./src/modules/addnewpost/services/post.service.ts");
+
 
 
 let DomainComponent = class DomainComponent {
-    constructor() { }
-    ngOnInit() { }
+    constructor(postService) {
+        this.postService = postService;
+    }
+    ngOnInit() {
+        this.posts = this.postService.getPosts();
+    }
+    setAsFAQ(post) {
+        post.isFAQ = true;
+        this.postService.setFAQstatus(post);
+    }
 };
+DomainComponent.ctorParameters = () => [
+    { type: _addnewpost_services_post_service__WEBPACK_IMPORTED_MODULE_2__["PostService"] }
+];
 DomainComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: 'sb-domain',
@@ -245,7 +262,7 @@ DomainComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
         template: Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(/*! raw-loader!./domain.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/modules/category/components/domain/domain.component.html")).default,
         styles: [Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(/*! ./domain.component.scss */ "./src/modules/category/components/domain/domain.component.scss")).default]
     }),
-    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [])
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [_addnewpost_services_post_service__WEBPACK_IMPORTED_MODULE_2__["PostService"]])
 ], DomainComponent);
 
 
@@ -309,12 +326,25 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "OthersComponent", function() { return OthersComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _addnewpost_services_post_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../addnewpost/services/post.service */ "./src/modules/addnewpost/services/post.service.ts");
+
 
 
 let OthersComponent = class OthersComponent {
-    constructor() { }
-    ngOnInit() { }
+    constructor(postService) {
+        this.postService = postService;
+    }
+    ngOnInit() {
+        this.posts = this.postService.getPosts();
+    }
+    setAsFAQ(post) {
+        post.isFAQ = true;
+        this.postService.setFAQstatus(post);
+    }
 };
+OthersComponent.ctorParameters = () => [
+    { type: _addnewpost_services_post_service__WEBPACK_IMPORTED_MODULE_2__["PostService"] }
+];
 OthersComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: 'sb-others',
@@ -322,7 +352,7 @@ OthersComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
         template: Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(/*! raw-loader!./others.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/modules/category/components/others/others.component.html")).default,
         styles: [Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(/*! ./others.component.scss */ "./src/modules/category/components/others/others.component.scss")).default]
     }),
-    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [])
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [_addnewpost_services_post_service__WEBPACK_IMPORTED_MODULE_2__["PostService"]])
 ], OthersComponent);
 
 
@@ -354,12 +384,25 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TechComponent", function() { return TechComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _addnewpost_services_post_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../addnewpost/services/post.service */ "./src/modules/addnewpost/services/post.service.ts");
+
 
 
 let TechComponent = class TechComponent {
-    constructor() { }
-    ngOnInit() { }
+    constructor(postService) {
+        this.postService = postService;
+    }
+    ngOnInit() {
+        this.posts = this.postService.getPosts();
+    }
+    setAsFAQ(post) {
+        post.isFAQ = true;
+        this.postService.setFAQstatus(post);
+    }
 };
+TechComponent.ctorParameters = () => [
+    { type: _addnewpost_services_post_service__WEBPACK_IMPORTED_MODULE_2__["PostService"] }
+];
 TechComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: 'sb-tech',
@@ -367,7 +410,7 @@ TechComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
         template: Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(/*! raw-loader!./tech.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/modules/category/components/tech/tech.component.html")).default,
         styles: [Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(/*! ./tech.component.scss */ "./src/modules/category/components/tech/tech.component.scss")).default]
     }),
-    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [])
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [_addnewpost_services_post_service__WEBPACK_IMPORTED_MODULE_2__["PostService"]])
 ], TechComponent);
 
 
