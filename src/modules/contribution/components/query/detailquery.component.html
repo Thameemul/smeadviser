@@ -1,11 +1,11 @@
 <div class="card">
     <div class="card-header" >
         <!-- style="background-color:slategrey" -->
-        <h5 style="color:rgb(47, 0, 255)"      class="card-title">  {{ (query | async).title }}</h5>
+        <h5 style="color:rgb(47, 0, 255)"      class="card-title">  {{ (query | async)?.title }}</h5>
     </div>
     <div class="card-body">
         <!-- <h6 style="color:rgb(47, 0, 255)" class="medium mb-1 ">Query Description</h6> -->
-        <div   [innerHTML]="(query | async).querydesc"></div>
+        <div   [innerHTML]="(query | async)?.querydesc"></div>
     </div>
     <hr>
     <ul class="list-group list-group-flush">
