@@ -1,5 +1,14 @@
 {
   "projects": {
     "default": "smeadviser-2320c"
+  },
+  "targets": {
+    "smeadviser-2320c": {
+      "hosting": {
+        "sme-adviser": [
+          "smeadviser-2320c"
+        ]
+      }
+    }
   }
 }

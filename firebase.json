@@ -6,11 +6,18 @@
     "source": "functions"
   },
   "hosting": {
+    "target": "sme-adviser",
     "public": "dist/sme-adviser",
     "ignore": [
       "firebase.json",
       "**/.*",
       "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
     ]
   }
 }
