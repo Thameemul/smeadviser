@@ -13,6 +13,7 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
     email!: string;
     password!: string;
+    isChecked = false;
 
     constructor(private authservice: AuthService, private router: Router) { }
 
