@@ -60,6 +60,12 @@ export class AddNewQueryComponent implements OnInit {
         if (form != null) {
             form.reset();
         }
+        this.model = {
+            id: '',
+            title: '',
+            category: '',
+            querydesc: '',
+        };
     }
 
     onSubmit(form: NgForm) {

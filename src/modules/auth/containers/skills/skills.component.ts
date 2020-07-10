@@ -67,6 +67,21 @@ export class SkillsComponent implements OnInit {
         if (form != null) {
             form.reset();
         }
+        this.model = {
+            id: '',
+            firstName: '',
+            lastName: '',
+            mobile: '',
+            teamName: '',
+            deskNo: '',
+            email: '',
+            password: '',
+            confirmPassword: '',
+            techSME: false,
+            domainSME: false,
+            othersSME: false,
+            skills: [],
+        };
     }
 
     onSubmit(form: NgForm) {

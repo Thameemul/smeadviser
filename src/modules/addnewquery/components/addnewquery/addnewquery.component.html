@@ -32,18 +32,15 @@
                         <h6 class="medium mb-1 ">Body *</h6>
                                  <small class="text-muted">Include all the information someone would need to answer your question</small>
                         <angular-editor name="querydesc" #querydesc="ngModel" [(ngModel)]="model.querydesc"
-                            [config]="config"></angular-editor>
+                            [config]="config" required></angular-editor>
                         <div *ngIf="querydesc.invalid && querydesc.touched" class="validation-error">This field is
                             required</div>
                     </div>
 
                     <div class="form-row">
-                        <div class="col-md-6 form-group mt-4 mb-0 ">
-                            <a class="btn btn-primary " (click)="resetForm()">Reset</a>
-                        </div>
-                        <div class="col-md-6 form-group mt-4 mb-0">
+                        <div class="col-md-12 form-group  text-center">
                             <button type="submit" [disabled]="form.invalid"
-                                class="btn btn-success btn-block"> Submit</button>
+                                class="btn btn-lg btn-success "> Submit</button>
                         </div>
                     </div>
 

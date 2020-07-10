@@ -57,6 +57,7 @@
                             <div class="col-md-6">
                                 <div class="form-group"><label class="medium mb-1" >Confirm Password *</label>
                                     <input class="form-control py-1" type="password" name="confirmPassword" #confirmPassword="ngModel" [(ngModel)]="model.confirmPassword" required/>
+                                    <div *ngIf="confirmPassword.invalid && confirmPassword.touched" class="validation-error">This field is required </div>
                                 </div>
                             </div>
                         </div>
@@ -81,7 +82,7 @@
                                     </div>
                             </div>
                             <div class="col-md-6 " >
-                                <label class="medium mb-1" >Skills *</label>
+                                <label class="medium mb-1" >Skills </label>
                                 <div class="input-group mb-3">
                                     <input type="text" class="form-control" name="skill" #newSkill="ngModel"
                                         [(ngModel)]='skill'
@@ -102,11 +103,10 @@
                             </div>
                         </div>
                         <div class="form-row">
-                            <div class="col-md-12 text-center">
-                                <div class="form-group "><button class="btn-lg btn-primary"
-                                         (click)="onSubmit(ngForm)" [disabled]="!ngForm.valid || !ngForm.touched">Create Account</button>
-                                </div>
-                            </div>
+                            <div class="col-md-12 form-group text-center">
+                                <button class="btn-lg btn-primary"
+                                (click)="onSubmit(ngForm)" [disabled]="!ngForm.valid || !ngForm.touched">Create Account</button>
+                           </div>
                         </div>
                     </form>
                 </div>

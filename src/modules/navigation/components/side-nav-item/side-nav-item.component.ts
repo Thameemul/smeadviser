@@ -11,7 +11,7 @@ export class SideNavItemComponent implements OnInit {
     @Input() sideNavItem!: SideNavItem;
     @Input() isActive!: boolean;
 
-    expanded = false;
+    expanded = true;
     routeData!: SBRouteData;
 
     constructor() {}

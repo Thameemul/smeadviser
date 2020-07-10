@@ -46,6 +46,12 @@ export class AddNewPostComponent implements OnInit {
         if (form != null) {
             form.reset();
         }
+        this.model = {
+            id: '',
+            title: '',
+            category: '',
+            postdesc: '',
+        };
     }
 
     onSubmit(form: NgForm) {

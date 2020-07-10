@@ -56,6 +56,11 @@ const routes: Routes = [
             import('@modules/contact/contact-routing.module').then(m => m.ContactRoutingModule),
     },
     {
+        path: 'settings',
+        loadChildren: () =>
+            import('@modules/settings/settings-routing.module').then(m => m.SettingsRoutingModule),
+    },
+    {
         path: 'reportbug',
         loadChildren: () =>
             import('@modules/reportbug/reportbug-routing.module').then(

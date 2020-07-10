@@ -1,43 +1,32 @@
 <sb-layout-auth>
     <div class="container">
-
         <div class="row justify-content-center">
              <div class="col-md-5">
                 <div class="card shadow-lg border-0 rounded-lg mt-5">
-                    <!-- <div class="card-header">
-                        <h3 class="text-center font-weight-dark my-4">SME Adviser</h3>
-                    </div> -->
                     <div class="card-body align-items-center">
-                        <img src="../../../../assets/img/small.png" style="width: 91%">
+                        <img src="../../../../assets/img/small.png" style="width: 85%">
                     </div>
                 </div>
              </div>
 
-
-            <div class="col-md-7">
+            <div class="col-md-6">
 
                <div class="card shadow-lg border-0 rounded-lg mt-5">
                     <mat-progress-bar *ngIf="isLoading | async" mode="indeterminate"></mat-progress-bar>
                     <div class="card-header">
                         <h3 class="text-center font-weight-dark my-4">Login</h3>
-                        <!-- <img src="../../../../assets/img/logo_SME Adviser_Final_c.png" style="width: 100%"> -->
                     </div>
                     <div class="card-body">
-                        <!-- <form > -->
+
                             <div class="form-group"><label class="medium mb-2" >Email *</label>
                                 <input class="form-control py-4" [(ngModel)]="email"  type="email" placeholder="Enter email" required /></div>
                             <div class="form-group"><label class="medium mb-2" >Password *</label>
                                 <input class="form-control py-4"  [(ngModel)]="password"  type="password" placeholder="Enter password" required/></div>
-                            <!-- <div class="form-group">
-                                <div class="custom-control custom-checkbox">
-                                    <input class="custom-control-input" type="checkbox" name="label" [(ngModel)]="isChecked" value = ""/>
-                                    <label class="custom-control-label" >Remember password</label></div>
-                            </div> -->
                             <div class="form-group d-flex align-items-center justify-content-between mt-4 mb-0"><a class="medium" routerLink="/auth/forgot-password">Forgot Password?</a>
-                                <button class="btn btn-primary" [disabled]="isLoading | async"  (click)="SignIn()" autofocus  >Login</button></div>
+                                <button class="btn btn-lg btn-primary " [disabled]="isLoading | async"  (click)="SignIn()" autofocus  >Login</button></div>
                     </div>
                     <div class="card-footer text-center">
-                        <div class="medium"><a routerLink="/auth/skills" >Sign up!</a></div>
+                        <div class="medium"><a routerLink="/auth/skills" >Need a new account? Sign up!</a></div>
                     </div>
                 </div>
             </div>

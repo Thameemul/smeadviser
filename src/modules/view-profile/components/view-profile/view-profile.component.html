@@ -1,166 +1,111 @@
+<div class="card-header"><h3 class="text-center font-weight-dark my-0">Profile Summary </h3></div>
+<div class="card-body">
+       <div class="row">
+           <div class="col-sm-12">
+                    <div class="row justify-content-center">
+                        <div class="col-sm-3">
+                            <div class="text-center">
+                                    <img src="../../../../assets/img/avatar.jpg" class="avatar rounded-circle img-thumbnail" style="width: 75%;" >
 
-  <hr>
-  <div class="container bootstrap snippet">
-      <div class="row">
-            <div class="col-sm-10"><h1> Code Blitz</h1></div>
-          <div class="col-sm-2"></div>
-      </div>
-      <div class="row">
-            <div class="col-sm-3"><!--left col-->
+                            </div>
+                            <hr>
+                            <ul class="list-group">
+                                <li class="text-muted-dark card-footer"><strong >Activity</strong> <i class="fa fa-dashboard fa-1x"></i></li>
+                                <li class="list-group-item text-left"><span class="pull-left">Posts</span> <span class="float-lg-right badge badge-secondary">10</span></li>
+                                <li class="list-group-item text-left"><span class="pull-left">Questions</span> <span class="float-lg-right badge badge-secondary">17</span></li>
+                                <li class="list-group-item text-left"><span class="pull-left">Answers</span> <span class="float-lg-right badge badge-secondary">30</span></li>
+                            </ul>
+                       </div>
+                        <div class="col-lg-9">
+                            <div class="card shadow-lg border-0 rounded-lg mt-5">
 
+                                <div class="card-body">
+                                    <form #ngForm="ngForm" name="">
+                                        <div class="form-row">
+                                            <div class="col-md-6">
+                                                <div class="form-group"><label class="medium mb-1 " >First Name </label>
+                                                    <input class="form-control py-1 text-muted" name="firstName" #firstName="ngModel" [(ngModel)]="model.firstName" />
+                                                    <div *ngIf="firstName.invalid && firstName.touched" class="validation-error">This field is required </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group"><label class="medium mb-1" >Last Name </label>
+                                                    <input class="form-control py-1" name="lastName" #lastName="ngModel"
+                                                        [(ngModel)]="model.lastName"  />
+                                                    <div *ngIf="lastName.invalid && lastName.touched" class="validation-error">This field is required </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="col-md-6">
+                                                <div class="form-group"><label class="medium mb-1" >Mobile No </label>
+                                                    <input class="form-control py-1" name="mobile" #mobile="ngModel" [(ngModel)]="model.mobile" autocomplete="false" type="tel"/>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group"><label class="medium mb-1" >Team Name</label>
+                                                    <input class="form-control py-1" name="teamname" #teamname="ngModel" [(ngModel)]="model.teamName" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="col-md-6">
+                                                <div class="form-group"><label class="medium mb-1" >Desk No</label>
+                                                    <input class="form-control py-1" name="deskno" #desnko="ngModel" [(ngModel)]="model.deskNo"  />
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group"><label class="medium mb-1" >Email </label>
+                                                    <input class="form-control py-1" name="email" #email="ngModel" [(ngModel)]="model.email" type="email"  />
 
-        <div class="text-center">
-          <img src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png" class="avatar img-circle img-thumbnail" alt="avatar">
-          <h6>Upload a different photo...</h6>
-          <input type="file" class="text-center center-block file-upload">
-        </div>
+                                                </div>
+                                            </div>
+                                        </div>
 
+                                        <div class="form-row ">
+                                            <div class="col-md-6" >
+                                                <div class="form-group">
 
-
-            <ul class="list-group">
-              <li class="list-group-item text-muted-dark">Activity <i class="fa fa-dashboard fa-1x"></i></li>
-              <li class="list-group-item text-left"><span class="pull-left"><strong>Posts</strong></span> 125</li>
-              <li class="list-group-item text-left"><span class="pull-left"><strong>Questions</strong></span> 13</li>
-              <li class="list-group-item text-left"><span class="pull-left"><strong>Answers</strong></span> 37</li>
-            </ul>
-
-
-          </div><!--/col-3-->
-          <div class="col-sm-9">
-              <ul class="nav nav-tabs">
-                  <li class="active"><a data-toggle="tab" href="#updatePersonal">Personal Details</a></li>
-                  <li><a data-toggle="tab" href="#updateEmployee">Employee Details</a></li>
-                  <li><a data-toggle="tab" href="#updateSkill">Skill Details</a></li>
-                </ul>
-
-
-            <div class="tab-content">
-              <div class="tab-pane active" id="updatePersonal">
-                  <hr>
-                    <form class="form" action="##" method="post" id="registrationForm">
-                        <div class="form-group">
-
-                            <div class="col-xs-6">
-                                <label for="first_name"><h4>First name</h4></label>
-                                <div class="list-group-item text-muted">Amudha</div>
+                                                        <label class="medium mb-1" >SME Mark </label>
+                                                            <div class="checkbox" >
+                                                            <div>
+                                                                    <input style="width: 30px;" type="checkbox" value="" name="techsme" #techsme="ngModel" [(ngModel)]="model.techSME"/><label>Technical</label>
+                                                                    <input style="width: 30px;" type="checkbox" value="" name="domainsme" #domainsme="ngModel" [(ngModel)]="model.domainSME"/><label>Domain</label>
+                                                                    <input style="width: 30px;" type="checkbox" value="" name="otherssme" #otherssme="ngModel" [(ngModel)]="model.othersSME"/><label>Others</label>
+                                                                </div>
+                                                            </div>
+                                                    </div>
+                                            </div>
+                                            <div class="col-md-6 " >
+                                                <label class="medium mb-1" >Skills </label>
+                                                <div style="height: 80px;" class="overflow-auto" >
+                                                    <ul id="mySkills" *ngIf="model.skills != null"  >
+                                                            <li  *ngFor="let skill of model.skills">
+                                                                {{ skill }}
+                                                            </li>
+                                                    </ul>
+                                                    <label *ngIf="model.skills == null || model.skills.length==0">No skills Added</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="col-md-12 text-center">
+                                                <div class="form-group "><button class="btn-lg btn-primary" routerLink ="/dashboard">Edit Profile</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
                             </div>
                         </div>
-                        <div class="form-group">
-
-                            <div class="col-xs-6">
-                              <label for="last_name"><h4>Last name</h4></label>
-                              <div class="list-group-item text-muted">Muthukumar</div>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="col-xs-6">
-                               <label for="mobile"><h4>Mobile</h4></label>
-                                <input type="number" class="form-control text-muted" name="mobile" id="mobile" placeholder="+919894729700"  title="enter your mobile number if any." pattern="[0-9]{10}" required>
-                            </div>
-                        </div>
-                        <div class="form-group">
-
-                            <div class="col-xs-6">
-                                <label for="email"><h4>Email</h4></label>
-                                <div class="list-group-item text-muted">Amudha.M@lntinfotech.com</div>
-                            </div>
-                        </div>
-                        <div class="form-group">
-
-                            <div class="col-xs-6">
-                                <label for="password text-muted "><h4>Password</h4></label>
-                                <input type=" text-muted" class="form-control" name="password" id="password" placeholder="password" title="enter your password.">
-                            </div>
-                        </div>
-                        <div class="form-group">
-
-                            <div class="col-xs-6">
-                              <label for="password2 text-muted "><h4>Verify</h4></label>
-                                <input type="password text-muted" class="form-control" name="password2" id="password2" placeholder="password2" title="enter your password2.">
-                            </div>
-                        </div>
-                        <!-- <div class="form-group">
-                             <div class="col-xs-12">
-                                  <br> -->
-                                    <!-- <button class="btn btn-lg btn-success pull-right" type="submit"><i class="glyphicon glyphicon-ok-sign"></i> Update</button> -->
-                                     <!-- <button class="btn btn-lg" type="reset"><i class="glyphicon glyphicon-repeat"></i> Reset</button> -->
-                              <!-- </div> -->
-                        <!-- </div> -->
-                    </form>
-
-                <hr>
-
-               </div><!--/tab-pane-->
-               <div class="tab-pane" id="updateEmployee">
-
-                 <h2></h2>
-
-                 <hr>
-                    <form class="form" action="##" method="post" id="registrationForm">
-                        <div class="form-group">
-
-                            <div class="col-xs-6">
-                                <label for="team_name"><h4>Team</h4></label>
-                                <div class="list-group-item text-muted" name="team_name" id="team_name">CAPS</div>
-                            </div>
-                        </div>
-                        <div class="form-group">
-
-                            <div class="col-xs-6">
-                              <label for="desk_location"><h4>Desk Location</h4></label>
-                                <div class="list-group-item text-muted" name="desk_location" id="desk_location">CHNSEZ-B10-32</div>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                             <div class="col-xs-12">
-                                  <br>
-                                    <button class="btn btn-lg btn-success pull-right" type="submit"><i class="glyphicon glyphicon-ok-sign"></i> Update</button>
-                                     <button class="btn btn-lg" type="reset"><i class="glyphicon glyphicon-repeat"></i> Reset</button>
-                              </div>
-                        </div>
-                    </form>
-
-               </div><!--/tab-pane-->
-               <div class="tab-pane" id="updateSkill">
-
-
-                    <hr>
-                    <form class="form skillset" action="##" method="post" id="registrationForm">
-                        <div class="form-group">
-
-                            <div class="col-xs-12" class="header">
-                                <label for="skillset"><h4>Skillset</h4></label>
-                                <input type="text" class="form-control" name="skillset" id="skillset" placeholder="skillset" title="Add your Skill here...">
-                                <span onclick="newElement()" class="addBtn pull-right">Add</span>
-                          </div>
-                        </div>
-                        <div class="form-group">
-                              <div class="col-xs-12 pull-right" >
-                                  <ul id="myUL">
-                                      <li class="mylist">COBOL</li>
-                                      <li class="mylist">JCL</li>
-                                      <li class="mylist">Webservices</li>
-                                      <li class="mylist">DB2</li>
-                                  </ul>
-                             </div>
-                        </div>
-                        <div class="form-group">
-                             <div class="col-xs-12">
-                                  <br>
-                                    <button class="btn btn-lg btn-success pull-right" type="submit"><i class="glyphicon glyphicon-ok-sign"></i> Update</button>
-                                     <button class="btn btn-lg" type="reset"><i class="glyphicon glyphicon-repeat"></i> Reset</button>
-                              </div>
-                        </div>
-                    </form>
+                    </div>
                 </div>
 
-                </div><!--/tab-pane-->
-            </div><!--/tab-content-->
+        </div>
+</div>
 
-          </div><!--/col-9-->
-      </div><!--/row-->
+
+
 
 
 
