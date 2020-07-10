@@ -1,6 +1,6 @@
 {
     "arrowParens": "avoid",
-    "endOfLine": "lf",
+    "endOfLine": "auto",
     "overrides": [
         {
             "files": "*.pug",

@@ -52,21 +52,23 @@ export class AuthService {
     }
 
     /* Sign in */
-    SignIn(email: string, password: string) {
-        this.angularFireAuth
-            .signInWithEmailAndPassword(email, password)
-            .then(res => {
-                this.user = res.user;
-                if (this.user != null) {
-                    localStorage.setItem('user', JSON.stringify(this.user));
-                    console.log(localStorage.getItem('user') as string);
-                }
-                console.log('Successfully signed in!');
-                this.router.navigate(['dashboard']);
-            })
-            .catch(err => {
-                console.log('Something is wrong:', err.message);
-            });
+    SignIn(email: string, password: string): Observable<boolean> {
+        return new Observable<boolean>(subscriber => {
+            this.angularFireAuth
+                .signInWithEmailAndPassword(email, password)
+                .then(res => {
+                    this.user = res.user;
+                    if (this.user != null) {
+                        localStorage.setItem('user', JSON.stringify(this.user));
+                        console.log(localStorage.getItem('user') as string);
+                    }
+                    subscriber.next(true);
+                    console.log('Successfully signed in!');
+                })
+                .catch(err => {
+                    subscriber.error(err);
+                });
+        });
     }
 
     /* Sign out */
