@@ -26,7 +26,7 @@
                              <div class="form-row">
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                         <small class="text-muted" [ngClass]="{'alert-danger': !passwordNotMatched}">{{ !passwordNotMatched ? "Password and Confim Password should be same" : "Password should be at least 6 characters long"}}</small>
+                                         <small  [ngClass]="{'text-danger': !passwordNotMatched, 'text-muted' : passwordNotMatched}">{{ !passwordNotMatched ? "Password and Confim Password should be same" : "Password should be at least 6 characters long"}}</small>
                                     </div>
                                 </div>
                             </div>

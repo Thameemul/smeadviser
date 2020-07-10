@@ -1,10 +1,10 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 import { UserService } from '@modules/auth/services';
 
 import { User } from '../../models/user.model';
 import { AuthService } from '../../services/auth.service';
-import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
     selector: 'sb-usermanagement',
@@ -34,13 +34,14 @@ export class UserManagementComponent implements OnInit {
             this.passwordNotMatched = false;
             return;
         }
+        this.passwordNotMatched = true;
         this.authservice
             .ChangePassword(this.code, this.password)
             .then(() => {
                 this.router.navigateByUrl('auth/login');
             })
             .catch(err => {
-                alert(err);
+                alert('Password reset failed. Please try again.');
             });
     }
 }
