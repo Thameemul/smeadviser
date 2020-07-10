@@ -115,6 +115,9 @@ dist
 .yarn/install-state.gz
 .pnp.*
 
+# firbase hosting files
+.firebase
+
 # compiled output
 /dist
 /tmp
