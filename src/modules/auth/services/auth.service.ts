@@ -32,6 +32,10 @@ export class AuthService {
         });
     }
 
+    ChangePassword(code: string, password: string): Promise<void> {
+        return this.angularFireAuth.confirmPasswordReset(code, password);
+    }
+
     /* Sign up */
     SignUp(email: string, password: string): Promise<string> {
         return new Promise((resolve, reject) => {

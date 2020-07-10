@@ -4,6 +4,7 @@ import { UserService } from '@modules/auth/services';
 
 import { User } from '../../models/user.model';
 import { AuthService } from '../../services/auth.service';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
     selector: 'sb-usermanagement',
@@ -12,13 +13,34 @@ import { AuthService } from '../../services/auth.service';
     styleUrls: ['usermanagement.component.scss'],
 })
 export class UserManagementComponent implements OnInit {
-    user!: User;
+    password = '';
+    confirmPassword = '';
+    code!: string;
+    passwordNotMatched = true;
 
-    constructor(private authservice: AuthService, private userservice: UserService) {}
+    constructor(
+        private authservice: AuthService,
+        private userservice: UserService,
+        private router: Router,
+        private route: ActivatedRoute
+    ) {}
 
-    ngOnInit() {}
+    ngOnInit() {
+        this.code = this.route.snapshot.queryParams.oobCode;
+    }
 
-    // async handleResetPassword(user: User) {
-    //     this.authservice.handleResetPassword(this.user.password, this.user.confirmPassword);
-    // }
+    handleResetPassword() {
+        if (this.password !== this.confirmPassword) {
+            this.passwordNotMatched = false;
+            return;
+        }
+        this.authservice
+            .ChangePassword(this.code, this.password)
+            .then(() => {
+                this.router.navigateByUrl('auth/login');
+            })
+            .catch(err => {
+                alert(err);
+            });
+    }
 }

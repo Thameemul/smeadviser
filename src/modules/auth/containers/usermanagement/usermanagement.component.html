@@ -9,25 +9,29 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label class="medium mb-1" >Password</label>
-                                        <input class="form-control py-4" name="password" [(ngModel)]="user.password"  type="password" required />
+                                        <input class="form-control py-4" #p="ngModel" name="password" [(ngModel)]="password"  type="password" required />
+                                    <div *ngIf="p.invalid && p.touched" class="validation-error">This field is
+                                        required</div>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label class="medium mb-1" >Confirm Password</label>
-                                        <input class="form-control py-4"   type="password"  required />
+                                        <input class="form-control py-4"  #cp="ngModel" name="confirmPassword" [(ngModel)]="confirmPassword"  type="password"  required />
+                                        <div *ngIf="cp.invalid && cp.touched" class="validation-error">This field is
+                                            required</div>
                                     </div>
                                 </div>
                             </div>
                              <div class="form-row">
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                         <small class="text-muted">* Password should be at least 6 characters long</small>
+                                         <small class="text-muted" [ngClass]="{'alert-danger': !passwordNotMatched}">{{ !passwordNotMatched ? "Password and Confim Password should be same" : "Password should be at least 6 characters long"}}</small>
                                     </div>
                                 </div>
                             </div>
                             <div class="form-group mt-4 mb-0">
-                                <button class="btn btn-primary btn-block" routerLink="/auth/login"  >Confirm</button>
+                                <button class="btn btn-primary btn-block" (click)="handleResetPassword()"  >Confirm</button>
                             </div>
                     </div>
                     <div class="card-footer text-center">
