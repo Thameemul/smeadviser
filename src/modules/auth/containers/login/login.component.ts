@@ -1,6 +1,7 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Observable, Subject } from 'rxjs';
 
 import { AuthService } from '../../services/auth.service';
 
@@ -15,6 +16,7 @@ export class LoginComponent implements OnInit {
     password!: string;
     isChecked = false;
     returnUrl!: string;
+    isLoading!: Subject<boolean>;
     constructor(
         private authservice: AuthService,
         private router: Router,
@@ -23,33 +25,30 @@ export class LoginComponent implements OnInit {
 
     ngOnInit() {
         //  this.resetForm();
+        this.isLoading = new Subject<boolean>();
+        this.isLoading.next(false);
+
         this.returnUrl = this.route.snapshot.queryParams.returnUrl || 'dashboard';
     }
 
-    resetForm(form?: NgForm) {
-        // if (form != null) {
-        //     form.reset();
-        // }
-        // this.authservice.userData = {
-        //     id: '',
-        //     firstName: '',
-        //     lastName: '',
-        //     email: '',
-        //     password: '',
-        //     confirmPassword: '',
-        // };
-    }
+    resetForm(form?: NgForm) {}
 
     SignIn() {
-        this.authservice
-            .SignIn(this.email, this.password)
-            .then(res => {
+        this.showProgressBar(true);
+        // return;
+        this.authservice.SignIn(this.email, this.password).subscribe(
+            () => {
+                this.showProgressBar(false);
                 this.router.navigateByUrl(this.returnUrl);
-            })
-            .catch(err => {
-                alert(err.message);
-            });
-        this.email = '';
-        this.password = '';
+            },
+            err => {
+                alert(err);
+                this.showProgressBar(false);
+            }
+        );
+    }
+
+    showProgressBar(show: boolean) {
+        this.isLoading.next(show);
     }
 }

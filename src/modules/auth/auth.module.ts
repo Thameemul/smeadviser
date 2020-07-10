@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 
 //  Firebase
 import { AngularFireModule } from '@angular/fire';
@@ -41,6 +42,7 @@ import { UserSkillService } from './services/userskill.service';
         AngularFireAuthModule, // auth
         AngularFireStorageModule, // storage
         FormsModule,
+        MatProgressBarModule,
     ],
     providers: [...authServices.services, UserSkillService, ...authGuards.guards],
     declarations: [...authContainers.containers, ...authComponents.components],
