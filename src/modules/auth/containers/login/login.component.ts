@@ -1,8 +1,8 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 
 import { AuthService } from '../../services/auth.service';
-import { Router } from '@angular/router';
 
 @Component({
     selector: 'sb-login',
@@ -14,18 +14,22 @@ export class LoginComponent implements OnInit {
     email!: string;
     password!: string;
     isChecked = false;
-
-    constructor(private authservice: AuthService, private router: Router) { }
+    returnUrl!: string;
+    constructor(
+        private authservice: AuthService,
+        private router: Router,
+        private route: ActivatedRoute
+    ) {}
 
     ngOnInit() {
         //  this.resetForm();
+        this.returnUrl = this.route.snapshot.queryParams.returnUrl || 'dashboard';
     }
 
     resetForm(form?: NgForm) {
         // if (form != null) {
         //     form.reset();
         // }
-
         // this.authservice.userData = {
         //     id: '',
         //     firstName: '',
@@ -37,7 +41,14 @@ export class LoginComponent implements OnInit {
     }
 
     SignIn() {
-        this.authservice.SignIn(this.email, this.password);
+        this.authservice
+            .SignIn(this.email, this.password)
+            .then(res => {
+                this.router.navigateByUrl(this.returnUrl);
+            })
+            .catch(err => {
+                alert(err.message);
+            });
         this.email = '';
         this.password = '';
     }

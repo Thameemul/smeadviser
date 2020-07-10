@@ -12,7 +12,8 @@ export class ContributionGuard implements CanActivate {
         state: RouterStateSnapshot
     ): Observable<boolean> | Promise<boolean> | boolean {
         if (this.authService.isLoggedIn !== true) {
-            this.router.navigate(['auth/login']);
+            this.router.navigate(['auth/login'], { queryParams: { returnUrl: state.url } });
+            return false;
         }
         return true;
     }
