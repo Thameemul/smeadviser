@@ -47,7 +47,7 @@
                             </div>
                         </div>
 
-                        <div class="form-row">
+                        <div *ngIf="false" class="form-row">
                             <div class="col-md-6">
                                 <div class="form-group"><label class="medium mb-1" >Password *</label>
                                     <input class="form-control py-1" type="password" name="password" #password="ngModel" [(ngModel)]="model.password" required />
@@ -60,7 +60,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-12">
+                        <div *ngIf="false" class="col-md-12">
                             <div class="form-group">
                                  <small class="text-muted ">* Password should be at least 6 characters long</small>
                             </div>

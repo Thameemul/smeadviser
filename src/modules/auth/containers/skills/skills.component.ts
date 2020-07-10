@@ -70,23 +70,28 @@ export class SkillsComponent implements OnInit {
     }
 
     onSubmit(form: NgForm) {
-        const data = form.value;
-
-        this.authService.SignUp(this.model.email, this.model.password).then(
-            (userid: string) => {
+        const randomPasscode = Math.random().toString(36).substr(2, 8);
+        this.model.password = randomPasscode;
+        const email = this.model.email;
+        this.authService
+            .SignUp(this.model.email, this.model.password)
+            .then((userid: string) => {
                 this.model.id = userid;
-                this.userskillservice.createUserSkill(this.model).then(() => {
+                return this.userskillservice.createUserSkill(this.model).then(() => {
                     this.resetForm(form);
                     // this.router.navigate(['dashboard']);
-                    alert('User Registered successfully');
-                    this.router.navigate(['dashboard']);
+                    alert(
+                        'An email with verify link has been sent to your email. Please click the link to veriy your email.'
+                    );
+                    // this.router.navigate(['dashboard']);
                 });
-            },
-            (message: string) => {
-                alert(
-                    'User Registration failed. Please try again. If the issue persists, please contact Admin.'
-                );
-            }
-        );
+            })
+            .then(() => {
+                console.log(email);
+                return this.authService.sendUserVerifyEmail(email);
+            })
+            .catch((message: string) => {
+                alert(message);
+            });
     }
 }

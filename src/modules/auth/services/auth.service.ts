@@ -114,4 +114,8 @@ export class AuthService {
                 window.alert(error);
             });
     }
+
+    sendUserVerifyEmail(email: string): Promise<void> {
+        return this.angularFireAuth.sendPasswordResetEmail(email);
+    }
 }
