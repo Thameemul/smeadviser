@@ -10,12 +10,12 @@ import {
 import { AngularFirestore } from '@angular/fire/firestore';
 import { NgForm } from '@angular/forms';
 import { AngularEditorConfig } from '@kolkov/angular-editor';
+import { Query } from '@modules/contribution/models/query.model';
+import { QueryService } from '@modules/contribution/services/query.service';
 import { Observable } from 'rxjs';
 
 import { UserSkill } from '../../../auth/models/userskill.model';
 import { UserSkillService } from '../../../auth/services/userskill.service';
-import { Query } from '../../models/query.model';
-import { QueryService } from '../../services/query.service';
 
 @Component({
     selector: 'sb-addnewquery',

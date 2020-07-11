@@ -1,10 +1,10 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { AngularEditorConfig } from '@kolkov/angular-editor';
+import { PostService } from '@modules/contribution/services';
 import { Subject } from 'rxjs';
 
 import { Post } from '../../models/post.model';
-import { PostService } from '../../services/post.service';
 
 @Component({
     selector: 'sb-addnewpost',

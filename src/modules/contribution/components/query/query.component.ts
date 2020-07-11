@@ -1,9 +1,7 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { Query } from '@modules/addnewquery/models';
-import * as firebase from 'firebase/app';
+import { Query } from '@modules/contribution/models/Query.model';
+import { QueryService } from '@modules/contribution/services';
 import { Observable } from 'rxjs';
-
-import { QueryService } from '../../../addnewquery/services/query.service';
 
 @Component({
     selector: 'sb-query',

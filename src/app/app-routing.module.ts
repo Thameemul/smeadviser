@@ -32,13 +32,6 @@ const routes: Routes = [
             ),
     },
     {
-        path: 'addnewquery',
-        loadChildren: () =>
-            import('@modules/addnewquery/addnewquery-routing.module').then(
-                m => m.AddNewQueryRoutingModule
-            ),
-    },
-    {
         path: 'search',
         loadChildren: () =>
             import('@modules/search/search-routing.module').then(m => m.SearchRoutingModule),
@@ -65,13 +58,6 @@ const routes: Routes = [
         loadChildren: () =>
             import('@modules/reportbug/reportbug-routing.module').then(
                 m => m.ReportBugRoutingModule
-            ),
-    },
-    {
-        path: 'addnewpost',
-        loadChildren: () =>
-            import('@modules/addnewpost/addnewpost-routing.module').then(
-                m => m.AddNewPostRoutingModule
             ),
     },
     {

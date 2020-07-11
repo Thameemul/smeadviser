@@ -25,6 +25,16 @@ export const ROUTES: Routes = [
         path: 'post',
         canActivate: [contributionGuards.ContributionGuard],
         component: contributionContainers.PostContriComponent,
+        children: [
+            {
+                path: '',
+                component: contributionComponents.PostComponent,
+            },
+            {
+                path: 'add',
+                component: contributionComponents.AddNewPostComponent,
+            },
+        ],
         data: {
             title: 'Post - SME Adviser',
         } as SBRouteData,
@@ -37,6 +47,10 @@ export const ROUTES: Routes = [
             {
                 path: '',
                 component: contributionComponents.QueryComponent,
+            },
+            {
+                path: 'add',
+                component: contributionComponents.AddNewQueryComponent,
             },
             {
                 path: ':docid',

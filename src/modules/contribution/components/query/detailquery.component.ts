@@ -1,8 +1,9 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { AngularEditorComponent, AngularEditorConfig } from '@kolkov/angular-editor';
-import { Query } from '@modules/addnewquery/models/query.model';
 import { AuthService } from '@modules/auth/services';
+import { angularEditorConfig } from '@modules/contribution/configuration/config';
+import { Query } from '@modules/contribution/models/query.model';
 import { Reply } from '@modules/contribution/models/reply.model';
 import { ContributionService } from '@modules/contribution/services';
 import { Observable, Subject } from 'rxjs';
@@ -13,17 +14,9 @@ import { Observable, Subject } from 'rxjs';
     styleUrls: ['./detailquery.component.scss'],
 })
 export class DetailqueryComponent implements OnInit {
+    config: AngularEditorConfig = angularEditorConfig;
+
     htmlContent = '';
-    public config: AngularEditorConfig = {
-        editable: true,
-        spellcheck: true,
-        height: '5rem',
-        minHeight: '15rem',
-        placeholder: '',
-        translate: 'no',
-        defaultParagraphSeparator: 'p',
-        defaultFontName: 'Arial',
-    };
     @ViewChild('replyEditor', { static: true }) editor!: AngularEditorComponent;
     query!: Observable<Query>;
     replies!: Observable<Reply[]>;
@@ -36,6 +29,7 @@ export class DetailqueryComponent implements OnInit {
         private route: ActivatedRoute,
         private authService: AuthService
     ) {}
+
     ngOnInit() {
         this.showProgressBar(false);
         this.route.params.subscribe(params => {

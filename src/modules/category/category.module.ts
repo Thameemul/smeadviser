@@ -19,8 +19,7 @@ import * as categoryGuards from './guards';
 
 /* Services */
 import * as categoryServices from './services';
-import { PostService } from '../addnewpost/services/post.service';
-import { QueryService } from '../addnewquery/services/query.service';
+import { PostService, QueryService } from '@modules/contribution/services';
 
 @NgModule({
     imports: [

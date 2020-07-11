@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
-import { Query } from '@modules/addnewquery/models';
 import * as firebase from 'firebase/app';
 import { Observable, of } from 'rxjs';
 
 import { FAQ } from '../models/faq.model';
+import { Query } from '../models/Query.model';
 import { Reply } from '../models/reply.model';
 
 @Injectable()

@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { Query } from '@modules/contribution/models/Query.model';
 import { Observable } from 'rxjs';
 
-import { Query } from '../../../addnewquery/models/query.model';
 import { SearchService } from '../../services/search.service';
 @Component({
     selector: 'sb-search',

@@ -1,9 +1,8 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { Post } from '@modules/addnewpost/models';
-import * as firebase from 'firebase/app';
+import { Post } from '../../models/post.model';
 import { Observable } from 'rxjs';
 
-import { PostService } from '../../../addnewpost/services/post.service';
+import { PostService } from '../../services/';
 
 @Component({
     selector: 'sb-post',

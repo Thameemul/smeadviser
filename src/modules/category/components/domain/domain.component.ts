@@ -1,8 +1,7 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { Post } from '@modules/contribution/models/post.model';
+import { PostService } from '@modules/contribution/services';
 import { Observable } from 'rxjs';
-
-import { Post } from '../../../addnewpost/models/post.model';
-import { PostService } from '../../../addnewpost/services/post.service';
 
 @Component({
     selector: 'sb-domain',
@@ -11,7 +10,7 @@ import { PostService } from '../../../addnewpost/services/post.service';
     styleUrls: ['domain.component.scss'],
 })
 export class DomainComponent implements OnInit {
-    //posts!: Observable<Post[]>;
+    // posts!: Observable<Post[]>;
     domainPosts!: Observable<Post[]>;
 
     constructor(private postService: PostService) {}

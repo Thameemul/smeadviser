@@ -1,11 +1,6 @@
 import { Injectable } from '@angular/core';
-import {
-    AngularFirestore,
-    AngularFirestoreCollection,
-    AngularFirestoreCollectionGroup,
-} from '@angular/fire/firestore';
+import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
 import { AuthService } from '@modules/auth/services';
-import * as firebase from 'firebase/app';
 import { Observable } from 'rxjs';
 
 import { Query } from '../models/Query.model';

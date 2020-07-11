@@ -1,10 +1,5 @@
 import { Injectable } from '@angular/core';
-import {
-    AngularFirestore,
-    AngularFirestoreCollection,
-    AngularFirestoreCollectionGroup,
-} from '@angular/fire/firestore';
-import { AuthService } from '@modules/auth/services';
+import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
 import * as firebase from 'firebase/app';
 import { Observable } from 'rxjs';
 
@@ -12,7 +7,7 @@ import { Post } from '../models/post.model';
 
 @Injectable()
 export class PostService {
-    constructor(private fireStore: AngularFirestore, private authService: AuthService) {}
+    constructor(private fireStore: AngularFirestore) {}
 
     getPosts(): Observable<Post[]> {
         const t: AngularFirestoreCollection = this.fireStore.collection<Post>('post');

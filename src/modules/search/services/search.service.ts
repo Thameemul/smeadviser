@@ -1,10 +1,7 @@
 import { Injectable } from '@angular/core';
-import { ActivatedRoute, ChildActivationEnd, Router } from '@angular/router';
+import { Query } from '@modules/contribution/models/Query.model';
 import * as firebase from 'firebase/app';
-import { BehaviorSubject, Observable } from 'rxjs';
-import { filter } from 'rxjs/operators';
-
-import { Query } from '../../addnewquery/models/query.model';
+import { Observable } from 'rxjs';
 
 @Injectable()
 export class SearchService {
