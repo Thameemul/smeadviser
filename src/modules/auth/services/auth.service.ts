@@ -121,4 +121,9 @@ export class AuthService {
             url: 'https://smeadviser-2320c.web.app/auth/login',
         });
     }
+
+    getUser(): firebase.User | undefined {
+        const user = JSON.parse(localStorage.getItem('user') as string) as firebase.User;
+        return user !== null ? user : undefined;
+    }
 }

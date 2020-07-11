@@ -1,6 +1,7 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { AngularEditorConfig } from '@kolkov/angular-editor';
+import { Subject } from 'rxjs';
 
 import { Post } from '../../models/post.model';
 import { PostService } from '../../services/post.service';
@@ -14,10 +15,10 @@ import { PostService } from '../../services/post.service';
 export class AddNewPostComponent implements OnInit {
     radioTitle = 'Category';
     radioItems: Array<string> = ['Technical', 'Domain', 'Others'];
-
+    isLoading: Subject<boolean> = new Subject<boolean>();
     selectedOption = 'Technical';
-
     htmlContent = '';
+
     public config: AngularEditorConfig = {
         editable: true,
         spellcheck: true,
@@ -33,6 +34,7 @@ export class AddNewPostComponent implements OnInit {
     constructor(private postService: PostService) {}
 
     ngOnInit() {
+        this.showProgressBar(false);
         this.resetForm();
         this.model = {
             id: '',
@@ -49,11 +51,17 @@ export class AddNewPostComponent implements OnInit {
     }
 
     onSubmit(form: NgForm) {
+        this.showProgressBar(true);
         this.model.category = this.selectedOption;
-        this.postService.createPost(this.model).then(() => {
-            this.resetForm(form);
-            alert('Post Submitted successfully');
-        });
+        this.postService
+            .createPost(this.model)
+            .then(() => {
+                this.resetForm(form);
+                this.showProgressBar(false);
+            })
+            .catch(() => {
+                this.showProgressBar(false);
+            });
     }
 
     create(post: Post) {
@@ -66,5 +74,9 @@ export class AddNewPostComponent implements OnInit {
 
     delete(id: string) {
         this.postService.deletePost(id);
+    }
+
+    showProgressBar(show: boolean) {
+        this.isLoading.next(show);
     }
 }

@@ -17,10 +17,11 @@
     </ul>
     <div class="card-body">
         <!-- <h6 style="color:rgb(47, 0, 255)" class="medium mb-1 ">Add Response</h6> -->
-        <angular-editor [config]="config"></angular-editor>
+        <mat-progress-bar *ngIf="isLoading | async" mode="indeterminate"></mat-progress-bar>
+        <angular-editor #replyEditor  [(ngModel)]="htmlContent" [config]="config"></angular-editor>
     </div>
     <div class="card-footer">
             <button type="submit"  class="btn btn-primary "  routerLink="/dashboard"> Cancel</button>
-            <button type="submit" class="btn btn-success  float-right" autofocus> Add Response</button>
+            <button type="submit" [disabled]="htmlContent.length == 0" class="btn btn-success float-right" (click)="addNewReply()" autofocus> Add Response</button>
     </div>
 </div>
