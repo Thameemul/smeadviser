@@ -9,6 +9,8 @@ import { SettingsModule } from './settings.module';
 import * as settingContainers from './containers';
 
 /* Guards */
+import * as settingsGuards from './guards';
+
 
 import { SBRouteData } from '@modules/navigation/models';
 
@@ -16,7 +18,7 @@ import { SBRouteData } from '@modules/navigation/models';
 export const ROUTES: Routes = [
     {
         path: '',
-        canActivate: [],
+        canActivate: [settingsGuards.SettingsGuard],
         component: settingContainers.SettingComponent,
         data: {
             title: 'Setttings - SME Adviser',

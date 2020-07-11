@@ -16,7 +16,7 @@ import * as chartsGuards from './guards';
 export const ROUTES: Routes = [
     {
         path: '',
-        canActivate: [],
+        canActivate: [chartsGuards.ChartsGuard],
         component: chartsContainers.ChartsComponent,
         data: {
             title: 'Statistics - SME Adviser',

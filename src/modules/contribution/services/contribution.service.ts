@@ -21,6 +21,7 @@ export class ContributionService {
                 .firestore()
                 .collection('post')
                 .where('isFAQ', '==', 1)
+                // .orderBy('createDate', 'desc')
                 .get()
                 .then(querySnapshot => {
                     const faqs: FAQ[] = [];

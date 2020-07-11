@@ -30,6 +30,7 @@ export class QueryService {
             '_' +
             +date.getTime();
         query.id = id;
+        query.createdDate = id;
         return this.fireStore.collection('query').doc(id).set(query);
     }
 

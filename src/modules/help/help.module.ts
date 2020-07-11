@@ -24,6 +24,7 @@ import * as helpContainers from './containers';
 // import * as searchDirectives from './directives';
 
 /* Guards */
+import * as helpGuards from './guards';
 
 /* Services */
 import * as HelpService from './services';
@@ -45,7 +46,7 @@ import { environment } from '../../environments/environment';
         AngularFireStorageModule, // storage
         FormsModule,
     ],
-    providers: [DecimalPipe, ...HelpService.services],
+    providers: [DecimalPipe, ...HelpService.services, ...helpGuards.guards],
     declarations: [
         ...helpContainers.containers,
         ...helpComponents.components,

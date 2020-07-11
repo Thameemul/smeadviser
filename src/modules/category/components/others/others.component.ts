@@ -11,16 +11,16 @@ import { PostService } from '../../../addnewpost/services/post.service';
     styleUrls: ['others.component.scss'],
 })
 export class OthersComponent implements OnInit {
-    posts!: Observable<Post[]>;
+    otherPosts!: Observable<Post[]>;
 
     constructor(private postService: PostService) {}
 
     ngOnInit() {
-        this.posts = this.postService.getPosts();
+        this.otherPosts = this.postService.getOtherPosts();
     }
 
-    setAsFAQ(post: Post) {
-        post.isFAQ = true;
-        this.postService.setFAQstatus(post);
-    }
+    // setAsFAQ(post: Post) {
+    //     post.isFAQ = true;
+    //     this.postService.setFAQstatus(post);
+    // }
 }

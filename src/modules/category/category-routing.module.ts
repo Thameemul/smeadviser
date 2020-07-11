@@ -21,7 +21,7 @@ export const ROUTES: Routes = [
     },
     {
         path: 'tech',
-        canActivate: [],
+        canActivate: [categoryGuards.CategoryGuard],
         component: categoryContainers.TechCatComponent,
         data: {
             title: 'Technical Category',
@@ -29,7 +29,7 @@ export const ROUTES: Routes = [
     },
     {
         path: 'domain',
-        canActivate: [],
+        canActivate: [categoryGuards.CategoryGuard],
         component: categoryContainers.DomainCatComponent,
         data: {
             title: 'Domain Category',
@@ -37,7 +37,7 @@ export const ROUTES: Routes = [
     },
     {
         path: 'others',
-        canActivate: [],
+        canActivate: [categoryGuards.CategoryGuard],
         component: categoryContainers.OthersCatComponent,
         data: {
             title: 'Others Category',

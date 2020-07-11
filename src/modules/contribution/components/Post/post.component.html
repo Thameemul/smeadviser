@@ -10,6 +10,8 @@
                 class="btn btn-sm btn-outline-info float-lg-right"
                 title="Add to Frequently Asked Questions">&#43;</button>
             <div class="float-lg-right">
+                <p>Posted on : {{post.createdDate}}  </p>
+                <span> </span>
                 <span class="float-lg-right" *ngIf="post.isFAQ != null && post.isFAQ"
                     class="badge badge-secondary">FAQ</span>
             </div>

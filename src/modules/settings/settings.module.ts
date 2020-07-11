@@ -24,6 +24,7 @@ import * as settingsContainers from './containers';
 // import * as searchDirectives from './directives';
 
 /* Guards */
+import * as settingsGuards from './guards';
 
 /* Services */
 import * as SettingsService from './services';
@@ -45,7 +46,7 @@ import { environment } from '../../environments/environment';
         AngularFireStorageModule, // storage
         FormsModule,
     ],
-    providers: [DecimalPipe, ...SettingsService.services],
+    providers: [DecimalPipe, ...SettingsService.services, ...settingsGuards.guards],
     declarations: [
         ...settingsContainers.containers,
         ...settingsComponents.components,

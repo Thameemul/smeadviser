@@ -9,6 +9,7 @@ import { AddNewQueryModule } from './addnewquery.module';
 import * as addnewqueryContainers from './containers';
 
 /* Guards */
+import * as addnewqueryGuards from './guards';
 
 import { SBRouteData } from '@modules/navigation/models';
 
@@ -16,7 +17,7 @@ import { SBRouteData } from '@modules/navigation/models';
 export const ROUTES: Routes = [
     {
         path: '',
-        canActivate: [],
+        canActivate: [addnewqueryGuards.AddNewQueryGuard],
         component: addnewqueryContainers.NewQueryComponent,
         data: {
             title: 'Add new Query',

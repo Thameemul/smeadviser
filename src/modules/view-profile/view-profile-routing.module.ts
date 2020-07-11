@@ -16,7 +16,7 @@ import { SBRouteData } from '@modules/navigation/models';
 export const ROUTES: Routes = [
     {
         path: '',
-        canActivate: [],
+        canActivate: [viewprofileGuards.ViewProfileGuard],
         component: viewprofileContainers.ViewProfComponent,
         data: {
             title: 'View Profile',

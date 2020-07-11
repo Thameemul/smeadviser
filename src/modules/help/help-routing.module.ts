@@ -9,6 +9,7 @@ import { HelpModule } from './help.module';
 import * as helpmeContainers from './containers';
 
 /* Guards */
+import * as helpGuards from './guards';
 
 import { SBRouteData } from '@modules/navigation/models';
 
@@ -16,7 +17,7 @@ import { SBRouteData } from '@modules/navigation/models';
 export const ROUTES: Routes = [
     {
         path: '',
-        canActivate: [],
+        canActivate: [helpGuards.HelpGuard],
         component: helpmeContainers.HelpMeComponent,
         data: {
             title: 'Help - SME Adviser',

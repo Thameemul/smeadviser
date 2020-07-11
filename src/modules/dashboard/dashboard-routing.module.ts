@@ -25,7 +25,7 @@ export const ROUTES: Routes = [
                 },
             ],
         } as SBRouteData,
-        canActivate: [],
+        canActivate: [dashboardGuards.DashboardGuard],
         component: dashboardContainers.DashboardComponent,
     },
     {
@@ -43,7 +43,7 @@ export const ROUTES: Routes = [
                 },
             ],
         } as SBRouteData,
-        canActivate: [],
+        canActivate: [dashboardGuards.DashboardGuard],
         component: dashboardContainers.StaticComponent,
     },
     {
@@ -61,7 +61,7 @@ export const ROUTES: Routes = [
                 },
             ],
         } as SBRouteData,
-        canActivate: [],
+        canActivate: [dashboardGuards.DashboardGuard],
         component: dashboardContainers.LightComponent,
     },
 ];

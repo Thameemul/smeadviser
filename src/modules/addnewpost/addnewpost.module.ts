@@ -24,6 +24,7 @@ import * as addnewpostContainers from './containers';
 import * as addnewpostDirectives from './directives';
 
 /* Guards */
+import * as addnewpostGuards from './guards';
 
 /* Services */
 import * as PostService from './services';
@@ -44,7 +45,12 @@ import { environment } from '../../environments/environment';
         AngularFireStorageModule, // storage
         FormsModule,
     ],
-    providers: [DecimalPipe, ...PostService.services, ...addnewpostDirectives.directives],
+    providers: [
+        DecimalPipe,
+        ...PostService.services,
+        ...addnewpostDirectives.directives,
+        ...addnewpostGuards.guards,
+    ],
     declarations: [
         ...addnewpostContainers.containers,
         ...addnewpostComponents.components,

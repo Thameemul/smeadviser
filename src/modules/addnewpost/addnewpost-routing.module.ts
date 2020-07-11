@@ -9,6 +9,7 @@ import { AddNewPostModule } from './addnewpost.module';
 import * as addnewpostContainers from './containers';
 
 /* Guards */
+import * as addnewpostGuards from './guards';
 
 import { SBRouteData } from '@modules/navigation/models';
 
@@ -16,7 +17,7 @@ import { SBRouteData } from '@modules/navigation/models';
 export const ROUTES: Routes = [
     {
         path: '',
-        canActivate: [],
+        canActivate: [addnewpostGuards.AddNewPostGuard],
         component: addnewpostContainers.NewPostComponent,
         data: {
             title: 'Add new Post',

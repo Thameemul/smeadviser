@@ -11,16 +11,17 @@ import { PostService } from '../../../addnewpost/services/post.service';
     styleUrls: ['domain.component.scss'],
 })
 export class DomainComponent implements OnInit {
-    posts!: Observable<Post[]>;
+    //posts!: Observable<Post[]>;
+    domainPosts!: Observable<Post[]>;
 
     constructor(private postService: PostService) {}
 
     ngOnInit() {
-        this.posts = this.postService.getPosts();
+        this.domainPosts = this.postService.getDomainPosts();
     }
 
-    setAsFAQ(post: Post) {
-        post.isFAQ = true;
-        this.postService.setFAQstatus(post);
-    }
+    // setAsFAQ(post: Post) {
+    //     post.isFAQ = true;
+    //     this.postService.setFAQstatus(post);
+    // }
 }

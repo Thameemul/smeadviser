@@ -55,8 +55,6 @@ import { UserSkillService } from '../auth/services/userskill.service';
         UserSkillService,
         ...addnewqueryGuards.guards,
         ...addnewqueryDirectives.directives,
-
-
     ],
     declarations: [
         ...addnewqueryContainers.containers,
