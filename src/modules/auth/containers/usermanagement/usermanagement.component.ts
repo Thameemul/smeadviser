@@ -35,6 +35,7 @@ export class UserManagementComponent implements OnInit {
             return;
         }
         this.passwordNotMatched = true;
+        console.log(this.code, this.password);
         this.authservice
             .ChangePassword(this.code, this.password)
             .then(() => {

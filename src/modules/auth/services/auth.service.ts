@@ -116,6 +116,9 @@ export class AuthService {
     }
 
     sendUserVerifyEmail(email: string): Promise<void> {
-        return this.angularFireAuth.sendPasswordResetEmail(email);
+        return this.angularFireAuth.sendSignInLinkToEmail(email, {
+            handleCodeInApp: true,
+            url: 'https://smeadviser-2320c.web.app/auth/login',
+        });
     }
 }
