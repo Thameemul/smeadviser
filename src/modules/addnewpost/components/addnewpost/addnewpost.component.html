@@ -28,6 +28,7 @@
 
                     <div class="form-group">
                         <h6 class="medium mb-1 ">Body *</h6>
+                        <mat-progress-bar *ngIf="isLoading | async" mode="indeterminate"></mat-progress-bar>
                         <angular-editor name="postdesc" #postdesc="ngModel" [(ngModel)]="model.postdesc"
                             [config]="config" required></angular-editor>
                         <div *ngIf="postdesc.invalid && postdesc.touched" class="validation-error">This field is

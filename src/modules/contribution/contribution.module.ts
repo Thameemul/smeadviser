@@ -30,6 +30,7 @@ import * as contributionServices from './services';
 import { PostService } from '../addnewpost/services/post.service';
 import { environment } from '../../environments/environment';
 import { QueryService } from '../addnewquery/services/query.service';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 
 @NgModule({
     imports: [
@@ -45,6 +46,7 @@ import { QueryService } from '../addnewquery/services/query.service';
         AngularFireAuthModule, // auth
         AngularFireStorageModule, // storage
         FormsModule,
+        MatProgressBarModule,
     ],
     providers: [
         ...contributionServices.services,

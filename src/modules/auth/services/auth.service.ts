@@ -32,6 +32,10 @@ export class AuthService {
         });
     }
 
+    ChangePassword(code: string, password: string): Promise<void> {
+        return this.angularFireAuth.confirmPasswordReset(code, password);
+    }
+
     /* Sign up */
     SignUp(email: string, password: string): Promise<string> {
         return new Promise((resolve, reject) => {
@@ -109,5 +113,17 @@ export class AuthService {
             .catch(error => {
                 window.alert(error);
             });
+    }
+
+    sendUserVerifyEmail(email: string): Promise<void> {
+        return this.angularFireAuth.sendSignInLinkToEmail(email, {
+            handleCodeInApp: true,
+            url: 'https://smeadviser-2320c.web.app/auth/login',
+        });
+    }
+
+    getUser(): firebase.User | undefined {
+        const user = JSON.parse(localStorage.getItem('user') as string) as firebase.User;
+        return user !== null ? user : undefined;
     }
 }

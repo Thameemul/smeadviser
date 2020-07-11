@@ -29,6 +29,7 @@ import * as addnewpostGuards from './guards';
 /* Services */
 import * as PostService from './services';
 import { environment } from '../../environments/environment';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 
 @NgModule({
     imports: [
@@ -44,6 +45,7 @@ import { environment } from '../../environments/environment';
         AngularFireAuthModule, // auth
         AngularFireStorageModule, // storage
         FormsModule,
+        MatProgressBarModule,
     ],
     providers: [
         DecimalPipe,
